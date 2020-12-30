@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <style type="text/css">
+      table {
+        border-collapse: collapse;
+      }
+      tr.test:nth-child(even) {
+        background-color: #eee;
+      }
+      td, th {
+        border: 1px solid #bbb;
+        padding: 0.1em;
+      }
+
+      .result {
+        width: 5em;
+        text-align: center;
+      }
+      .result-ERROR {
+        background-color: #f66;
+      }
+      .result-FAILED {
+        background-color: #fcc;
+      }
+      .result-PASSED {
+        background-color: #9f9;
+      }
+      .result-SKIPPED {
+        background-color: #ff6;
+      }
+      .result-XFAIL {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Test Name</th>
+          {% for test in tests[test_names[0]]: %}
+            <th>
+              {{ test.podman_version }}
+              {% if test.commit_id != '': %}
+                {{ test.commit_date }}
+                (<a href="https://github.com/containers/podman/commit/{{ test.commit_id }}">{{ test.commit_id }}</a>)
+              {% endif %}
+              {% if test.runtime != "runc": %}
+                {{ test.runtime }}
+              {% endif %}
+              </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for test_name in test_names: %}
+          <tr class="test">
+            <td class="test-name">{{ test_name }}</td>
+            {% for test in tests[test_name]: %}
+              <td class="result result-{{ test.result }}">{{ test.result }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
