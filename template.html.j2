@@ -3,17 +3,12 @@
     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"-->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-      .highlight {
-        background-color: #ccb;
+      #filterInput {
+        min-width: 20em;
       }
 
-      /*.result {
-        width: 5em;
-      }
-      .result-ERROR {
-        background-color: #DB2828 !important;
-        border-color: #DB2828 !important;
-        color: #FFFFFF !important;
+      /*.result-ERROR {
+        background-color: #f66;
       }
       .result-FAILED {
         background-color: #fcc;
@@ -30,55 +25,105 @@
     </style>
   </head>
   <body>
-    <h2>docker-py integration tests against Podman APIv2</h2>
-    <section>
-      <table id="tests" class="table table-striped table-bordered table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Test Name</th>
-            {% for test in tests[test_names[0]]: %}
-              <th scope="col">
-                {{ test.podman_version }}
-                {% if test.commit_id != '': %}
-                  {{ test.commit_date }}
-                  (<a href="https://github.com/containers/podman/commit/{{ test.commit_id }}">{{ test.commit_id }}</a>)
-                {% endif %}
-                {% if test.comment != "": %}
-                  ({{ test.comment }})
-                {% endif %}
-              </th>
-            {% endfor %}
-          </tr>
-        </thead>
-        <tbody>
-          {% for test_name in test_names: %}
+    <div class="container-fluid">
+      <h1>docker-py integration tests against Podman APIv2</h2>
+      <section>
+        <div class="card shadow">
+          <div class="card-body text-muted">
+            <button type="button" class="btn-close float-end" aria-label="Close"></button>
+            <h5 class="card-title">Legend</h5>
+            <p>
+              Runtime: <span class="badge bg-info">crun</span> (runc assumed if not given)
+            </p>
+            <p>
+              Comment/Note: <span class="badge bg-warning text-dark">something</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <table id="tests" class="table table-striped table-bordered table-hover">
+          <thead>
             <tr>
-              <th scope="row">{{ test_name }}</th>
-              {% for test in tests[test_name]: %}
-                  <!--span class="ui red horizontal label">{{ test.result }}</span-->
-                {% if test.result == 'ERROR': %}
-                  <td class="table-danger bg-danger text-white result result-{{ test.result }}">
-                {% elif test.result == 'FAILED': %}
-                  <td class="table-danger text-danger result result-{{ test.result }}">
-                {% elif test.result == 'PASSED': %}
-                  <td class="table-success text-success result result-{{ test.result }}">
-                {% elif test.result == 'SKIPPED': %}
-                  <td class="table-warning text-warning result result-{{ test.result }}">
-                {% elif test.result == 'XFAIL': %}
-                  <td class="table-secondary result result-{{ test.result }}">
-                {% else: %}
-                  <td class="result result-{{ test.result }}">
-                {% endif %}
-                  {{ test.result }}
-                </td>
+              <th scope="col">
+                <form>
+                  <input class="form-control" type="search" id="filterInput" placeholder="Filter tests ...">
+                </form>
+              </th>
+              {% for test in tests[test_names[0]]: %}
+                <th scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
+                  {{ test.podman_version }}
+                  {% if test.commit_id != '': %}
+                    <a href="https://github.com/containers/podman/commit/{{ test.commit_id }}">{{ test.commit_date }}</a>
+                  {% endif %}
+                  {% if test.runtime != "runc": %}
+                    <span class="badge bg-info">{{ test.runtime }}</span>
+                  {% endif %}
+                  {% if test.comment != "": %}
+                    <span class="badge bg-warning text-dark">{{ test.comment }}</span>
+                  {% endif %}
+                </th>
               {% endfor %}
             </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </section>
+          </thead>
+          <tbody>
+            {% for test_name in test_names: %}
+              <tr class="align-middle test" data-test-file="{{ tests[test_name][0].test_file }}" data-test-class="{{ tests[test_name][0].test_class }}" data-test-method="{{ tests[test_name][0].test_method }}">
+                <th scope="row" data-test-file="{{ tests[test_name][0].test_file }}" data-test-class="{{ tests[test_name][0].test_class }}" data-test-method="{{ tests[test_name][0].test_method }}">{{ test_name }}</th>
+                {% for test in tests[test_name]: %}
+                    <!--span class="ui red horizontal label">{{ test.result }}</span-->
+                  <td class="
+                    {% if test.result == 'ERROR': %}
+                      table-danger bg-danger text-white
+                    {% elif test.result == 'FAILED': %}
+                      table-danger text-danger
+                    {% elif test.result == 'PASSED': %}
+                      table-success text-success
+                    {% elif test.result == 'SKIPPED': %}
+                      table-warning text-warning
+                    {% elif test.result == 'XFAIL': %}
+                      table-secondary
+                    {% else: %}
+                    {% endif %}
+                    result result-{{ test.result }}"
+                    data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-result="{{ test.result }}"  data-runtime="{{ test.runtime }}" data-test-file="{{ test.test_file }}" data-test-class="{{ test.test_class }}" data-test-method="{{ test.test_method }}"
+                  >
+                    {{ test.result }}
+                  </td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </div>
 
-    <--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script-->
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script-->
     <script src="dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (function() {
+        let filterInput = document.getElementById('filterInput');
+
+        function doFilter(e) {
+          // Declare variables
+          let filter = filterInput.value.toLowerCase();
+          let ths = document.querySelectorAll("tr.test th");
+
+          // Loop through all list items, and hide those who don't match the search query
+          for(th of ths) {
+            let txtValue = th.textContent || th.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+              th.parentElement.classList.remove('d-none');
+            } else {
+              th.parentElement.classList.add('d-none');
+            }
+          }
+        }
+
+        window.addEventListener('load', doFilter);
+        filterInput.addEventListener('input', doFilter);
+      })();
+    </script>
   </body>
 </html>
