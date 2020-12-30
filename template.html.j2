@@ -1,23 +1,19 @@
 <html>
   <head>
+    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"-->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-      table {
-        border-collapse: collapse;
-      }
-      tr.test:nth-child(even) {
-        background-color: #eee;
-      }
-      td, th {
-        border: 1px solid #bbb;
-        padding: 0.1em;
+      .highlight {
+        background-color: #ccb;
       }
 
-      .result {
+      /*.result {
         width: 5em;
-        text-align: center;
       }
       .result-ERROR {
-        background-color: #f66;
+        background-color: #DB2828 !important;
+        border-color: #DB2828 !important;
+        color: #FFFFFF !important;
       }
       .result-FAILED {
         background-color: #fcc;
@@ -30,38 +26,59 @@
       }
       .result-XFAIL {
         background-color: #ccc;
-      }
+      }*/
     </style>
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Test Name</th>
-          {% for test in tests[test_names[0]]: %}
-            <th>
-              {{ test.podman_version }}
-              {% if test.commit_id != '': %}
-                {{ test.commit_date }}
-                (<a href="https://github.com/containers/podman/commit/{{ test.commit_id }}">{{ test.commit_id }}</a>)
-              {% endif %}
-              {% if test.runtime != "runc": %}
-                {{ test.runtime }}
-              {% endif %}
+    <h2>docker-py integration tests against Podman APIv2</h2>
+    <section>
+      <table id="tests" class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Test Name</th>
+            {% for test in tests[test_names[0]]: %}
+              <th scope="col">
+                {{ test.podman_version }}
+                {% if test.commit_id != '': %}
+                  {{ test.commit_date }}
+                  (<a href="https://github.com/containers/podman/commit/{{ test.commit_id }}">{{ test.commit_id }}</a>)
+                {% endif %}
+                {% if test.comment != "": %}
+                  ({{ test.comment }})
+                {% endif %}
               </th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for test_name in test_names: %}
-          <tr class="test">
-            <td class="test-name">{{ test_name }}</td>
-            {% for test in tests[test_name]: %}
-              <td class="result result-{{ test.result }}">{{ test.result }}</td>
             {% endfor %}
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {% for test_name in test_names: %}
+            <tr>
+              <th scope="row">{{ test_name }}</th>
+              {% for test in tests[test_name]: %}
+                  <!--span class="ui red horizontal label">{{ test.result }}</span-->
+                {% if test.result == 'ERROR': %}
+                  <td class="table-danger bg-danger text-white result result-{{ test.result }}">
+                {% elif test.result == 'FAILED': %}
+                  <td class="table-danger text-danger result result-{{ test.result }}">
+                {% elif test.result == 'PASSED': %}
+                  <td class="table-success text-success result result-{{ test.result }}">
+                {% elif test.result == 'SKIPPED': %}
+                  <td class="table-warning text-warning result result-{{ test.result }}">
+                {% elif test.result == 'XFAIL': %}
+                  <td class="table-secondary result result-{{ test.result }}">
+                {% else: %}
+                  <td class="result result-{{ test.result }}">
+                {% endif %}
+                  {{ test.result }}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script-->
+    <script src="dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
