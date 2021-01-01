@@ -55,7 +55,7 @@
                 <th scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
                   {{ test.podman_version }}
                   {% if test.commit_id != '': %}
-                    <a href="https://github.com/containers/podman/commit/{{ test.commit_id }}">{{ test.commit_date }}</a>
+                    <a href="https://github.com/containers/podman/commit/{{ test.commit_id }}" title="Commit ID: {{ test.commit_id }}">{{ test.commit_date }}</a>
                   {% endif %}
                   {% if test.runtime != "runc": %}
                     <span class="badge bg-info">{{ test.runtime }}</span>
