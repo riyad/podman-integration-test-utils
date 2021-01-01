@@ -102,6 +102,22 @@
               </tr>
             {%- endfor %}
           </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              {%- for test_session in test_sessions: %}
+                <td>
+                  <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_session[test_session].FAILED }}</span>
+                  <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_session[test_session].PASSED }}</span>
+                  <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_session[test_session].SKIPPED }}</span>
+                  <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_session[test_session].XFAIL }}</span>
+                  <span class="badge bg-light">XPASS: {{ test_summaries_by_session[test_session].XPASS }}</span>
+                  <span class="badge bg-danger">ERROR: {{ test_summaries_by_session[test_session].ERROR }}</span>
+                </td>
+              {%- endfor %}
+              <td></td>
+            </tr>
+          </tfoot>
         </table>
       </section>
     </div>

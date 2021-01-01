@@ -28,6 +28,7 @@ def main():
     tests_by_name = defaultdict(list)
     test_names = set()
     test_sessions = set()
+    test_summaries_by_session = defaultdict(lambda: defaultdict(int))
     for test_name, tests in groupby(all_tests, lambda t: t['_test_name']):
         tests = list(tests)
         tests_by_name[test_name].extend(tests)
@@ -35,6 +36,7 @@ def main():
 
         for test in tests:
             test_sessions.add(test['_test_session'])
+            test_summaries_by_session[test['_test_session']][test['result']] += 1
 
     test_names = sorted(list(test_names))
     test_sessions = sorted(list(test_sessions))
@@ -47,6 +49,7 @@ def main():
         test_names=test_names,
         test_sessions=test_sessions,
         tests_by_name=tests_by_name,
+        test_summaries_by_session=test_summaries_by_session,
     ))
 
 
