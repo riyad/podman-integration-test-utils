@@ -31,7 +31,7 @@ def main():
 
         comment = '_'.join(file_name_parts[i:])
 
-        _test_session = "{} {} {}".format(podman_version, commit_date, commit_id)
+        _test_session = "{} {} {} {} {}".format(podman_version, commit_date, commit_id, runtime, comment)
 
         with file_path.open('rt') as f:
             do_parse = False

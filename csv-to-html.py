@@ -25,16 +25,29 @@ def main():
     else:
         exit(1)
 
-    grouped_by_tests = defaultdict(list)
-    for test_name, tests in groupby(all_tests, lambda t: "{}::{}::{}".format(t['test_file'], t['test_class'], t['test_method'])):
-        grouped_by_tests[test_name].extend(list(tests))
+    tests_by_name = defaultdict(list)
+    test_names = set()
+    test_sessions = set()
+    for test_name, tests in groupby(all_tests, lambda t: t['_test_name']):
+        tests = list(tests)
+        tests_by_name[test_name].extend(tests)
+        test_names.add(test_name)
 
-    test_names = list(grouped_by_tests.keys())
-    grouped_by_tests[test_names[0]] = sorted(grouped_by_tests[test_names[0]], key=itemgetter('podman_version', 'commit_date', 'commit_id'))
+        for test in tests:
+            test_sessions.add(test['_test_session'])
+
+    test_names = sorted(list(test_names))
+    test_sessions = sorted(list(test_sessions))
+    for test_name in test_names:
+        tests_by_name[test_name] = sorted(tests_by_name[test_name], key=itemgetter('_test_session'))
 
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
     template = env.get_template('template.html.j2')
-    print(template.render(test_names=test_names, tests=grouped_by_tests))
+    print(template.render(
+        test_names=test_names,
+        test_sessions=test_sessions,
+        tests_by_name=tests_by_name,
+    ))
 
 
 if __name__ == '__main__':
