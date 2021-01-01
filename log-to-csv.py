@@ -7,7 +7,7 @@ import sys
 
 def main():
     csv_writer = csv.writer(sys.stdout)
-    csv_writer.writerow(['commit_date', 'commit_id', 'podman_version', 'runtime', 'test_file', 'test_class', 'test_method', 'result', 'comment'])
+    csv_writer.writerow(['commit_date', 'commit_id', 'podman_version', 'runtime', 'test_file', 'test_class', 'test_method', 'result', 'comment', '_test_name', '_test_session'])
 
     for file_arg in sys.argv[1:]:
         file_path = pathlib.Path(file_arg)
@@ -31,6 +31,8 @@ def main():
 
         comment = '_'.join(file_name_parts[i:])
 
+        _test_session = "{} {} {}".format(podman_version, commit_date, commit_id)
+
         with file_path.open('rt') as f:
             do_parse = False
             for line in f:
@@ -49,7 +51,8 @@ def main():
                     test_file, test_method = file_class_test.split('::', maxsplit=1)
                     if '::' in test_method:
                         test_class, test_method = test_method.split('::')
-                    csv_writer.writerow([commit_date, commit_id, podman_version, runtime, test_file, test_class, test_method, result, comment])
+                    _test_name = file_class_test
+                    csv_writer.writerow([commit_date, commit_id, podman_version, runtime, test_file, test_class, test_method, result, comment, _test_name, _test_session])
 
 
 if __name__ == '__main__':
