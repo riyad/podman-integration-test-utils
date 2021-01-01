@@ -65,6 +65,7 @@
                   {% endif %}
                 </th>
               {% endfor %}
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -92,6 +93,7 @@
                     {{ test.result }}
                   </td>
                 {% endfor %}
+                  <th scope="row" data-test-file="{{ tests[test_name][0].test_file }}" data-test-class="{{ tests[test_name][0].test_class }}" data-test-method="{{ tests[test_name][0].test_method }}">{{ test_name }}</th>
               </tr>
             {% endfor %}
           </tbody>
