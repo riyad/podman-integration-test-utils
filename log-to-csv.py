@@ -34,25 +34,47 @@ def main():
         _test_session = "{} {} {} {} {}".format(podman_version, commit_date, commit_id, runtime, comment)
 
         with file_path.open('rt') as f:
+            is_test_section = False
             do_parse = False
             for line in f:
-                if not do_parse:
-                    # first empty line, test summary section begins
-                    if line == "\n":
-                        do_parse = True
+                if not is_test_section:
+                    if '===== test session starts =====' in line:
+                        is_test_section = True
                         continue
                 else:
-                    if line == "\n":
-                        # second empty line, error section follows
+                    if '=====' in line:
+                        is_test_section = False
+                        do_parse = False
                         break
 
-                    file_class_test, result, _ = line.split(' ', maxsplit=2)
-                    test_class = None
-                    test_file, test_method = file_class_test.split('::', maxsplit=1)
-                    if '::' in test_method:
-                        test_class, test_method = test_method.split('::')
-                    _test_name = file_class_test
-                    csv_writer.writerow([commit_date, commit_id, podman_version, runtime, test_file, test_class, test_method, result, comment, _test_name, _test_session])
+                    if not do_parse:
+                        # first empty line, test session section begins
+                        if line == "\n":
+                            do_parse = True
+                            continue
+                    else:
+                        if line == "\n":
+                            # second empty line, test session section ends
+                            do_parse = False
+                            break
+
+                        try:
+                            file_class_test, result, _ = line.split(' ', maxsplit=2)
+                        except ValueError:
+                            file_class_test, _ = line.split(' ', maxsplit=1)
+                            result = None
+
+                        try:
+                            test_file, test_method = file_class_test.split('::', maxsplit=1)
+                            if '::' in test_method:
+                                test_class, test_method = test_method.split('::')
+                        except ValueError:
+                            test_file = None
+                            test_class = None
+                            test_method = None
+
+                        _test_name = file_class_test
+                        csv_writer.writerow([commit_date, commit_id, podman_version, runtime, test_file, test_class, test_method, result, comment, _test_name, _test_session])
 
 
 if __name__ == '__main__':
