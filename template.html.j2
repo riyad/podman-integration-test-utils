@@ -52,7 +52,7 @@
                 </form>
               </th>
               {%- for test_session in test_sessions: %}
-                {%- set test = tests_by_name[test_names[0]][loop.index0] %}
+                {%- set test = tests_by_name_and_session[test_names[0]][test_session] %}
                 <th class="align-top" scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
                   {{ test.podman_version }}
                   {%- if test.commit_id != '': %}
@@ -71,34 +71,31 @@
           </thead>
           <tbody>
             {%- for test_name in test_names: %}
-              <tr class="align-middle test" data-test-file="{{ tests_by_name[test_name][0].test_file }}" data-test-class="{{ tests_by_name[test_name][0].test_class }}" data-test-method="{{ tests_by_name[test_name][0].test_method }}">
-                <th scope="row" data-test-file="{{ tests_by_name[test_name][0].test_file }}" data-test-class="{{ tests_by_name[test_name][0].test_class }}" data-test-method="{{ tests_by_name[test_name][0].test_method }}">{{ test_name }}</th>
+              {%- set test_session = test_sessions[0] %}
+              <tr class="align-middle test" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">{{ test_name }}</th>
                 {%- for test_session in test_sessions: %}
-                  {%- set test = tests_by_name[test_name][loop.index0] %}
-                  {%- if test._test_session == test_session: %}
-                    <td class="
-                      {% if test.result == 'ERROR': %}
-                        table-danger bg-danger text-white
-                      {% elif test.result == 'FAILED': %}
-                        table-danger text-danger
-                      {% elif test.result == 'PASSED': %}
-                        table-success text-success
-                      {% elif test.result == 'SKIPPED': %}
-                        table-warning text-warning
-                      {% elif test.result == 'XFAIL': %}
-                        table-secondary
-                      {% else: %}
-                      {% endif %}
-                      result result-{{ test.result }}"
-                      data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-result="{{ test.result }}"  data-runtime="{{ test.runtime }}" data-test-file="{{ test.test_file }}" data-test-class="{{ test.test_class }}" data-test-method="{{ test.test_method }}"
-                    >
-                      {{ test.result }}
-                    </td>
-                  {%- else: %}
-                    <td>o.O</td>
-                  {%- endif %}
+                  {%- set test = tests_by_name_and_session[test_name][test_session] %}
+                  <td class="
+                    {% if test.result == 'ERROR': %}
+                      table-danger bg-danger text-white
+                    {% elif test.result == 'FAILED': %}
+                      table-danger text-danger
+                    {% elif test.result == 'PASSED': %}
+                      table-success text-success
+                    {% elif test.result == 'SKIPPED': %}
+                      table-warning text-warning
+                    {% elif test.result == 'XFAIL': %}
+                      table-secondary
+                    {% else: %}
+                    {% endif %}
+                    result result-{{ test.result }}"
+                    data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-result="{{ test.result }}"  data-runtime="{{ test.runtime }}" data-test-file="{{ test.test_file }}" data-test-class="{{ test.test_class }}" data-test-method="{{ test.test_method }}"
+                  >
+                    {{ test.result }}
+                  </td>
                 {%- endfor %}
-                <th scope="row" data-test-file="{{ tests_by_name[test_name][0].test_file }}" data-test-class="{{ tests_by_name[test_name][0].test_class }}" data-test-method="{{ tests_by_name[test_name][0].test_method }}">{{ test_name }}</th>
+                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">{{ test_name }}</th>
               </tr>
             {%- endfor %}
           </tbody>
