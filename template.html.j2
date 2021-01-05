@@ -3,7 +3,7 @@
     <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"-->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-      #filterInput {
+      #filterInputLeft, #filterInputRight {
         min-width: 20em;
       }
 
@@ -48,7 +48,7 @@
             <tr>
               <th scope="col">
                 <form>
-                  <input class="form-control" type="search" id="filterInput" placeholder="Filter tests ...">
+                  <input class="form-control" type="search" id="filterInputLeft" placeholder="Filter tests ...">
                 </form>
               </th>
               {%- for test_session in test_sessions: %}
@@ -66,7 +66,11 @@
                   {%- endif %}
                 </th>
               {%- endfor %}
-              <th scope="col"></th>
+              <th scope="col">
+                <form>
+                  <input class="form-control" type="search" id="filterInputRight" placeholder="Filter tests ...">
+                </form>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -123,17 +127,39 @@
     <script src="dist/js/bootstrap.bundle.min.js"></script>
     <script>
       (function() {
-        let filterInput = document.getElementById('filterInput');
+        let filterInputLeft = document.getElementById('filterInputLeft')
+        let filterInputRight = document.getElementById('filterInputRight')
+
+        function syncFilter(e) {
+          let filterInputs = [filterInputLeft, filterInputRight];
+
+          for (let filterInput of filterInputs) {
+            if (e.target.filterInput) {
+              continue;
+            }
+
+            if (filterInput.value != e.target.value) {
+              filterInput.value = e.target.value;
+            }
+          }
+        }
 
         function doFilter(e) {
-          // Declare variables
-          let filter = filterInput.value.toLowerCase();
-          let ths = document.querySelectorAll("tr.test th");
+          let target = e.target;
+          if (e.target == document) {
+            // some browsers keep input data when refreshing a page
+            // just pick one for initialization
+            target = filterInputLeft;
+          }
+
+          // cache things for later
+          let filterString = target.value.toLowerCase();
+          let test_row_ths = document.querySelectorAll("tr.test th");
 
           // Loop through all list items, and hide those who don't match the search query
-          for(th of ths) {
+          for(th of test_row_ths) {
             let txtValue = th.textContent || th.innerText;
-            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+            if (txtValue.toLowerCase().indexOf(filterString) > -1) {
               th.parentElement.classList.remove('d-none');
             } else {
               th.parentElement.classList.add('d-none');
@@ -141,8 +167,12 @@
           }
         }
 
+        filterInputLeft.addEventListener('input', syncFilter);
+        filterInputRight.addEventListener('input', syncFilter);
+
         window.addEventListener('load', doFilter);
-        filterInput.addEventListener('input', doFilter);
+        filterInputLeft.addEventListener('input', doFilter);
+        filterInputRight.addEventListener('input', doFilter);
       })();
     </script>
   </body>
