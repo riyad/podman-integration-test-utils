@@ -15,35 +15,14 @@
 <body>
   <div class="container-fluid">
     <h1>docker-py integration tests against Podman APIv2</h1>
-    <section>
-      <div class="card shadow">
-        <div class="card-body text-muted">
-          <button type="button" class="btn-close float-end" aria-label="Close"></button>
-          <h5 class="card-title">Legend</h5>
 
-          <h6>Runtime used</h6>
-          <p>
-            Different runtimes might affect test performance. We assume that tests were run with <code>runc</code> by default and mark them with e.g. <span class="badge bg-info">crun</span> if this was not the case.
-          </p>
-
-          <h6>Comments/Notes</h6>
-          <p>
-            Tests that have notes have a <span class="badge bg-warning text-dark">badge looking like this</span>.
-          </p>
-
-          <h6>Unsupported tests</h6>
-          <p>
-            Some tests will never pass, because they test features of Docker that Podman doesn't intend to replicate (e.g. Swarm). They're marked with <span class="badge bg-danger">unsupported</span>.
-          </p>
-        </div>
+    <section class="row">
+      <div class="col-2">
+        <button type="button" class="btn btn-secondary" id="toggleUnsupportedTestsButton">Toggle unsupported tests</button>
       </div>
     </section>
 
-    <section>
-      <button type="button" class="btn btn-secondary" id="toggleUnsupportedTestsButton">Toggle unsupported tests</button>
-    </section>
-
-    <section>
+    <section class="row">
       <table id="tests" class="table table-striped table-bordered table-hover">
         <thead>
           <tr>
@@ -123,7 +102,7 @@
                 <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_session[test_session].PASSED }}</span>
                 <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_session[test_session].SKIPPED }}</span>
                 <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_session[test_session].XFAIL }}</span>
-                <span class="badge bg-light">XPASS: {{ test_summaries_by_session[test_session].XPASS }}</span>
+                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_session[test_session].XPASS }}</span>
                 <span class="badge bg-danger">ERROR: {{ test_summaries_by_session[test_session].ERROR }}</span>
               </td>
             {%- endfor %}
@@ -131,6 +110,29 @@
           </tr>
         </tfoot>
       </table>
+    </section>
+
+    <section class="row p-2">
+      <div class="card shadow">
+        <div class="card-body text-muted">
+          <h5 class="card-title">Notes</h5>
+
+          <h6>Runtime used</h6>
+          <p>
+            Different runtimes might affect test performance. We assume that tests were run with <code>runc</code> by default and mark them with e.g. <span class="badge bg-info">crun</span> if this was not the case.
+          </p>
+
+          <h6>Comments/Notes</h6>
+          <p>
+            Tests that have notes have a <span class="badge bg-warning text-dark">badge looking like this</span>.
+          </p>
+
+          <h6>Unsupported tests</h6>
+          <p>
+            Some tests will never pass, because they test features of Docker that Podman doesn't intend to replicate (e.g. Swarm). They're marked with <span class="badge bg-danger">unsupported</span>.
+          </p>
+        </div>
+      </div>
     </section>
   </div>
 
