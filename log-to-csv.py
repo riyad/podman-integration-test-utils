@@ -88,10 +88,10 @@ def main():
 
                         try:
                             file_class_test, result, _ = line.split(' ', maxsplit=2)
-                            test['_test_name'] = file_class_test
                             test['result'] = result
                         except ValueError:
                             file_class_test, _ = line.split(' ', maxsplit=1)
+                        test['_test_name'] = file_class_test
 
                         try:
                             test_file, test_method = file_class_test.split('::', maxsplit=1)
