@@ -55,11 +55,11 @@
         </thead>
         <tbody>
           {%- for test_name in test_names: %}
-            {%- set test_session = test_sessions[0] %}
-            <tr class="align-middle test {{ 'test-unsupported d-none' if tests_by_name_and_session[test_name][test_session]._unsupported }}" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
-              <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+            {%- set _test = tests_by_name_and_session[test_name][test_sessions[0]] %}
+            <tr class="align-middle test {{ 'test-unsupported d-none' if _test._unsupported }}" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
+              <th scope="row" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
                 {{ test_name }}
-                {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
+                {%- if _test._unsupported: %}
                   <span class="badge bg-danger">unsupported</span>
                 {%- endif %}
               </th>
