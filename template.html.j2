@@ -1,200 +1,142 @@
-<html>
-  <head>
-    <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"-->
-    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-      #filterInputLeft, #filterInputRight {
-        min-width: 20em;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container-fluid">
-      <h1>docker-py integration tests against Podman APIv2</h2>
-      <section>
-        <div class="card shadow">
-          <div class="card-body text-muted">
-            <button type="button" class="btn-close float-end" aria-label="Close"></button>
-            <h5 class="card-title">Legend</h5>
+<!doctype html>
+<html class="no-js" lang="en">
 
-            <h6>Runtime used</h6>
-            <p>
-              Different runtimes might affect test performance. We assume that tests were run with <code>runc</code> by default and mark them with e.g. <span class="badge bg-info">crun</span> if this was not the case.
-            </p>
+<head>
+  <meta charset="utf-8">
+  <title>docker-py integration tests against Podman APIv2</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <h6>Comments/Notes</h6>
-            <p>
-              Tests that have notes have a <span class="badge bg-warning text-dark">badge looking like this</span>.
-            </p>
+  <!--link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"-->
+  <link rel="stylesheet" href="css/vendor/bootstrap@5.0.0-beta1.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
 
-            <h6>Unsupported tests</h6>
-            <p>
-              Some tests will never pass, because they test features of Docker that Podman doesn't intend to replicate (e.g. Swarm). They're marked with <span class="badge bg-danger">unsupported</span>.
-            </p>
-          </div>
+<body>
+  <div class="container-fluid">
+    <h1>docker-py integration tests against Podman APIv2</h1>
+    <section>
+      <div class="card shadow">
+        <div class="card-body text-muted">
+          <button type="button" class="btn-close float-end" aria-label="Close"></button>
+          <h5 class="card-title">Legend</h5>
+
+          <h6>Runtime used</h6>
+          <p>
+            Different runtimes might affect test performance. We assume that tests were run with <code>runc</code> by default and mark them with e.g. <span class="badge bg-info">crun</span> if this was not the case.
+          </p>
+
+          <h6>Comments/Notes</h6>
+          <p>
+            Tests that have notes have a <span class="badge bg-warning text-dark">badge looking like this</span>.
+          </p>
+
+          <h6>Unsupported tests</h6>
+          <p>
+            Some tests will never pass, because they test features of Docker that Podman doesn't intend to replicate (e.g. Swarm). They're marked with <span class="badge bg-danger">unsupported</span>.
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <button type="button" class="btn btn-secondary" id="toggleUnsupportedTestsButton">Toggle unsupported tests</button>
-      </section>
+    <section>
+      <button type="button" class="btn btn-secondary" id="toggleUnsupportedTestsButton">Toggle unsupported tests</button>
+    </section>
 
-      <section>
-        <table id="tests" class="table table-striped table-bordered table-hover">
-          <thead>
-            <tr>
-              <th scope="col">
-                <form>
-                  <input class="form-control" type="search" id="filterInputLeft" placeholder="Filter tests ...">
-                </form>
+    <section>
+      <table id="tests" class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th scope="col">
+              <form>
+                <input class="form-control" type="search" id="filterInputLeft" placeholder="Filter tests ...">
+              </form>
+            </th>
+            {%- for test_session in test_sessions: %}
+              {%- set test = tests_by_name_and_session[test_names[0]][test_session] %}
+              <th class="align-top" scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
+                {{ test.podman_version }}
+                {%- if test.commit_id != '': %}
+                  <a href="https://github.com/containers/podman/commit/{{ test.commit_id }}" title="Commit ID: {{ test.commit_id }}">{{ test.commit_date }}</a>
+                {%- endif %}
+                {%- if test.runtime != "runc": %}
+                  <span class="badge bg-info">{{ test.runtime }}</span>
+                {%- endif %}
+                {%- if test.comment != "": %}
+                  <span class="badge bg-warning text-dark">{{ test.comment }}</span>
+                {%- endif %}
               </th>
-              {%- for test_session in test_sessions: %}
-                {%- set test = tests_by_name_and_session[test_names[0]][test_session] %}
-                <th class="align-top" scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
-                  {{ test.podman_version }}
-                  {%- if test.commit_id != '': %}
-                    <a href="https://github.com/containers/podman/commit/{{ test.commit_id }}" title="Commit ID: {{ test.commit_id }}">{{ test.commit_date }}</a>
-                  {%- endif %}
-                  {%- if test.runtime != "runc": %}
-                    <span class="badge bg-info">{{ test.runtime }}</span>
-                  {%- endif %}
-                  {%- if test.comment != "": %}
-                    <span class="badge bg-warning text-dark">{{ test.comment }}</span>
-                  {%- endif %}
-                </th>
-              {%- endfor %}
-              <th scope="col">
-                <form>
-                  <input class="form-control" type="search" id="filterInputRight" placeholder="Filter tests ...">
-                </form>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {%- for test_name in test_names: %}
-              {%- set test_session = test_sessions[0] %}
-              <tr class="align-middle test {{ 'test-unsupported d-none' if tests_by_name_and_session[test_name][test_session]._unsupported }}" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
-                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
-                  {{ test_name }}
-                  {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
-                    <span class="badge bg-danger">unsupported</span>
-                  {%- endif %}
-                </th>
-                {%- for test_session in test_sessions: %}
-                  {%- set test = tests_by_name_and_session[test_name][test_session] %}
-                  <td class="
-                    {% if test.result == 'ERROR': %}
-                      table-danger bg-danger text-white
-                    {% elif test.result == 'FAILED': %}
-                      table-danger text-danger
-                    {% elif test.result == 'PASSED': %}
-                      table-success text-success
-                    {% elif test.result == 'SKIPPED': %}
-                      table-warning text-warning
-                    {% elif test.result == 'XFAIL': %}
-                      table-secondary
-                    {% else: %}
-                    {% endif %}
-                    result result-{{ test.result }}"
-                    data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-result="{{ test.result }}"  data-runtime="{{ test.runtime }}" data-test-file="{{ test.test_file }}" data-test-class="{{ test.test_class }}" data-test-method="{{ test.test_method }}"
-                  >
-                    {{ test.result }}
-                  </td>
-                {%- endfor %}
-                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
-                  {{ test_name }}
-                  {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
-                    <span class="badge bg-danger">unsupported</span>
-                  {%- endif %}
-                </th>
-              </tr>
             {%- endfor %}
-          </tbody>
-          <tfoot>
-            <tr>
-              <td></td>
+            <th scope="col">
+              <form>
+                <input class="form-control" type="search" id="filterInputRight" placeholder="Filter tests ...">
+              </form>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for test_name in test_names: %}
+            {%- set test_session = test_sessions[0] %}
+            <tr class="align-middle test {{ 'test-unsupported d-none' if tests_by_name_and_session[test_name][test_session]._unsupported }}" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+              <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+                {{ test_name }}
+                {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
+                  <span class="badge bg-danger">unsupported</span>
+                {%- endif %}
+              </th>
               {%- for test_session in test_sessions: %}
-                <td>
-                  <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_session[test_session].FAILED }}</span>
-                  <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_session[test_session].PASSED }}</span>
-                  <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_session[test_session].SKIPPED }}</span>
-                  <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_session[test_session].XFAIL }}</span>
-                  <span class="badge bg-light">XPASS: {{ test_summaries_by_session[test_session].XPASS }}</span>
-                  <span class="badge bg-danger">ERROR: {{ test_summaries_by_session[test_session].ERROR }}</span>
+                {%- set test = tests_by_name_and_session[test_name][test_session] %}
+                <td class="
+                  {% if test.result == 'ERROR': %}
+                    table-danger bg-danger text-white
+                  {% elif test.result == 'FAILED': %}
+                    table-danger text-danger
+                  {% elif test.result == 'PASSED': %}
+                    table-success text-success
+                  {% elif test.result == 'SKIPPED': %}
+                    table-warning text-warning
+                  {% elif test.result == 'XFAIL': %}
+                    table-secondary
+                  {% else: %}
+                  {% endif %}
+                  result result-{{ test.result }}"
+                  data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-result="{{ test.result }}"  data-runtime="{{ test.runtime }}" data-test-file="{{ test.test_file }}" data-test-class="{{ test.test_class }}" data-test-method="{{ test.test_method }}"
+                >
+                  {{ test.result }}
                 </td>
               {%- endfor %}
-              <td></td>
+              <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+                {{ test_name }}
+                {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
+                  <span class="badge bg-danger">unsupported</span>
+                {%- endif %}
+              </th>
             </tr>
-          </tfoot>
-        </table>
-      </section>
-    </div>
+          {%- endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            {%- for test_session in test_sessions: %}
+              <td>
+                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_session[test_session].FAILED }}</span>
+                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_session[test_session].PASSED }}</span>
+                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_session[test_session].SKIPPED }}</span>
+                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_session[test_session].XFAIL }}</span>
+                <span class="badge bg-light">XPASS: {{ test_summaries_by_session[test_session].XPASS }}</span>
+                <span class="badge bg-danger">ERROR: {{ test_summaries_by_session[test_session].ERROR }}</span>
+              </td>
+            {%- endfor %}
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+  </div>
 
-    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script-->
-    <script src="dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      (function() {
-        let filterInputLeft = document.getElementById('filterInputLeft')
-        let filterInputRight = document.getElementById('filterInputRight')
+  <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script-->
+  <script src="js/vendor/bootstrap@5.0.0-beta1.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
 
-        function syncFilter(e) {
-          let filterInputs = [filterInputLeft, filterInputRight];
-
-          for (let filterInput of filterInputs) {
-            if (e.target.filterInput) {
-              continue;
-            }
-
-            if (filterInput.value != e.target.value) {
-              filterInput.value = e.target.value;
-            }
-          }
-        }
-
-        function doFilter(e) {
-          let target = e.target;
-          if (e.target == document) {
-            // some browsers keep input data when refreshing a page
-            // just pick one for initialization
-            target = filterInputLeft;
-          }
-
-          // cache things for later
-          let filterString = target.value.toLowerCase();
-          let test_row_ths = document.querySelectorAll("tr.test th");
-
-          // Loop through all list items, and hide those who don't match the search query
-          for(th of test_row_ths) {
-            let txtValue = th.textContent || th.innerText;
-            if (txtValue.toLowerCase().indexOf(filterString) > -1) {
-              th.parentElement.classList.remove('d-none');
-            } else {
-              th.parentElement.classList.add('d-none');
-            }
-          }
-        }
-
-        filterInputLeft.addEventListener('input', syncFilter);
-        filterInputRight.addEventListener('input', syncFilter);
-
-        window.addEventListener('load', doFilter);
-        filterInputLeft.addEventListener('input', doFilter);
-        filterInputRight.addEventListener('input', doFilter);
-
-      })();
-      (function() {
-
-        function doToggleUnsupportedTests(e) {
-          let test_row_trs = document.querySelectorAll("tr.test.test-unsupported");
-
-          for (tr of test_row_trs) {
-            tr.classList.toggle('d-none');
-          }
-        }
-
-        let toggleUnsupportedTestsButton = document.getElementById("toggleUnsupportedTestsButton");
-        toggleUnsupportedTestsButton.addEventListener('click', doToggleUnsupportedTests);
-      })();
-    </script>
-  </body>
 </html>
