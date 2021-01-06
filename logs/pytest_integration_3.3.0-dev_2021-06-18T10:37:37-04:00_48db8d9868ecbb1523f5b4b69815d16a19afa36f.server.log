@@ -1,0 +1,240 @@
+Resolved "alpine" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2021-06-19T17:44:58+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:07+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:12+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:16+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:20+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:25+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:28+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:31+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:34+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:38+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:42+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:44+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:48+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:52+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:56+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:45:59+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:46:01+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:46:05+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:46:08+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:46:12+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:46:15+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:46:19+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:46:22+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T17:47:52+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2021-06-19T17:47:56+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2021-06-19T17:48:43+02:00" level=error msg="Error adding network: failed to Statfs \"/run/user/1000/netns/cni-83bbe041-df5e-bafe-b7c2-f7abb38e732d\": no such file or directory"
+time="2021-06-19T17:48:43+02:00" level=error msg="Error while adding pod to CNI network \"podman\": failed to Statfs \"/run/user/1000/netns/cni-83bbe041-df5e-bafe-b7c2-f7abb38e732d\": no such file or directory"
+time="2021-06-19T17:48:43+02:00" level=warning msg="Ignoring error tearing down loopback interface: failed to Statfs \"/run/user/1000/netns/cni-83bbe041-df5e-bafe-b7c2-f7abb38e732d\": no such file or directory"
+time="2021-06-19T17:48:43+02:00" level=error msg="error loading cached network config: network \"podman\" not found in CNI cache"
+time="2021-06-19T17:48:43+02:00" level=warning msg="falling back to loading from existing plugins on disk"
+time="2021-06-19T17:48:43+02:00" level=error msg="Error tearing down partially created network namespace for container 0445ca9a4b4afca08a4b2c92db98952aaa1c09d5fb3554192d4cdf4d465df174: Error while removing pod from CNI network \"podman\": mkdir /var/lib: no such file or directory"
+time="2021-06-19T17:49:00+02:00" level=error msg="error while waiting on condition: \"cancelled by user\""
+time="2021-06-19T17:49:16+02:00" level=error msg="<nil>"
+time="2021-06-19T17:50:59+02:00" level=error msg="error attaching to container 5fd2c41407bb8ce640c3af8933a7902668612bf246497f15c8e96fb057d1d1e2: detached from container"
+time="2021-06-19T17:51:03+02:00" level=error msg="error attaching to container 55fd96c2a260869cea05c7b687d0b964d580072cd256492fc9d92c29e9daaa06: detached from container"
+time="2021-06-19T17:51:08+02:00" level=error msg="error attaching to container 11125e0b317ad3c207cf3e3e9d1df1be16cfd49656e64fa83715991a08286045: detached from container"
+time="2021-06-19T17:51:19+02:00" level=warning msg="runc pause may fail if you don't have the full access to cgroups"
+time="2021-06-19T17:51:19+02:00" level=warning msg="runc resume may fail if you don't have the full access to cgroups"
+time="2021-06-19T17:51:52+02:00" level=error msg="Container 1ea27d5b80c9def046291e44ca148be374469ee0e6e126288abc15b3dcdf833a exec session 73c14703c40f7978cd5c734f2aaa193740e4d1deba809b337218266fa56eaa16 error: detached from container"
+time="2021-06-19T17:51:52+02:00" level=error msg="error attaching to container 1ea27d5b80c9def046291e44ca148be374469ee0e6e126288abc15b3dcdf833a exec session 73c14703c40f7978cd5c734f2aaa193740e4d1deba809b337218266fa56eaa16: timed out waiting for file /home/riyad/podman/storage/overlay-containers/1ea27d5b80c9def046291e44ca148be374469ee0e6e126288abc15b3dcdf833a/userdata/73c14703c40f7978cd5c734f2aaa193740e4d1deba809b337218266fa56eaa16/exit/1ea27d5b80c9def046291e44ca148be374469ee0e6e126288abc15b3dcdf833a: internal libpod error"
+time="2021-06-19T17:51:56+02:00" level=error msg="error attaching to container b080952210145a33f876f80b8304376cb03c22be03647450e08d6a25b7b5bcc9 exec session 1042182468f0e88e8a6cc7ec8c1038b3d96e7875c972ac728a34378a63743c73: detached from container"
+time="2021-06-19T17:53:33+02:00" level=error msg="error attaching to container f859bf63926b5547ae51f39a9e1bdba0b29f422da2c29e6de16e54006e22e500 exec session db99ffd8975d488a04941a7e206c3aaf391472af980990fb5fe0331b9a5eaa17: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2021-06-19T17:53:33+02:00" level=error msg="Error writing error to container f859bf63926b5547ae51f39a9e1bdba0b29f422da2c29e6de16e54006e22e500 HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2021-06-19T17:53:33+02:00" level=error msg="Error flushing HTTP buffer for container f859bf63926b5547ae51f39a9e1bdba0b29f422da2c29e6de16e54006e22e500 HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:34e26c2658aa2a0ac4050c26c36b912dbeadefa6f13d181e7cfa013547671e13
+Copying config sha256:7c1df79f498113db9c0532b0e414e4ac016ffc256f2142e2c8b1d24d5783124c
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:38c30258622b8292338f6a39e458a6bc7218c32540d6d398d98400803fd6dcd8
+Copying config sha256:5c4f1eeb9ef4272e512c00a9b86195e43c3941969022447d75fe110c334a74aa
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:f22b99068db93900abe17f7f5e09ec775c2826ecfe9db961fea68293744144bd
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:f22b99068db93900abe17f7f5e09ec775c2826ecfe9db961fea68293744144bd
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:d9d766853d9dfda2e78f787481a34c25cb8690309577e3e93455926a99225269
+Copying config sha256:f5587b27da07f93b62d329a0c7276a0ee602485fb68ec461b9b3e77d62d76a94
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:002795d03ea7eec110d2d026d9f3d96549798a1b7ba2fa654872148c70fd0b26
+Copying config sha256:1533a3119ef40f95ab9587d8f8518be247780f08387696199900c8c7f895c91c
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:8afa2835403824490e52b7478bf6b4514de121c20415cbf4ab4806219a11253c
+Copying config sha256:9d768a8b4a397da274b67897be1dbe4bd8d03b5d4acccbbee5c1177580dd1e09
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:3faaa2891805054b85697cd962dd2821ea06f22662efc0a29472a7c2aa3d29f9
+Copying config sha256:e9c8aa13cf07f699dce96021fc6e04decab25cd7743742c423b620d14c7a2b83
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:20ca72feb05887c864a1dd2b3ce0ac3ca4d928dfca9b48bb93069a2342eae7b2
+Copying config sha256:4c53c80933e32bd62647163657c340f285c41498a8f352d565f7f05f7a5a51ae
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2021-06-19T17:57:34+02:00" level=error msg="Error adding network: failed to set bridge addr: \"cni-podman1\" already has an IP address different from 172.28.5.254/16"
+time="2021-06-19T17:57:34+02:00" level=error msg="Error while adding pod to CNI network \"dockerpytest_e96aa9f0595ffcfd\": failed to set bridge addr: \"cni-podman1\" already has an IP address different from 172.28.5.254/16"
+time="2021-06-19T17:57:34+02:00" level=error msg="error loading cached network config: network \"dockerpytest_e96aa9f0595ffcfd\" not found in CNI cache"
+time="2021-06-19T17:57:34+02:00" level=warning msg="falling back to loading from existing plugins on disk"
+time="2021-06-19T17:57:34+02:00" level=error msg="Error tearing down partially created network namespace for container 398ecd780f94c811c9042cd5cb6df6d352c8bcf42ed79bea6b23bf48fd2eb2b0: Error while removing pod from CNI network \"dockerpytest_e96aa9f0595ffcfd\": running [/usr/sbin/iptables -t nat -D POSTROUTING -s 172.28.5.1 -j CNI-60f8ed43c71db231083f9ce5 -m comment --comment name: \"dockerpytest_e96aa9f0595ffcfd\" id: \"398ecd780f94c811c9042cd5cb6df6d352c8bcf42ed79bea6b23bf48fd2eb2b0\" --wait]: exit status 2: iptables v1.8.7 (nf_tables): Chain 'CNI-60f8ed43c71db231083f9ce5' does not exist\nTry `iptables -h' or 'iptables --help' for more information.\n"
+time="2021-06-19T17:58:09+02:00" level=warning msg="dnsname and --internal networks are incompatible.  dnsname plugin not configured for network dockerpytest_e879e72e0864c9bf"
+time="2021-06-19T17:58:52+02:00" level=error msg="Error loading CNI config list file /home/riyad/.config/cni/net.d/test 01.conflist: error reading /home/riyad/.config/cni/net.d/test 01.conflist: open /home/riyad/.config/cni/net.d/test 01.conflist: no such file or directory"
+time="2021-06-19T17:59:16+02:00" level=error msg="Error adding network: failed to set bridge addr: \"cni-podman1\" already has an IP address different from 132.124.0.1/16"
+time="2021-06-19T17:59:16+02:00" level=error msg="Error while adding pod to CNI network \"dockerpytest_a65519541fc945fc\": failed to set bridge addr: \"cni-podman1\" already has an IP address different from 132.124.0.1/16"
+time="2021-06-19T17:59:16+02:00" level=error msg="error loading cached network config: network \"dockerpytest_a65519541fc945fc\" not found in CNI cache"
+time="2021-06-19T17:59:16+02:00" level=warning msg="falling back to loading from existing plugins on disk"
+time="2021-06-19T17:59:16+02:00" level=error msg="Error tearing down partially created network namespace for container c3976b6c91461ebd508fabd4b5c4facd52f72109837165b0d8d2b92dd5ccbccf: Error while removing pod from CNI network \"dockerpytest_a65519541fc945fc\": running [/usr/sbin/iptables -t nat -D POSTROUTING -s 132.124.0.23 -j CNI-f1fcc3795af75dca3d5ebf6c -m comment --comment name: \"dockerpytest_a65519541fc945fc\" id: \"c3976b6c91461ebd508fabd4b5c4facd52f72109837165b0d8d2b92dd5ccbccf\" --wait]: exit status 2: iptables v1.8.7 (nf_tables): Chain 'CNI-f1fcc3795af75dca3d5ebf6c' does not exist\nTry `iptables -h' or 'iptables --help' for more information.\n"
+time="2021-06-19T17:59:28+02:00" level=error msg="Error adding network: failed to set bridge addr: \"cni-podman1\" already has an IP address different from 2001:389::1/64"
+time="2021-06-19T17:59:28+02:00" level=error msg="Error while adding pod to CNI network \"dockerpytest_60c59b46052a5046\": failed to set bridge addr: \"cni-podman1\" already has an IP address different from 2001:389::1/64"
+time="2021-06-19T17:59:28+02:00" level=error msg="error loading cached network config: network \"dockerpytest_60c59b46052a5046\" not found in CNI cache"
+time="2021-06-19T17:59:28+02:00" level=warning msg="falling back to loading from existing plugins on disk"
+time="2021-06-19T17:59:28+02:00" level=error msg="Error tearing down partially created network namespace for container ca79a273a63db6a4f7e61c9e93030560917fec2b7a594ac1a3840b5484c8becc: Error while removing pod from CNI network \"dockerpytest_60c59b46052a5046\": running [/usr/sbin/ip6tables -t nat -D POSTROUTING -s 2001:389::2 -j CNI-c07590926303f5f3f3c239ca -m comment --comment name: \"dockerpytest_60c59b46052a5046\" id: \"ca79a273a63db6a4f7e61c9e93030560917fec2b7a594ac1a3840b5484c8becc\" --wait]: exit status 2: ip6tables v1.8.7 (nf_tables): Chain 'CNI-c07590926303f5f3f3c239ca' does not exist\nTry `ip6tables -h' or 'ip6tables --help' for more information.\n"
+time="2021-06-19T18:00:04+02:00" level=error msg="Error loading CNI config list file /home/riyad/.config/cni/net.d/dockerpytest_71baffe823ec45bc.conflist: error reading /home/riyad/.config/cni/net.d/dockerpytest_71baffe823ec45bc.conflist: open /home/riyad/.config/cni/net.d/dockerpytest_71baffe823ec45bc.conflist: no such file or directory"
+time="2021-06-19T18:00:10+02:00" level=error msg="Error loading CNI config list file /home/riyad/.config/cni/net.d/dockerpytest_f36ac9b7298489fe.conflist: error reading /home/riyad/.config/cni/net.d/dockerpytest_f36ac9b7298489fe.conflist: open /home/riyad/.config/cni/net.d/dockerpytest_f36ac9b7298489fe.conflist: no such file or directory"
+time="2021-06-19T18:03:04+02:00" level=error msg="<nil>"
+time="2021-06-19T18:03:30+02:00" level=error msg="<nil>"
+time="2021-06-19T18:03:40+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2021-06-19T18:03:40+02:00" level=error msg="<nil>"
+time="2021-06-19T18:03:46+02:00" level=error msg="<nil>"
+time="2021-06-19T18:06:17+02:00" level=error msg="<nil>"
+Getting image source signatures
+Copying blob sha256:72e830a4dff5f0d5225cdc0a320e85ab1ce06ea5673acfe8d83a7645cbd0e9cf
+Copying blob sha256:3eeb92a54c8862b628daa30edf85344ff6e5cf80c7587e3927d6348436681f49
+Copying config sha256:2657093834748bd6ffe447c9d010eaf1b8e8fa2e92a09fd976903aa7bff63b09
+Writing manifest to image destination
+Storing signatures
+time="2021-06-19T18:06:20+02:00" level=error msg="<nil>"
+time="2021-06-19T18:06:27+02:00" level=error msg="error attaching to container 2fc03a032dea27905979beaf488c537153ae22284e0893197c2c7a935f70e60b exec session f89072f3f8b09f88cae8bc07a1343df9c018798dc901f0fc4cc57dabaea0852d: exec failed: container_linux.go:380: starting container process caused: exec: \"docker\": executable file not found in $PATH: OCI runtime attempted to invoke a command that was not found"
+time="2021-06-19T18:06:37+02:00" level=warning msg="runc pause may fail if you don't have the full access to cgroups"
+time="2021-06-19T18:06:37+02:00" level=warning msg="runc resume may fail if you don't have the full access to cgroups"
+time="2021-06-19T18:07:26+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T18:07:27+02:00" level=error msg="<nil>"
+time="2021-06-19T18:07:29+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T18:07:32+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T18:07:33+02:00" level=error msg="<nil>"
+time="2021-06-19T18:07:36+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-06-19T18:07:37+02:00" level=error msg="<nil>"
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7...
+Getting image source signatures
+Copying blob sha256:ca4f61b1923c10e9eb81228bd46bee1dfba02b9c7dac1844527a734752688ede
+Copying config sha256:f2a91732366c0332ccd7afd2a5c4ff2b9af81f549370f7a19acd460f87686bc7
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+time="2021-06-19T18:08:37+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"

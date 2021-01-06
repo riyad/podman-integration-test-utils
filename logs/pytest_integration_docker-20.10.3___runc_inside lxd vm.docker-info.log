@@ -1,0 +1,50 @@
+Client:
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  app: Docker App (Docker Inc., v0.9.1-beta3)
+  buildx: Build with BuildKit (Docker Inc., v0.5.1-docker)
+
+Server:
+ Containers: 28
+  Running: 0
+  Paused: 0
+  Stopped: 28
+ Images: 23
+ Server Version: 20.10.3
+ Storage Driver: fuse-overlayfs
+ Logging Driver: json-file
+ Cgroup Driver: cgroupfs
+ Cgroup Version: 1
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 io.containerd.runtime.v1.linux runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: 269548fa27e0089a8b8278fc4fc781d7f65a939b
+ runc version: ff819c7e9184c13b7c2607fe6c30ae19403a7aff
+ init version: de40ad0
+ Security Options:
+  apparmor
+  seccomp
+   Profile: default
+ Kernel Version: 5.8.0-43-generic
+ Operating System: Ubuntu 20.10
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 1
+ Total Memory: 973.7MiB
+ Name: docker-test-vm
+ ID: D3E2:L6D5:XBTR:WVPL:AQ2M:YQJY:PGSS:Y2RM:MQQE:7GYV:7CWW:SV3G
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Registry: https://index.docker.io/v1/
+ Labels:
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+ Live Restore Enabled: false
+

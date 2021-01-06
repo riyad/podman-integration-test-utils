@@ -1,0 +1,120 @@
+{
+  "host": {
+    "arch": "amd64",
+    "buildahVersion": "1.20.0",
+    "cgroupManager": "systemd",
+    "cgroupVersion": "v2",
+    "conmon": {
+      "package": "conmon: /usr/libexec/podman/conmon",
+      "path": "/usr/libexec/podman/conmon",
+      "version": "conmon version 2.0.27, commit: "
+    },
+    "cpus": 4,
+    "distribution": {
+      "distribution": "ubuntu",
+      "version": "20.10"
+    },
+    "eventLogger": "journald",
+    "hostname": "acnologia",
+    "idMappings": {
+      "gidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ],
+      "uidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ]
+    },
+    "kernel": "5.8.0-48-generic",
+    "memFree": 2804408320,
+    "memTotal": 16540516352,
+    "ociRuntime": {
+      "name": "runc",
+      "package": "cri-o-runc: /usr/lib/cri-o-runc/sbin/runc",
+      "path": "/usr/lib/cri-o-runc/sbin/runc",
+      "version": "runc version spec: 1.0.2-dev\ngo: go1.14.7\nlibseccomp: 2.4.3"
+    },
+    "os": "linux",
+    "remoteSocket": {
+      "path": "/run/user/1000/podman/podman.sock"
+    },
+    "security": {
+      "apparmorEnabled": false,
+      "capabilities": "CAP_CHOWN,CAP_DAC_OVERRIDE,CAP_FOWNER,CAP_FSETID,CAP_KILL,CAP_NET_BIND_SERVICE,CAP_SETFCAP,CAP_SETGID,CAP_SETPCAP,CAP_SETUID,CAP_SYS_CHROOT",
+      "rootless": true,
+      "seccompEnabled": true,
+      "selinuxEnabled": false
+    },
+    "slirp4netns": {
+      "executable": "/usr/bin/slirp4netns",
+      "package": "slirp4netns: /usr/bin/slirp4netns",
+      "version": "slirp4netns version 1.1.8\ncommit: unknown\nlibslirp: 4.3.1-git\nSLIRP_CONFIG_VERSION_MAX: 3\nlibseccomp: 2.4.3"
+    },
+    "swapFree": 1880580096,
+    "swapTotal": 2147479552,
+    "uptime": "7h 41m 29.57s (Approximately 0.29 days)",
+    "linkmode": "dynamic"
+  },
+  "store": {
+    "configFile": "/home/riyad/.config/containers/storage.conf",
+    "containerStore": {
+      "number": 0,
+      "paused": 0,
+      "running": 0,
+      "stopped": 0
+    },
+    "graphDriverName": "overlay",
+    "graphOptions": {
+      "overlay.mount_program": {
+  "Executable": "/usr/bin/fuse-overlayfs",
+  "Package": "fuse-overlayfs: /usr/bin/fuse-overlayfs",
+  "Version": "fusermount3 version: 3.9.3\nfuse-overlayfs: version 1.4\nFUSE library version 3.9.3\nusing FUSE kernel interface version 7.31"
+},
+      "overlay.mountopt": "nodev,metacopy=on"
+    },
+    "graphRoot": "/home/riyad/podman/storage",
+    "graphStatus": {
+      "Backing Filesystem": "zfs",
+      "Native Overlay Diff": "false",
+      "Supports d_type": "true",
+      "Using metacopy": "false"
+    },
+    "imageStore": {
+      "number": 10
+    },
+    "runRoot": "/run/user/1000/containers",
+    "volumePath": "/home/riyad/podman/storage/volumes"
+  },
+  "registries": {
+    "search": [
+  "docker.io",
+  "quay.io"
+]
+  },
+  "version": {
+    "APIVersion": "3.2.0-dev",
+    "Version": "3.2.0-dev",
+    "GoVersion": "go1.16.2",
+    "GitCommit": "72eb0005f1ae680932acacae3048939965cc44ea",
+    "BuiltTime": "Tue Apr  6 20:57:20 2021",
+    "Built": 1617735440,
+    "OsArch": "linux/amd64"
+  }
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="docker-py" errors="0" failures="4" skipped="1" tests="10" time="6.848" timestamp="2021-02-22T16:37:08.199673" hostname="docker-test"><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_container_with_target" time="0.338"><failure message="docker.errors.ImageNotFound: 404 Client Error for http+docker://localhost/v1.41/images/build1/json: Not Found (&quot;no such image: build1: No such image: build1:latest&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:940: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.41/images/build1/json
+
+During handling of the above exception, another exception occurred:
+/home/riyad/src/docker-py/tests/integration/api_build_test.py:272: in test_build_container_with_target
+    ???
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/image.py:253: in inspect_image
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.ImageNotFound: 404 Client Error for http+docker://localhost/v1.41/images/build1/json: Not Found ("no such image: build1: No such image: build1:latest")</failure></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_from_stringio" time="0.025" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_gzip_custom_encoding" time="0.021" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_gzip_encoding" time="1.057" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_in_context_abs_dockerfile" time="1.206"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.41/containers/ce1cb19c021b03c3ed45e290cacb65678858ed75fe79b6e1fabd480da9f25541/start: Internal Server Error (&quot;OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:326: applying cgroup configuration for process caused: could not execute `systemctl --user --no-pager show-environment`, output=&quot;Failed to connect to bus: No such file or directory\n&quot;: exit status 1: unknown&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:940: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.41/containers/ce1cb19c021b03c3ed45e290cacb65678858ed75fe79b6e1fabd480da9f25541/start
+
+During handling of the above exception, another exception occurred:
+/home/riyad/src/docker-py/tests/integration/api_build_test.py:579: in test_build_in_context_abs_dockerfile
+    ???
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.41/containers/ce1cb19c021b03c3ed45e290cacb65678858ed75fe79b6e1fabd480da9f25541/start: Internal Server Error ("OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:326: applying cgroup configuration for process caused: could not execute `systemctl --user --no-pager show-environment`, output="Failed to connect to bus: No such file or directory\n": exit status 1: unknown")</failure></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_in_context_dockerfile" time="0.309"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.41/containers/6aed9355f35e2b6d90dd9658229290d50db8e358dd09267087d1269df442451f/start: Internal Server Error (&quot;OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:326: applying cgroup configuration for process caused: could not execute `systemctl --user --no-pager show-environment`, output=&quot;Failed to connect to bus: No such file or directory\n&quot;: exit status 1: unknown&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:940: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.41/containers/6aed9355f35e2b6d90dd9658229290d50db8e358dd09267087d1269df442451f/start
+
+During handling of the above exception, another exception occurred:
+/home/riyad/src/docker-py/tests/integration/api_build_test.py:514: in test_build_in_context_dockerfile
+    ???
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.41/containers/6aed9355f35e2b6d90dd9658229290d50db8e358dd09267087d1269df442451f/start: Internal Server Error ("OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:326: applying cgroup configuration for process caused: could not execute `systemctl --user --no-pager show-environment`, output="Failed to connect to bus: No such file or directory\n": exit status 1: unknown")</failure></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_in_context_nested_dockerfile" time="0.590"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.41/containers/f32049f126b4addc4a73465337720874717ef3a2dd0d9ed3e944877113e12dc1/start: Internal Server Error (&quot;OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:326: applying cgroup configuration for process caused: could not execute `systemctl --user --no-pager show-environment`, output=&quot;Failed to connect to bus: No such file or directory\n&quot;: exit status 1: unknown&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:940: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.41/containers/f32049f126b4addc4a73465337720874717ef3a2dd0d9ed3e944877113e12dc1/start
+
+During handling of the above exception, another exception occurred:
+/home/riyad/src/docker-py/tests/integration/api_build_test.py:547: in test_build_in_context_nested_dockerfile
+    ???
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.41/containers/f32049f126b4addc4a73465337720874717ef3a2dd0d9ed3e944877113e12dc1/start: Internal Server Error ("OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:326: applying cgroup configuration for process caused: could not execute `systemctl --user --no-pager show-environment`, output="Failed to connect to bus: No such file or directory\n": exit status 1: unknown")</failure></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_invalid_platform" time="0.035"><skipped type="pytest.skip" message="Feature requires Docker Engine experimental mode">/home/ubuntu/docker-py/tests/helpers.py:70: Feature requires Docker Engine experimental mode</skipped></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_isolation" time="0.689" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_labels" time="1.007" /><testcase time="0.000" /></testsuite></testsuites>
