@@ -17,6 +17,7 @@ EMPTY_TEST = dict(
     comment=None,
     _test_name=None,
     _test_session=None,
+    _unsupported=None,
 )
 
 
@@ -93,6 +94,10 @@ def main():
                             test['test_method'] = test_method
                         except ValueError:
                             pass
+
+                        test['_unsupported'] = (
+                            test['test_class'] in ['ConfigAPITest', 'NodesTest', 'SecretAPITest', 'ServiceTest', 'SwarmTest'] \
+                                or test['test_method'] in ['test_create_inspect_network_with_scope', 'test_create_network_attachable' , 'test_create_network_ingress'])
 
                         csv_writer.writerow(test)
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import csv
+import distutils.util
 import sys
 from collections import defaultdict
 from itertools import groupby
@@ -34,6 +35,9 @@ def main():
         test_names.add(test_name)
 
         for test in tests:
+            # fix data format
+            test['_unsupported'] = bool(distutils.util.strtobool(test['_unsupported']))
+
             test_sessions.add(test['_test_session'])
             tests_by_name_and_session[test_name][test['_test_session']] = test
             test_summaries_by_session[test['_test_session']][test['result']] += 1

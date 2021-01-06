@@ -6,22 +6,6 @@
       #filterInputLeft, #filterInputRight {
         min-width: 20em;
       }
-
-      /*.result-ERROR {
-        background-color: #f66;
-      }
-      .result-FAILED {
-        background-color: #fcc;
-      }
-      .result-PASSED {
-        background-color: #9f9;
-      }
-      .result-SKIPPED {
-        background-color: #ff6;
-      }
-      .result-XFAIL {
-        background-color: #ccc;
-      }*/
     </style>
   </head>
   <body>
@@ -40,6 +24,10 @@
             </p>
           </div>
         </div>
+      </section>
+
+      <section>
+        <button type="button" class="btn btn-secondary" id="toggleUnsupportedTestsButton">Toggle unsupported tests</button>
       </section>
 
       <section>
@@ -76,8 +64,13 @@
           <tbody>
             {%- for test_name in test_names: %}
               {%- set test_session = test_sessions[0] %}
-              <tr class="align-middle test" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
-                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">{{ test_name }}</th>
+              <tr class="align-middle test {{ 'test-unsupported d-none' if tests_by_name_and_session[test_name][test_session]._unsupported }}" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+                  {{ test_name }}
+                  {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
+                    <span class="badge bg-danger">unsupported</span>
+                  {%- endif %}
+                </th>
                 {%- for test_session in test_sessions: %}
                   {%- set test = tests_by_name_and_session[test_name][test_session] %}
                   <td class="
@@ -99,7 +92,12 @@
                     {{ test.result }}
                   </td>
                 {%- endfor %}
-                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">{{ test_name }}</th>
+                <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+                  {{ test_name }}
+                  {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
+                    <span class="badge bg-danger">unsupported</span>
+                  {%- endif %}
+                </th>
               </tr>
             {%- endfor %}
           </tbody>
@@ -173,6 +171,20 @@
         window.addEventListener('load', doFilter);
         filterInputLeft.addEventListener('input', doFilter);
         filterInputRight.addEventListener('input', doFilter);
+
+      })();
+      (function() {
+
+        function doToggleUnsupportedTests(e) {
+          let test_row_trs = document.querySelectorAll("tr.test.test-unsupported");
+
+          for (tr of test_row_trs) {
+            tr.classList.toggle('d-none');
+          }
+        }
+
+        let toggleUnsupportedTestsButton = document.getElementById("toggleUnsupportedTestsButton");
+        toggleUnsupportedTestsButton.addEventListener('click', doToggleUnsupportedTests);
       })();
     </script>
   </body>
