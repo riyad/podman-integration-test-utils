@@ -1,0 +1,176 @@
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Realtime period not supported on cgroups V2 systems
+Realtime runtime not supported on cgroups V2 systems
+time="2022-09-21T23:46:44+03:00" level=error msg="While waiting on condition: \"cancelled by user\""
+time="2022-09-21T23:49:00+03:00" level=warning msg="StopSignal SIGTERM failed to stop container elegant_mclean in 2 seconds, resorting to SIGKILL"
+time="2022-09-21T23:49:15+03:00" level=warning msg="StopSignal SIGTERM failed to stop container affectionate_bhaskara in 2 seconds, resorting to SIGKILL"
+time="2022-09-21T23:51:00+03:00" level=warning msg="StopSignal SIGTERM failed to stop container lucid_cori in 2 seconds, resorting to SIGKILL"
+time="2022-09-21T23:51:15+03:00" level=warning msg="StopSignal SIGTERM failed to stop container eloquent_rubin in 2 seconds, resorting to SIGKILL"
+time="2022-09-21T23:51:30+03:00" level=warning msg="StopSignal SIGTERM failed to stop container thirsty_meitner in 1 seconds, resorting to SIGKILL"
+time="2022-09-21T23:51:32+03:00" level=warning msg="StopSignal SIGTERM failed to stop container thirsty_meitner in 1 seconds, resorting to SIGKILL"
+time="2022-09-21T23:52:33+03:00" level=error msg="Error attaching to container 3aa09b545be75f353071eac1d9a794e148003a1b3cf83db98859935e1174bcca: detached from container"
+time="2022-09-21T23:52:45+03:00" level=error msg="Error attaching to container 72896eca83e78e02d524931f92ecd76ad9cf5100b8d3021688cb16f1f0835f59: detached from container"
+time="2022-09-21T23:52:59+03:00" level=error msg="Error attaching to container aeae5f013785e668e13546e89290ff12f2023874f7a7b3933f1a4554aa2dacf6: detached from container"
+time="2022-09-21T23:53:47+03:00" level=warning msg="runc pause may fail if you don't have the full access to cgroups"
+time="2022-09-21T23:53:47+03:00" level=warning msg="runc resume may fail if you don't have the full access to cgroups"
+time="2022-09-21T23:55:29+03:00" level=error msg="Container a250710b3b7a145928019e3b27318011595e4a0974065ed0a13e27eac9451ff7 exec session 5f330a5f94151d0515379935d51e071454b5dd48245c49d84ba0f2a5803d83ab error: detached from container"
+time="2022-09-21T23:55:29+03:00" level=error msg="attaching to container a250710b3b7a145928019e3b27318011595e4a0974065ed0a13e27eac9451ff7 exec session 5f330a5f94151d0515379935d51e071454b5dd48245c49d84ba0f2a5803d83ab: timed out waiting for file /home/riyad/podman/storage/overlay-containers/a250710b3b7a145928019e3b27318011595e4a0974065ed0a13e27eac9451ff7/userdata/5f330a5f94151d0515379935d51e071454b5dd48245c49d84ba0f2a5803d83ab/exit/a250710b3b7a145928019e3b27318011595e4a0974065ed0a13e27eac9451ff7: internal libpod error"
+time="2022-09-21T23:55:47+03:00" level=error msg="Container f706046f0e6bfb5d60f59b094e65b38d2a18e3dd7ef685490f4843220c08d1d7 exec session d82abddc501a37dde8bd805c3c4240951966f4c6f3201d2b9b70ee1311e34940 error: detached from container"
+time="2022-09-21T23:55:47+03:00" level=error msg="attaching to container f706046f0e6bfb5d60f59b094e65b38d2a18e3dd7ef685490f4843220c08d1d7 exec session d82abddc501a37dde8bd805c3c4240951966f4c6f3201d2b9b70ee1311e34940: timed out waiting for file /home/riyad/podman/storage/overlay-containers/f706046f0e6bfb5d60f59b094e65b38d2a18e3dd7ef685490f4843220c08d1d7/userdata/d82abddc501a37dde8bd805c3c4240951966f4c6f3201d2b9b70ee1311e34940/exit/f706046f0e6bfb5d60f59b094e65b38d2a18e3dd7ef685490f4843220c08d1d7: internal libpod error"
+time="2022-09-21T23:59:11+03:00" level=error msg="attaching to container dce0ffd998a15e4134447174b1ff6b3a36ca049143dc91b01d2bfa8e681ec1bd exec session cb637ae86e0768adae0dad97ae57bfd74ed45a3211d4da0889c9e9466a0a8531: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2022-09-21T23:59:11+03:00" level=error msg="Writing error to container dce0ffd998a15e4134447174b1ff6b3a36ca049143dc91b01d2bfa8e681ec1bd HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2022-09-21T23:59:11+03:00" level=error msg="Flushing HTTP buffer for container dce0ffd998a15e4134447174b1ff6b3a36ca049143dc91b01d2bfa8e681ec1bd HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:f6366d7d0fe1650e6568bb974bdd06cb1c1b5225f97118daacb8d5b988be9d36
+Copying config sha256:0d739ba9d1b3a15781540e9112bc5ca01f7d52d19c8d8e66c2eae692b5f9e86c
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:9f4db4b51474838eb822d187be86aa92476cd1d348bb69009d028e992e5e0fd1
+Copying config sha256:054272180a7160a10d497e539c1d51a380cbae0d2e1f0e2217241a183c0b4ea8
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:468ad388ae8c7ebf54d43429bff8350985c4ca7104b75ef23d30d7dd311336f4
+Copying config sha256:4ab0cc56a2189199583c38a41f947cd8d33dfe3ec34b4d2cebbf45772d4be738
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Copying blob sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:77cdde594766b435afc366dc6322d3bc5d01b6c201c32a41c5fab9452131c5a8
+Copying config sha256:0140223422eaf763b4871d4d64d65bc3606e1bd50d03b1813e0fe9ee561a4bac
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:e558fff5344d7bdbb2c4255f4d2463f4159ddda48c2ffa0ff6d0de82446bf117
+Copying config sha256:9f95d626af2e42da58e60f81500865c35152551e2bdd833c56dd97b9202552c6
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:b6c3da58e26cc25cc0db21bd3bd9e516f46a78ce9cb51e1335c3a4b4e332268b
+Copying config sha256:e6bfaf10be3b8a7e13c60d3bd891a65264aa4c4704a31d9d9b3028aec302160d
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:66a0f92eb73423766065caf802a4586cfdb8d5b26b8a39feeed9e15213bae874
+Copying config sha256:bd6333e066464241e5ccde03b9b572b05b5ad8b51f580006025fc7db5f207c62
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:55a18b6dc8ddc783b5203be7c5ceee3bb5b2891e629bdda420fc4cfa6ab77b5e
+Copying config sha256:34db3f3692ff5296b6c7a0950c573d5c164d4036591c50a17a52f3f8db79b8ed
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2022-09-22T00:13:27+03:00" level=error msg="While waiting on condition: \"container 10528eb8a1502491d8cb72af01ee8382d8ebd5a67583fdeb85b03beb86cc0e1a does not exist in database: no such container\""
+Trying to pull docker.io/library/dockerpytest_does_not_exist:latest...
+Getting image source signatures
+Copying blob sha256:994393dc58e7931862558d06e46aa2bb17487044f670f310dffe1d24e4d1eec7
+Copying blob sha256:19a79b64965575da81cc1c47549809af0d3aa923a3d7cc1bbfb0c6c80b8c1246
+Copying config sha256:fe91cff35ac16de5d8ad5f52ca482bad0929687054e76dce65c2e135e5260117
+Writing manifest to image destination
+Storing signatures
+time="2022-09-22T00:15:59+03:00" level=error msg="attaching to container 159532807c24e4b724d19083cdc1ae50655de90cb577231a7b01a8337759e743 exec session 4cf830483dcb7f4c87a0f875d8cad7232bd7053e5e16d4609c591aec26ce6203: runc: exec failed: unable to start container process: exec: \"docker\": executable file not found in $PATH: OCI runtime attempted to invoke a command that was not found"
+time="2022-09-22T00:16:34+03:00" level=warning msg="runc pause may fail if you don't have the full access to cgroups"
+time="2022-09-22T00:16:35+03:00" level=warning msg="runc resume may fail if you don't have the full access to cgroups"
+time="2022-09-22T00:17:38+03:00" level=warning msg="StopSignal SIGTERM failed to stop container adoring_burnell in 10 seconds, resorting to SIGKILL"
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49
+Copying config sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49
+Copying config sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49
+Copying config sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7...
+Getting image source signatures
+Copying blob sha256:ca4f61b1923c10e9eb81228bd46bee1dfba02b9c7dac1844527a734752688ede
+Copying config sha256:f2a91732366c0332ccd7afd2a5c4ff2b9af81f549370f7a19acd460f87686bc7
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:213ec9aee27d8be045c6a92b7eac22c9a64b44558193775a1a7f626352392b49
+Copying config sha256:9c6f0724472873bb50a2ae67a9e7adcb57673a183cea8b06eb778dca859181b5
+Writing manifest to image destination
+Storing signatures

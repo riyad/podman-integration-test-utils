@@ -1,0 +1,26 @@
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2022-01-17T11:20:11+01:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2022-01-17T11:20:18+01:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2022-01-17T11:22:18+01:00" level=error msg="While waiting on condition: \"cancelled by user\""
+time="2022-01-17T11:23:42+01:00" level=warning msg="StopSignal SIGTERM failed to stop container gallant_khayyam in 2 seconds, resorting to SIGKILL"
+time="2022-01-17T11:23:50+01:00" level=warning msg="StopSignal SIGTERM failed to stop container nostalgic_proskuriakova in 2 seconds, resorting to SIGKILL"
+time="2022-01-17T11:24:52+01:00" level=warning msg="StopSignal SIGTERM failed to stop container wizardly_hopper in 2 seconds, resorting to SIGKILL"
+time="2022-01-17T11:25:01+01:00" level=warning msg="StopSignal SIGTERM failed to stop container exciting_haibt in 2 seconds, resorting to SIGKILL"
+time="2022-01-17T11:25:09+01:00" level=warning msg="StopSignal SIGTERM failed to stop container sad_mestorf in 1 seconds, resorting to SIGKILL"
+time="2022-01-17T11:25:10+01:00" level=warning msg="StopSignal SIGTERM failed to stop container sad_mestorf in 1 seconds, resorting to SIGKILL"
+time="2022-01-17T11:25:45+01:00" level=error msg="error attaching to container bfa854292840bf51eea71ca380ad22e838b887ff3440b6a3bd19ecbf4c94682a: detached from container"
+time="2022-01-17T11:25:52+01:00" level=error msg="error attaching to container eb3ce05e7ed71ee23a137266d8e4d970a686a20130579ee5b2e2d185c75b0b7e: detached from container"
+time="2022-01-17T11:26:00+01:00" level=error msg="error attaching to container d165ffb29c4677369cb9aec34c7e2a0dc73cbebefe14966f53a8e5bfe064173c: detached from container"
+panic: send on closed channel
+
+goroutine 13830 [running]:
+github.com/containers/podman/v3/libpod.(*Container).readFromJournal.func1()
+	/home/riyad/src/podman/libpod/container_log_linux.go:242 +0x5ae
+created by github.com/containers/podman/v3/libpod.(*Container).readFromJournal
+	/home/riyad/src/podman/libpod/container_log_linux.go:118 +0x812

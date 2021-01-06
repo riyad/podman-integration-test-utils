@@ -1,0 +1,24 @@
+time="2021-08-26T13:58:24+02:00" level=warning msg="Failed to decode the keys [\"secret\" \"secret.opts\"] from \"/usr/share/containers/containers.conf\"."
+time="2021-08-26T13:58:24+02:00" level=warning msg="Failed to decode the keys [\"secret\" \"secret.opts\"] from \"/usr/share/containers/containers.conf\"."
+time="2021-08-26T13:58:24+02:00" level=warning msg="Failed to decode the keys [\"secret\" \"secret.opts\"] from \"/usr/share/containers/containers.conf\"."
+Resolved "alpine" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2021-08-26T14:03:15+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2021-08-26T14:03:22+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2021-08-26T14:05:02+02:00" level=error msg="error while waiting on condition: \"cancelled by user\""
+time="2021-08-26T14:08:22+02:00" level=error msg="error attaching to container 726de36307902ee2c931e55b29d19a034cf9adbbbb3463fd3b1de614fe850034: detached from container"
+time="2021-08-26T14:08:27+02:00" level=error msg="error attaching to container 9fc5e0fdabbccf63b23a5544a7cf40dc58632f3352a9a780f1f1fa94e61719df: detached from container"
+time="2021-08-26T14:08:33+02:00" level=error msg="error attaching to container 32125d9598eb8bfcac8e4fb9cbf8a99812a3db1d90ff8d4a25d3c338f99f5000: detached from container"
+panic: send on closed channel
+
+goroutine 15552 [running]:
+github.com/containers/podman/v3/libpod.(*Container).readFromJournal.func1(0xc001707f80, 0xc000ade350, 0x1ea1ab8, 0xc000136030, 0xc000945400, 0xc000abaee0, 0xc00138b620)
+	/home/riyad/src/podman/libpod/container_log_linux.go:221 +0x68b
+created by github.com/containers/podman/v3/libpod.(*Container).readFromJournal
+	/home/riyad/src/podman/libpod/container_log_linux.go:111 +0x612

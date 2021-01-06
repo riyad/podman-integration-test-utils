@@ -1,0 +1,157 @@
+{
+  "host": {
+    "arch": "amd64",
+    "buildahVersion": "1.26.1",
+    "cgroupManager": "systemd",
+    "cgroupVersion": "v2",
+    "cgroupControllers": [
+      "memory",
+      "pids"
+    ],
+    "conmon": {
+      "package": "conmon_2.0.25+ds1-1.1_amd64",
+      "path": "/usr/bin/conmon",
+      "version": "conmon version 2.0.25, commit: unknown"
+    },
+    "cpus": 4,
+    "cpuUtilization": {
+      "userPercent": 14.41,
+      "systemPercent": 5.75,
+      "idlePercent": 79.84
+    },
+    "distribution": {
+      "distribution": "ubuntu",
+      "version": "22.04",
+      "codename": "jammy"
+    },
+    "eventLogger": "journald",
+    "hostname": "acnologia",
+    "idMappings": {
+      "gidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ],
+      "uidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ]
+    },
+    "kernel": "5.15.0-27-generic",
+    "logDriver": "journald",
+    "memFree": 2431811584,
+    "memTotal": 16533549056,
+    "networkBackend": "cni",
+    "ociRuntime": {
+      "name": "runc",
+      "package": "runc_1.1.0-0ubuntu1_amd64",
+      "path": "/usr/sbin/runc",
+      "version": "runc version 1.1.0-0ubuntu1\nspec: 1.0.2-dev\ngo: go1.17.3\nlibseccomp: 2.5.3"
+    },
+    "os": "linux",
+    "remoteSocket": {
+      "path": "/run/user/1000/podman/podman.sock",
+      "exists": true
+    },
+    "serviceIsRemote": false,
+    "security": {
+      "apparmorEnabled": false,
+      "capabilities": "CAP_CHOWN,CAP_DAC_OVERRIDE,CAP_FOWNER,CAP_FSETID,CAP_KILL,CAP_NET_BIND_SERVICE,CAP_SETFCAP,CAP_SETGID,CAP_SETPCAP,CAP_SETUID,CAP_SYS_CHROOT",
+      "rootless": true,
+      "seccompEnabled": true,
+      "seccompProfilePath": "/usr/share/containers/seccomp.json",
+      "selinuxEnabled": false
+    },
+    "slirp4netns": {
+      "executable": "/usr/bin/slirp4netns",
+      "package": "slirp4netns_1.0.1-2_amd64",
+      "version": "slirp4netns version 1.0.1\ncommit: 6a7b16babc95b6a3056b33fb45b74a6f62262dd4\nlibslirp: 4.6.1"
+    },
+    "swapFree": 2147479552,
+    "swapTotal": 2147479552,
+    "uptime": "2h 26m 29.24s (Approximately 0.08 days)",
+    "linkmode": "dynamic"
+  },
+  "store": {
+    "configFile": "/home/riyad/.config/containers/storage.conf",
+    "containerStore": {
+      "number": 0,
+      "paused": 0,
+      "running": 0,
+      "stopped": 0
+    },
+    "graphDriverName": "overlay",
+    "graphOptions": {
+      "overlay.mount_program": {
+  "Executable": "/usr/bin/fuse-overlayfs",
+  "Package": "fuse-overlayfs_1.7.1-1_amd64",
+  "Version": "fusermount3 version: 3.10.5\nfuse-overlayfs: version 1.7.1\nFUSE library version 3.10.5\nusing FUSE kernel interface version 7.31"
+},
+      "overlay.mountopt": "nodev,metacopy=on"
+    },
+    "graphRoot": "/home/riyad/podman/storage",
+    "graphRootAllocated": 99779477504,
+    "graphRootUsed": 3246784512,
+    "graphStatus": {
+      "Backing Filesystem": "zfs",
+      "Native Overlay Diff": "false",
+      "Supports d_type": "true",
+      "Using metacopy": "false"
+    },
+    "imageCopyTmpDir": "/var/tmp",
+    "imageStore": {
+      "number": 46
+    },
+    "runRoot": "/run/user/1000/containers",
+    "volumePath": "/home/riyad/podman/storage/volumes"
+  },
+  "registries": {
+    "search": [
+  "registry.fedoraproject.org",
+  "registry.access.redhat.com",
+  "docker.io",
+  "quay.io"
+]
+  },
+  "plugins": {
+    "volume": [
+      "local"
+    ],
+    "network": [
+      "bridge",
+      "macvlan",
+      "ipvlan"
+    ],
+    "log": [
+      "k8s-file",
+      "none",
+      "passthrough",
+      "journald"
+    ]
+  },
+  "version": {
+    "APIVersion": "4.2.0-dev",
+    "Version": "4.2.0-dev",
+    "GoVersion": "go1.18.1",
+    "GitCommit": "a0ecb8675d1c45f083a70a6b3faaebd22abe5417",
+    "BuiltTime": "Mon May  9 13:02:43 2022",
+    "Built": 1652094163,
+    "OsArch": "linux/amd64",
+    "Os": "linux"
+  }
+}

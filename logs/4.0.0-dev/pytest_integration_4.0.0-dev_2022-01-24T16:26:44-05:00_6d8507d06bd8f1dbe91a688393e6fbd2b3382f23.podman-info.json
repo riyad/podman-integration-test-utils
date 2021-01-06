@@ -1,0 +1,151 @@
+{
+  "host": {
+    "arch": "amd64",
+    "buildahVersion": "1.24.0-dev",
+    "cgroupManager": "systemd",
+    "cgroupVersion": "v2",
+    "cgroupControllers": [
+      "cpuset",
+      "cpu",
+      "io",
+      "memory",
+      "pids"
+    ],
+    "conmon": {
+      "package": "conmon: /usr/libexec/podman/conmon",
+      "path": "/usr/libexec/podman/conmon",
+      "version": "conmon version 2.0.30, commit: "
+    },
+    "cpus": 4,
+    "distribution": {
+      "distribution": "ubuntu",
+      "version": "21.10",
+      "codename": "impish"
+    },
+    "eventLogger": "journald",
+    "hostname": "acnologia",
+    "idMappings": {
+      "gidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ],
+      "uidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ]
+    },
+    "kernel": "5.13.0-27-generic",
+    "logDriver": "journald",
+    "memFree": 978956288,
+    "memTotal": 16533868544,
+    "networkBackend": "cni",
+    "ociRuntime": {
+      "name": "runc",
+      "package": "runc: /usr/sbin/runc",
+      "path": "/usr/sbin/runc",
+      "version": "runc version 1.0.1-0ubuntu2\nspec: 1.0.2-dev\ngo: go1.16.5\nlibseccomp: 2.5.1"
+    },
+    "os": "linux",
+    "remoteSocket": {
+      "path": "/run/user/1000/podman/podman.sock"
+    },
+    "serviceIsRemote": false,
+    "security": {
+      "apparmorEnabled": false,
+      "capabilities": "CAP_CHOWN,CAP_DAC_OVERRIDE,CAP_FOWNER,CAP_FSETID,CAP_KILL,CAP_NET_BIND_SERVICE,CAP_SETFCAP,CAP_SETGID,CAP_SETPCAP,CAP_SETUID,CAP_SYS_CHROOT",
+      "rootless": true,
+      "seccompEnabled": true,
+      "seccompProfilePath": "/usr/share/containers/seccomp.json",
+      "selinuxEnabled": false
+    },
+    "slirp4netns": {
+      "executable": "/usr/bin/slirp4netns",
+      "package": "slirp4netns: /usr/bin/slirp4netns",
+      "version": "slirp4netns version 1.1.8\ncommit: unknown\nlibslirp: 4.3.1-git\nSLIRP_CONFIG_VERSION_MAX: 3\nlibseccomp: 2.5.1"
+    },
+    "swapFree": 484917248,
+    "swapTotal": 2147479552,
+    "uptime": "67h 10m 25.85s (Approximately 2.79 days)",
+    "linkmode": "dynamic"
+  },
+  "store": {
+    "configFile": "/home/riyad/.config/containers/storage.conf",
+    "containerStore": {
+      "number": 0,
+      "paused": 0,
+      "running": 0,
+      "stopped": 0
+    },
+    "graphDriverName": "overlay",
+    "graphOptions": {
+      "overlay.mount_program": {
+  "Executable": "/usr/bin/fuse-overlayfs",
+  "Package": "fuse-overlayfs: /usr/bin/fuse-overlayfs",
+  "Version": "fusermount3 version: 3.10.3\nfuse-overlayfs: version 1.5\nFUSE library version 3.10.3\nusing FUSE kernel interface version 7.31"
+},
+      "overlay.mountopt": "nodev,metacopy=on"
+    },
+    "graphRoot": "/home/riyad/podman/storage",
+    "graphStatus": {
+      "Backing Filesystem": "zfs",
+      "Native Overlay Diff": "false",
+      "Supports d_type": "true",
+      "Using metacopy": "false"
+    },
+    "imageCopyTmpDir": "/var/tmp",
+    "imageStore": {
+      "number": 21
+    },
+    "runRoot": "/run/user/1000/containers",
+    "volumePath": "/home/riyad/podman/storage/volumes"
+  },
+  "registries": {
+    "search": [
+  "registry.fedoraproject.org",
+  "registry.access.redhat.com",
+  "docker.io",
+  "quay.io"
+]
+  },
+  "plugins": {
+    "volume": [
+      "local"
+    ],
+    "network": [
+      "bridge",
+      "macvlan",
+      "ipvlan"
+    ],
+    "log": [
+      "k8s-file",
+      "none",
+      "passthrough",
+      "journald"
+    ]
+  },
+  "version": {
+    "APIVersion": "4.0.0-dev",
+    "Version": "4.0.0-dev",
+    "GoVersion": "go1.17.6",
+    "GitCommit": "6d8507d06bd8f1dbe91a688393e6fbd2b3382f23",
+    "BuiltTime": "Mon Jan 24 22:53:15 2022",
+    "Built": 1643061195,
+    "OsArch": "linux/amd64"
+  }
+}

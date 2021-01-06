@@ -1,0 +1,1869 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="docker-py" errors="0" failures="99" skipped="5" tests="278" time="1281.842" timestamp="2021-04-06T16:40:58.331372" hostname="acnologia"><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_container_with_target" time="14.411" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_from_stringio" time="6.279" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_gzip_custom_encoding" time="6.140" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_gzip_encoding" time="7.543" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_in_context_abs_dockerfile" time="10.522"><failure message="AssertionError: assert 1 == 4&#10;  +1&#10;  -4">tests/integration/api_build_test.py:585: in test_build_in_context_abs_dockerfile
+    assert len(lsdata) == 4
+E   AssertionError: assert 1 == 4
+E     +1
+E     -4</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_in_context_dockerfile" time="9.929" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_in_context_nested_dockerfile" time="8.294" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_invalid_platform" time="9.672"><failure message="Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;">tests/integration/api_build_test.py:452: in test_build_invalid_platform
+    pass
+E   Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_isolation" time="7.699" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_labels" time="6.235"><failure message="AssertionError: assert {'io.buildah.... 'test': 'OK'} == {'test': 'OK'}&#10;  Omitting 1 identical items, use -vv to show&#10;  Left contains 1 more item:&#10;  {'io.buildah.version': '1.20.0'}&#10;  Full diff:&#10;  - {'test': 'OK'}&#10;  + {'io.buildah.version': '1.20.0', 'test': 'OK'}">tests/integration/api_build_test.py:215: in test_build_labels
+    assert info['Config']['Labels'] == labels
+E   AssertionError: assert {'io.buildah.... 'test': 'OK'} == {'test': 'OK'}
+E     Omitting 1 identical items, use -vv to show
+E     Left contains 1 more item:
+E     {'io.buildah.version': '1.20.0'}
+E     Full diff:
+E     - {'test': 'OK'}
+E     + {'io.buildah.version': '1.20.0', 'test': 'OK'}</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_out_of_context_dockerfile" time="9.461" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_shmsize" time="6.130" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_squash" time="16.877" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_stderr_data" time="7.813"><failure message="AssertionError: assert False&#10; +  where False = any([False, False, False, False, False, False, ...])">tests/integration/api_build_test.py:395: in test_build_stderr_data
+    assert any([line == expected for line in lines])
+E   AssertionError: assert False
+E    +  where False = any([False, False, False, False, False, False, ...])</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_streaming" time="9.262" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_buildargs" time="6.448" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_cache_from" time="15.196"><failure message="AssertionError: assert 0 == 3&#10;  +0&#10;  -3">tests/integration/api_build_test.py:240: in test_build_with_cache_from
+    assert counter == 3
+E   AssertionError: assert 0 == 3
+E     +0
+E     -3</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_dockerfile_empty_lines" time="8.956" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_dockerignore" time="10.082" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_extra_hosts" time="6.156"><failure message="docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.40/build?t=dockerpytest_extrahost_build&amp;q=False&amp;nocache=False&amp;rm=False&amp;forcerm=False&amp;pull=False&amp;extrahosts=extrahost.local.test%3A127.0.0.1&amp;extrahosts=hello.world.test%3A127.0.0.1: Bad Request (&quot;failed to parse query parameter 'extrahosts': &quot;hello.world.test:127.0.0.1&quot;: invalid character 'h' looking for beginning of value&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.40/build?t=dockerpytest_extrahost_build&amp;q=False&amp;nocache=False&amp;rm=False&amp;forcerm=False&amp;pull=False&amp;extrahosts=extrahost.local.test%3A127.0.0.1&amp;extrahosts=hello.world.test%3A127.0.0.1
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_build_test.py:336: in test_build_with_extra_hosts
+    for chunk in stream:
+docker/api/client.py:387: in _stream_helper
+    yield self._result(response, json=decode)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.40/build?t=dockerpytest_extrahost_build&amp;q=False&amp;nocache=False&amp;rm=False&amp;forcerm=False&amp;pull=False&amp;extrahosts=extrahost.local.test%3A127.0.0.1&amp;extrahosts=hello.world.test%3A127.0.0.1: Bad Request ("failed to parse query parameter 'extrahosts': "hello.world.test:127.0.0.1": invalid character 'h' looking for beginning of value")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_network_mode" time="7.261"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/69ef3c6405397e3c19c05245ccc577f94c473f8da1f24f65ff9e5e20dd025ecc/connect: Internal Server Error (&quot;network disconnect is not enabled for rootless containers&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/networks/69ef3c6405397e3c19c05245ccc577f94c473f8da1f24f65ff9e5e20dd025ecc/connect
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_build_test.py:283: in test_build_with_network_mode
+    self.client.connect_container_to_network(
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/network.py:250: in connect_container_to_network
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/69ef3c6405397e3c19c05245ccc577f94c473f8da1f24f65ff9e5e20dd025ecc/connect: Internal Server Error ("network disconnect is not enabled for rootless containers")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_proxy" time="7.630" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_build_with_proxy_and_buildargs" time="14.045" /><testcase classname="tests.integration.api_build_test.BuildTest" name="test_prune_builds" time="10.815"><skipped type="pytest.xfail" message="Currently fails on 18.09: https://github.com/moby/moby/issues/37920" /></testcase><testcase classname="tests.integration.api_client_test.InformationTest" name="test_info" time="7.852" /><testcase classname="tests.integration.api_client_test.InformationTest" name="test_version" time="8.336" /><testcase classname="tests.integration.api_client_test.AutoDetectVersionTest" name="test_client_init" time="5.770" /><testcase classname="tests.integration.api_client_test.ConnectionTimeoutTest" name="test_timeout" time="0.510" /><testcase classname="tests.integration.api_client_test.UnixconnTest" name="test_resource_warnings" time="2.185" /><testcase classname="tests.integration.api_container_test.ListContainersTest" name="test_list_containers" time="7.337" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create" time="6.008" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_container_with_volumes_from" time="8.534" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_auto_remove" time="6.373" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_cpu_rt_options" time="5.944" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_device_cgroup_rules" time="5.910"><failure message="AssertionError: assert None == ['c 7:128 rwm']&#10;  +None&#10;  -['c 7:128 rwm']">tests/integration/api_container_test.py:470: in test_create_with_device_cgroup_rules
+    assert config['HostConfig']['DeviceCgroupRules'] == [rule]
+E   AssertionError: assert None == ['c 7:128 rwm']
+E     +None
+E     -['c 7:128 rwm']</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_environment_variable_no_value" time="6.035"><failure message="AssertionError: assert 'Foo' in ['PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'TERM=xterm', 'container=podman', 'Other=one', 'Blank=']">tests/integration/api_container_test.py:366: in test_create_with_environment_variable_no_value
+    assert 'Foo' in config['Config']['Env']
+E   AssertionError: assert 'Foo' in ['PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'TERM=xterm', 'container=podman', 'Other=one', 'Blank=']</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_host_pid_mode" time="6.134"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/7e000d8ce8b03839c569732470ca9228bac64eca91eac9fe75e7e9a70f0ad1b8/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: readonly path /proc/asound: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/7e000d8ce8b03839c569732470ca9228bac64eca91eac9fe75e7e9a70f0ad1b8/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_container_test.py:58: in test_create_with_host_pid_mode
+    self.client.start(ctnr)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/7e000d8ce8b03839c569732470ca9228bac64eca91eac9fe75e7e9a70f0ad1b8/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: readonly path /proc/asound: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_init" time="6.320" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_isolation" time="5.997"><failure message="AssertionError: assert '' == 'default'&#10;  - default">tests/integration/api_container_test.py:395: in test_create_with_isolation
+    assert config['HostConfig']['Isolation'] == 'default'
+E   AssertionError: assert '' == 'default'
+E     - default</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_links" time="7.391"><failure message="docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.40/containers/create: Bad Request (&quot;bad parameter: Link is not supported&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.40/containers/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_container_test.py:95: in test_create_with_links
+    res2 = self.client.create_container(
+docker/api/container.py:430: in create_container
+    return self.create_container_from_config(config, name)
+docker/api/container.py:441: in create_container_from_config
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.40/containers/create: Bad Request ("bad parameter: Link is not supported")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_mac_address" time="6.156"><failure message="AssertionError: assert '02:42:ac:11:00:0a' == ''&#10;  + 02:42:ac:11:00:0a">tests/integration/api_container_test.py:214: in test_create_with_mac_address
+    assert mac_address_expected == res['NetworkSettings']['MacAddress']
+E   AssertionError: assert '02:42:ac:11:00:0a' == ''
+E     + 02:42:ac:11:00:0a</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_memory_constraints_with_int" time="6.508" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_memory_constraints_with_str" time="6.614" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_restart_policy" time="8.427"><failure message="Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;">tests/integration/api_container_test.py:124: in test_create_with_restart_policy
+    self.client.remove_container(id)
+E   Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_stop_timeout" time="7.238" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_storage_opt" time="9.478"><skipped type="pytest.xfail" message="Not supported on most drivers" /></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_tmpfs" time="8.882"><failure message="AssertionError: assert {'/tmp1': 'si...ev,tmpcopyup'} == {'/tmp1': 'size=3M'}&#10;  Differing items:&#10;  {'/tmp1': 'size=3M,rw,rprivate,nosuid,nodev,tmpcopyup'} != {'/tmp1': 'size=3M'}&#10;  Full diff:&#10;  - {'/tmp1': 'size=3M'}&#10;  + {'/tmp1': 'size=3M,rw,rprivate,nosuid,nodev,tmpcopyup'}">tests/integration/api_container_test.py:384: in test_create_with_tmpfs
+    assert config['HostConfig']['Tmpfs'] == tmpfs
+E   AssertionError: assert {'/tmp1': 'si...ev,tmpcopyup'} == {'/tmp1': 'size=3M'}
+E     Differing items:
+E     {'/tmp1': 'size=3M,rw,rprivate,nosuid,nodev,tmpcopyup'} != {'/tmp1': 'size=3M'}
+E     Full diff:
+E     - {'/tmp1': 'size=3M'}
+E     + {'/tmp1': 'size=3M,rw,rprivate,nosuid,nodev,tmpcopyup'}</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_create_with_uts_mode" time="6.891" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_group_id_ints" time="10.099" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_group_id_strings" time="10.688" /><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_invalid_log_driver_raises_exception" time="5.931"><failure message="AssertionError: assert 'container create: error running container create option: invalid log driver: invalid argument' in [&quot;logger: no log driver named 'asdf' is registered&quot;, 'error looking up logging plugin asdf: plugin &quot;asdf&quot; not found']&#10; +  where 'container create: error running container create option: invalid log driver: invalid argument' = APIError(HTTPError('500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create')).explanation&#10; +    where APIError(HTTPError('500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create')) = &lt;ExceptionInfo APIError(HTTPError('500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create')) tblen=6&gt;.value">tests/integration/api_container_test.py:286: in test_invalid_log_driver_raises_exception
+    assert excinfo.value.explanation in expected_msgs
+E   AssertionError: assert 'container create: error running container create option: invalid log driver: invalid argument' in ["logger: no log driver named 'asdf' is registered", 'error looking up logging plugin asdf: plugin "asdf" not found']
+E    +  where 'container create: error running container create option: invalid log driver: invalid argument' = APIError(HTTPError('500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create')).explanation
+E    +    where APIError(HTTPError('500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create')) = &lt;ExceptionInfo APIError(HTTPError('500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create')) tblen=6&gt;.value</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_valid_log_driver_and_log_opt" time="7.041"><failure message="AssertionError: assert None == {'max-file': '100'}&#10;  +None&#10;  -{'max-file': '100'}">tests/integration/api_container_test.py:265: in test_valid_log_driver_and_log_opt
+    assert container_log_config['Config'] == log_config.config
+E   AssertionError: assert None == {'max-file': '100'}
+E     +None
+E     -{'max-file': '100'}</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_valid_no_config_specified" time="6.963"><failure message="AssertionError: assert None == {}&#10;  +None&#10;  -{}">tests/integration/api_container_test.py:324: in test_valid_no_config_specified
+    assert container_log_config['Config'] == {}
+E   AssertionError: assert None == {}
+E     +None
+E     -{}</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.CreateContainerTest" name="test_valid_no_log_driver_specified" time="7.530"><failure message="AssertionError: assert None == {'max-file': '100'}&#10;  +None&#10;  -{'max-file': '100'}">tests/integration/api_container_test.py:305: in test_valid_no_log_driver_specified
+    assert container_log_config['Config'] == log_config.config
+E   AssertionError: assert None == {'max-file': '100'}
+E     +None
+E     -{'max-file': '100'}</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.VolumeBindTest" name="test_create_with_binds_ro" time="11.697" /><testcase classname="tests.integration.api_container_test.VolumeBindTest" name="test_create_with_binds_rw" time="7.806" /><testcase classname="tests.integration.api_container_test.VolumeBindTest" name="test_create_with_mounts" time="7.922" /><testcase classname="tests.integration.api_container_test.VolumeBindTest" name="test_create_with_mounts_ro" time="7.806"><failure message="AssertionError: assert True == False&#10;  +True&#10;  -False">tests/integration/api_container_test.py:565: in test_create_with_mounts_ro
+    self.check_container_data(inspect_data, False)
+tests/integration/api_container_test.py:598: in check_container_data
+    assert mount_data['RW'] == rw
+E   AssertionError: assert True == False
+E     +True
+E     -False</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.VolumeBindTest" name="test_create_with_volume_mount" time="7.801" /><testcase classname="tests.integration.api_container_test.ArchiveTest" name="test_copy_directory_to_container" time="11.401" /><testcase classname="tests.integration.api_container_test.ArchiveTest" name="test_copy_file_to_container" time="22.155"><failure message="AssertionError: assert b'' == b'Deaf To All But The Song'&#10;  Full diff:&#10;  - b'Deaf To All But The Song'&#10;  + b''">tests/integration/api_container_test.py:669: in test_copy_file_to_container
+    assert logs.strip() == data
+E   AssertionError: assert b'' == b'Deaf To All But The Song'
+E     Full diff:
+E     - b'Deaf To All But The Song'
+E     + b''</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.ArchiveTest" name="test_get_file_archive_from_container" time="12.553" /><testcase classname="tests.integration.api_container_test.ArchiveTest" name="test_get_file_stat_from_container" time="10.496" /><testcase classname="tests.integration.api_container_test.RenameContainerTest" name="test_rename_container" time="4.863" /><testcase classname="tests.integration.api_container_test.StartContainerTest" name="test_run_shlex_commands" time="4.834" /><testcase classname="tests.integration.api_container_test.StartContainerTest" name="test_start_container" time="3.506" /><testcase classname="tests.integration.api_container_test.StartContainerTest" name="test_start_container_with_dict_instead_of_id" time="3.284" /><testcase classname="tests.integration.api_container_test.WaitTest" name="test_wait" time="6.233" /><testcase classname="tests.integration.api_container_test.WaitTest" name="test_wait_with_condition" time="7.453" /><testcase classname="tests.integration.api_container_test.WaitTest" name="test_wait_with_dict_instead_of_id" time="6.309" /><testcase classname="tests.integration.api_container_test.LogsTest" name="test_logs" time="3.231" /><testcase classname="tests.integration.api_container_test.LogsTest" name="test_logs_streaming_and_follow" time="3.592" /><testcase classname="tests.integration.api_container_test.LogsTest" name="test_logs_streaming_and_follow_and_cancel" time="4.439" /><testcase classname="tests.integration.api_container_test.LogsTest" name="test_logs_tail_option" time="3.273" /><testcase classname="tests.integration.api_container_test.LogsTest" name="test_logs_with_dict_instead_of_id" time="3.267" /><testcase classname="tests.integration.api_container_test.LogsTest" name="test_logs_with_tail_0" time="3.187" /><testcase classname="tests.integration.api_container_test.LogsTest" name="test_logs_with_until" time="3.170" /><testcase classname="tests.integration.api_container_test.DiffTest" name="test_diff" time="3.257" /><testcase classname="tests.integration.api_container_test.DiffTest" name="test_diff_with_dict_instead_of_id" time="3.348" /><testcase classname="tests.integration.api_container_test.StopTest" name="test_stop" time="5.383" /><testcase classname="tests.integration.api_container_test.StopTest" name="test_stop_with_dict_instead_of_id" time="5.467" /><testcase classname="tests.integration.api_container_test.KillTest" name="test_kill" time="3.420" /><testcase classname="tests.integration.api_container_test.KillTest" name="test_kill_with_dict_instead_of_id" time="3.455" /><testcase classname="tests.integration.api_container_test.KillTest" name="test_kill_with_signal" time="3.345" /><testcase classname="tests.integration.api_container_test.KillTest" name="test_kill_with_signal_integer" time="3.237" /><testcase classname="tests.integration.api_container_test.KillTest" name="test_kill_with_signal_name" time="3.268" /><testcase classname="tests.integration.api_container_test.PortTest" name="test_port" time="2.927"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error (&quot;container create: unable to find network configuration for bridge: network not found&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_container_test.py:1060: in test_port
+    container = self.client.create_container(
+docker/api/container.py:430: in create_container
+    return self.create_container_from_config(config, name)
+docker/api/container.py:441: in create_container_from_config
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error ("container create: unable to find network configuration for bridge: network not found")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.ContainerTopTest" name="test_top" time="3.441"><skipped type="pytest.xfail" message="Output of docker top depends on host distro, and is not formalized." /></testcase><testcase classname="tests.integration.api_container_test.ContainerTopTest" name="test_top_with_psargs" time="3.486"><skipped type="pytest.xfail" message="Output of docker top depends on host distro, and is not formalized." /></testcase><testcase classname="tests.integration.api_container_test.RestartContainerTest" name="test_restart" time="5.514" /><testcase classname="tests.integration.api_container_test.RestartContainerTest" name="test_restart_with_dict_instead_of_id" time="5.562" /><testcase classname="tests.integration.api_container_test.RestartContainerTest" name="test_restart_with_low_timeout" time="5.909" /><testcase classname="tests.integration.api_container_test.RemoveContainerTest" name="test_remove" time="3.316" /><testcase classname="tests.integration.api_container_test.RemoveContainerTest" name="test_remove_with_dict_instead_of_id" time="3.267" /><testcase classname="tests.integration.api_container_test.AttachContainerTest" name="test_attach_no_stream" time="3.204"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/3c6fd2eb8835204753be8f1882a4ef23443a147bac89b1ad520f08a84b1b9fba/attach?logs=1&amp;stdout=1&amp;stderr=1&amp;stream=0: Internal Server Error (&quot;can only attach to created or running containers - currently in state stopped: container state improper&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/3c6fd2eb8835204753be8f1882a4ef23443a147bac89b1ad520f08a84b1b9fba/attach?logs=1&amp;stdout=1&amp;stderr=1&amp;stream=0
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_container_test.py:1229: in test_attach_no_stream
+    output = self.client.attach(container, stream=False, logs=True)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:62: in attach
+    output = self._read_from_socket(
+docker/api/client.py:433: in _read_from_socket
+    socket = self._get_raw_response_socket(response)
+docker/api/client.py:346: in _get_raw_response_socket
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/3c6fd2eb8835204753be8f1882a4ef23443a147bac89b1ad520f08a84b1b9fba/attach?logs=1&amp;stdout=1&amp;stderr=1&amp;stream=0: Internal Server Error ("can only attach to created or running containers - currently in state stopped: container state improper")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.AttachContainerTest" name="test_attach_stream_and_cancel" time="6.300" /><testcase classname="tests.integration.api_container_test.AttachContainerTest" name="test_detach_with_arg" time="3.791" /><testcase classname="tests.integration.api_container_test.AttachContainerTest" name="test_detach_with_config_file" time="3.829" /><testcase classname="tests.integration.api_container_test.AttachContainerTest" name="test_detach_with_default" time="4.280" /><testcase classname="tests.integration.api_container_test.AttachContainerTest" name="test_run_container_reading_socket" time="3.171" /><testcase classname="tests.integration.api_container_test.AttachContainerTest" name="test_run_container_streaming" time="3.226" /><testcase classname="tests.integration.api_container_test.PauseTest" name="test_pause_unpause" time="3.333" /><testcase classname="tests.integration.api_container_test.PruneTest" name="test_prune_containers" time="3.861" /><testcase classname="tests.integration.api_container_test.GetContainerStatsTest" name="test_get_container_stats_no_stream" time="3.250" /><testcase classname="tests.integration.api_container_test.ContainerUpdateTest" name="test_restart_policy_update" time="3.290"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/991adafed8047dd481698d0502b43182f4caab9c47d00aa35774828e3283b9e1/update: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/containers/991adafed8047dd481698d0502b43182f4caab9c47d00aa35774828e3283b9e1/update
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_container_test.py:1416: in test_restart_policy_update
+    self.client.update_container(container,
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1270: in update_container
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/991adafed8047dd481698d0502b43182f4caab9c47d00aa35774828e3283b9e1/update: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.ContainerUpdateTest" name="test_update_container" time="3.273"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/dbdcb8bdb1cef47df83fcb30a991e169ea7a5707905e771107eafbaa29788f98/update: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/containers/dbdcb8bdb1cef47df83fcb30a991e169ea7a5707905e771107eafbaa29788f98/update
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_container_test.py:1394: in test_update_container
+    self.client.update_container(container, mem_limit=new_mem_limit)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1270: in update_container
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/dbdcb8bdb1cef47df83fcb30a991e169ea7a5707905e771107eafbaa29788f98/update: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.ContainerCPUTest" name="test_container_cpu_shares" time="3.276" /><testcase classname="tests.integration.api_container_test.ContainerCPUTest" name="test_container_cpuset" time="3.232" /><testcase classname="tests.integration.api_container_test.ContainerCPUTest" name="test_create_with_runtime" time="3.010"><failure message="AssertionError: assert 'oci' == 'runc'&#10;  - runc&#10;  + oci">tests/integration/api_container_test.py:1461: in test_create_with_runtime
+    assert config['HostConfig']['Runtime'] == 'runc'
+E   AssertionError: assert 'oci' == 'runc'
+E     - runc
+E     + oci</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_container_test.LinkTest" name="test_remove_link" time="3.262"><failure message="docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.40/containers/create: Bad Request (&quot;bad parameter: Link is not supported&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.40/containers/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_container_test.py:1479: in test_remove_link
+    container2 = self.client.create_container(
+docker/api/container.py:430: in create_container
+    return self.create_container_from_config(config, name)
+docker/api/container.py:441: in create_container_from_config
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.40/containers/create: Bad Request ("bad parameter: Link is not supported")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_detach_with_config_file" time="8.458"><failure message="AssertionError">tests/integration/api_exec_test.py:227: in test_detach_with_config_file
+    assert_cat_socket_detached_with_keys(sock, [ctrl_with('p')])
+tests/helpers.py:138: in assert_cat_socket_detached_with_keys
+    assert data == b'' or data.startswith(
+E   AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_detach_with_default" time="4.402" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_command_as_root" time="3.431" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_command_as_user" time="3.440" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_command_streaming" time="3.382" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_command_string" time="3.438" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_command_with_env" time="3.377" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_command_with_workdir" time="3.577" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_inspect" time="3.575" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_start_detached" time="3.529"><failure message="AssertionError: assert '\n' == ''&#10;  Strings contain only whitespace, escaping them using repr()&#10;  - ''&#10;  + '\n'">tests/integration/api_exec_test.py:152: in test_exec_start_detached
+    assert response == ""
+E   AssertionError: assert '\n' == ''
+E     Strings contain only whitespace, escaping them using repr()
+E     - ''
+E     + '\n'</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_exec_start_socket" time="3.602"><failure message="AssertionError: assert 121 == 1&#10;  +121&#10;  -1">tests/integration/api_exec_test.py:134: in test_exec_start_socket
+    assert stream == 1  # stdout (0 = stdin, 1 = stdout, 2 = stderr)
+E   AssertionError: assert 121 == 1
+E     +121
+E     -1</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_execute_command" time="3.505" /><testcase classname="tests.integration.api_exec_test.ExecTest" name="test_execute_command_with_proxy_env" time="3.741" /><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_no_stream_demux" time="3.871" /><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_no_stream_no_demux" time="4.041" /><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_stream_demux" time="4.040" /><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_stream_no_demux" time="3.976" /><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_tty_no_stream_demux" time="3.458"><failure message="ValueError: 104 is not a valid stream">tests/integration/api_exec_test.py:299: in test_exec_command_tty_no_stream_demux
+    exec_log = self.client.exec_start(res, demux=True)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/exec_api.py:169: in exec_start
+    return self._read_from_socket(res, stream, tty=tty, demux=demux)
+docker/api/client.py:448: in _read_from_socket
+    return consume_socket_output(gen, demux=demux)
+docker/utils/socket.py:142: in consume_socket_output
+    for frame in frames:
+docker/api/client.py:439: in &lt;genexpr&gt;
+    gen = (demux_adaptor(*frame) for frame in gen)
+docker/utils/socket.py:169: in demux_adaptor
+    raise ValueError('{0} is not a valid stream'.format(stream_id))
+E   ValueError: 104 is not a valid stream</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_tty_no_stream_no_demux" time="3.938"><failure message="AssertionError: assert b't\r\nhello err\r\n' == b'hello out\r\nhello err\r\n'&#10;  At index 0 diff: b't' != b'h'&#10;  Full diff:&#10;  - b'hello out\r\nhello err\r\n'&#10;  ?   --------&#10;  + b't\r\nhello err\r\n'">tests/integration/api_exec_test.py:282: in test_exec_command_tty_no_stream_no_demux
+    assert exec_log == b'hello out\r\nhello err\r\n'
+E   AssertionError: assert b't\r\nhello err\r\n' == b'hello out\r\nhello err\r\n'
+E     At index 0 diff: b't' != b'h'
+E     Full diff:
+E     - b'hello out\r\nhello err\r\n'
+E     ?   --------
+E     + b't\r\nhello err\r\n'</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_tty_stream_demux" time="3.378"><failure message="ValueError: 104 is not a valid stream">tests/integration/api_exec_test.py:305: in test_exec_command_tty_stream_demux
+    exec_log = list(self.client.exec_start(res, demux=True, stream=True))
+docker/api/client.py:439: in &lt;genexpr&gt;
+    gen = (demux_adaptor(*frame) for frame in gen)
+docker/utils/socket.py:169: in demux_adaptor
+    raise ValueError('{0} is not a valid stream'.format(stream_id))
+E   ValueError: 104 is not a valid stream</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_exec_test.ExecDemuxTest" name="test_exec_command_tty_stream_no_demux" time="4.057"><failure message="AssertionError: assert b'hello out\r\n' in [b't\r\n', b'hello err\r\n']">tests/integration/api_exec_test.py:288: in test_exec_command_tty_stream_no_demux
+    assert b'hello out\r\n' in exec_log
+E   AssertionError: assert b'hello out\r\n' in [b't\r\n', b'hello err\r\n']</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_healthcheck_test.HealthcheckTest" name="test_healthcheck_fails" time="3.293"><failure message="KeyError: 'Health'">tests/integration/api_healthcheck_test.py:51: in test_healthcheck_fails
+    wait_on_health_status(self.client, container, "unhealthy")
+tests/integration/api_healthcheck_test.py:11: in wait_on_health_status
+    return helpers.wait_on_condition(condition)
+tests/helpers.py:82: in wait_on_condition
+    while not condition():
+tests/integration/api_healthcheck_test.py:10: in condition
+    return res['State']['Health']['Status'] == status
+E   KeyError: 'Health'</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_healthcheck_test.HealthcheckTest" name="test_healthcheck_passes" time="3.334"><failure message="KeyError: 'Health'">tests/integration/api_healthcheck_test.py:38: in test_healthcheck_passes
+    wait_on_health_status(self.client, container, "healthy")
+tests/integration/api_healthcheck_test.py:11: in wait_on_health_status
+    return helpers.wait_on_condition(condition)
+tests/helpers.py:82: in wait_on_condition
+    while not condition():
+tests/integration/api_healthcheck_test.py:10: in condition
+    return res['State']['Health']['Status'] == status
+E   KeyError: 'Health'</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_healthcheck_test.HealthcheckTest" name="test_healthcheck_shell_command" time="2.919"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error (&quot;fill out specgen: healthcheck-retries must be greater than 0&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_healthcheck_test.py:18: in test_healthcheck_shell_command
+    container = self.client.create_container(
+docker/api/container.py:430: in create_container
+    return self.create_container_from_config(config, name)
+docker/api/container.py:441: in create_container_from_config
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error ("fill out specgen: healthcheck-retries must be greater than 0")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_healthcheck_test.HealthcheckTest" name="test_healthcheck_start_period" time="3.305"><failure message="KeyError: 'Health'">tests/integration/api_healthcheck_test.py:68: in test_healthcheck_start_period
+    wait_on_health_status(self.client, container, "healthy")
+tests/integration/api_healthcheck_test.py:11: in wait_on_health_status
+    return helpers.wait_on_condition(condition)
+tests/helpers.py:82: in wait_on_condition
+    while not condition():
+tests/integration/api_healthcheck_test.py:10: in condition
+    return res['State']['Health']['Status'] == status
+E   KeyError: 'Health'</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.ListImagesTest" name="test_images" time="3.938" /><testcase classname="tests.integration.api_image_test.ListImagesTest" name="test_images_quiet" time="2.944" /><testcase classname="tests.integration.api_image_test.PullImageTest" name="test_pull" time="6.107" /><testcase classname="tests.integration.api_image_test.PullImageTest" name="test_pull_invalid_platform" time="7.368"><failure message="Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;">tests/integration/api_image_test.py:69: in test_pull_invalid_platform
+    self.client.pull('hello-world', platform='foobar')
+E   Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.PullImageTest" name="test_pull_streaming" time="5.986" /><testcase classname="tests.integration.api_image_test.CommitTest" name="test_commit" time="3.442"><failure message="AssertionError: assert 'alpine:3.10' == 'docker.io/li...y/alpine:3.10'&#10;  - docker.io/library/alpine:3.10&#10;  + alpine:3.10">tests/integration/api_image_test.py:92: in test_commit
+    assert TEST_IMG == img['ContainerConfig']['Image']
+E   AssertionError: assert 'alpine:3.10' == 'docker.io/li...y/alpine:3.10'
+E     - docker.io/library/alpine:3.10
+E     + alpine:3.10</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.CommitTest" name="test_commit_with_changes" time="3.223"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/commit?container=dd21db389169b38351d3d0ae37bfec84c94add36aad3deda5f3c5181cbc314de&amp;changes=EXPOSE+8000&amp;changes=CMD+%5B%22bash%22%5D: Internal Server Error (&quot;CommitFailure: invalid change &quot;CMD&quot; - must be formatted as KEY VALUE&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/commit?container=dd21db389169b38351d3d0ae37bfec84c94add36aad3deda5f3c5181cbc314de&amp;changes=EXPOSE+8000&amp;changes=CMD+%5B%22bash%22%5D
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_image_test.py:101: in test_commit_with_changes
+    img_id = self.client.commit(
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:147: in commit
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/commit?container=dd21db389169b38351d3d0ae37bfec84c94add36aad3deda5f3c5181cbc314de&amp;changes=EXPOSE+8000&amp;changes=CMD+%5B%22bash%22%5D: Internal Server Error ("CommitFailure: invalid change "CMD" - must be formatted as KEY VALUE")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.RemoveImageTest" name="test_remove" time="3.760" /><testcase classname="tests.integration.api_image_test.ImportImageTest" name="test_get_load_image" time="7.122"><failure message="AssertionError: assert False&#10; +  where False = any([])">tests/integration/api_image_test.py:266: in test_get_load_image
+    assert any([
+E   AssertionError: assert False
+E    +  where False = any([])</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.ImportImageTest" name="test_import_from_bytes" time="3.104" /><testcase classname="tests.integration.api_image_test.ImportImageTest" name="test_import_from_file" time="3.113" /><testcase classname="tests.integration.api_image_test.ImportImageTest" name="test_import_from_stream" time="3.104" /><testcase classname="tests.integration.api_image_test.ImportImageTest" name="test_import_from_url" time="0.000"><skipped type="pytest.skip" message="Doesn't work inside a container - FIXME">/home/riyad/src/docker-py/tests/integration/api_image_test.py:291: Doesn't work inside a container - FIXME</skipped><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.ImportImageTest" name="test_import_image_from_data_with_changes" time="3.027" /><testcase classname="tests.integration.api_image_test.ImportImageTest" name="test_import_image_with_changes" time="3.049" /><testcase classname="tests.integration.api_image_test.PruneImagesTest" name="test_prune_images" time="6.462"><failure message="AssertionError: assert 0 &gt; 0">tests/integration/api_image_test.py:332: in test_prune_images
+    assert result['SpaceReclaimed'] &gt; 0
+E   AssertionError: assert 0 &gt; 0</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.SaveLoadImagesTest" name="test_get_image_load_image" time="3.102"><failure message="AssertionError: assert False is True">tests/integration/api_image_test.py:360: in test_get_image_load_image
+    assert success is True
+E   AssertionError: assert False is True</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+{'stream': 'Loaded image: docker.io/library/alpine:3.10\n'}
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_image_test.InspectDistributionTest" name="test_inspect_distribution" time="2.894"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/distribution/busybox:latest/json: Not Found (&quot;Path /v1.40/distribution/busybox:latest/json is not supported&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/distribution/busybox:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_image_test.py:366: in test_inspect_distribution
+    data = self.client.inspect_distribution('busybox:latest')
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/image.py:289: in inspect_distribution
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/distribution/busybox:latest/json: Not Found ("Path /v1.40/distribution/busybox:latest/json is not supported")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_connect_and_disconnect_container" time="3.336"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/8d088e0c3005a20c609a8cb06f488a5e48bdfb92252f04e55fa552136faaf887/connect: Internal Server Error (&quot;network disconnect is not enabled for rootless containers&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/networks/8d088e0c3005a20c609a8cb06f488a5e48bdfb92252f04e55fa552136faaf887/connect
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:98: in test_connect_and_disconnect_container
+    self.client.connect_container_to_network(container, net_id)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/network.py:250: in connect_container_to_network
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/8d088e0c3005a20c609a8cb06f488a5e48bdfb92252f04e55fa552136faaf887/connect: Internal Server Error ("network disconnect is not enabled for rootless containers")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_connect_and_force_disconnect_container" time="3.379"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/dd96b9c431ecf6300b333293ea1ecb0026df7afa935493019786cc5a123412b4/connect: Internal Server Error (&quot;network disconnect is not enabled for rootless containers&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/networks/dd96b9c431ecf6300b333293ea1ecb0026df7afa935493019786cc5a123412b4/connect
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:125: in test_connect_and_force_disconnect_container
+    self.client.connect_container_to_network(container, net_id)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/network.py:250: in connect_container_to_network
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/dd96b9c431ecf6300b333293ea1ecb0026df7afa935493019786cc5a123412b4/connect: Internal Server Error ("network disconnect is not enabled for rootless containers")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_connect_on_container_create" time="16.203"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/d34609314253efebbaf8a90f9819b49ef0e0dfafb478b864edcd67f282dd327e/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/d34609314253efebbaf8a90f9819b49ef0e0dfafb478b864edcd67f282dd327e/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:165: in test_connect_on_container_create
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/d34609314253efebbaf8a90f9819b49ef0e0dfafb478b864edcd67f282dd327e/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_connect_with_aliases" time="3.349"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/b6e8cd1d438269d210d55d9b5a907d9e66c1714b8a1a3d901251995fae404e4c/connect: Internal Server Error (&quot;network disconnect is not enabled for rootless containers&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/networks/b6e8cd1d438269d210d55d9b5a907d9e66c1714b8a1a3d901251995fae404e4c/connect
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:147: in test_connect_with_aliases
+    self.client.connect_container_to_network(
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/network.py:250: in connect_container_to_network
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/b6e8cd1d438269d210d55d9b5a907d9e66c1714b8a1a3d901251995fae404e4c/connect: Internal Server Error ("network disconnect is not enabled for rootless containers")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_connect_with_ipv4_address" time="3.214"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/f92c9a8fe8f0b901b3e08e0ce260357aa68b4fcdd707fb384b633d2fd5a1914a/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/f92c9a8fe8f0b901b3e08e0ce260357aa68b4fcdd707fb384b633d2fd5a1914a/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:369: in test_connect_with_ipv4_address
+    container = self.create_and_start(
+tests/integration/base.py:124: in create_and_start
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/f92c9a8fe8f0b901b3e08e0ce260357aa68b4fcdd707fb384b633d2fd5a1914a/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_connect_with_ipv6_address" time="3.186"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/e6687f0f57ab3a46b3689c88d29169543ffefdf17e03d63054bc845492ccf234/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/e6687f0f57ab3a46b3689c88d29169543ffefdf17e03d63054bc845492ccf234/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:395: in test_connect_with_ipv6_address
+    container = self.create_and_start(
+tests/integration/base.py:124: in create_and_start
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/e6687f0f57ab3a46b3689c88d29169543ffefdf17e03d63054bc845492ccf234/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_connect_with_links" time="3.184"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/8ac1a6dc21d2d616b1f3527a5e151e4c98daf5a722dbfd8be989496aa428b3f6/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/8ac1a6dc21d2d616b1f3527a5e151e4c98daf5a722dbfd8be989496aa428b3f6/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:333: in test_connect_with_links
+    container = self.create_and_start(
+tests/integration/base.py:124: in create_and_start
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/8ac1a6dc21d2d616b1f3527a5e151e4c98daf5a722dbfd8be989496aa428b3f6/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_check_duplicate" time="2.933"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/create: Internal Server Error (&quot;the network name dockerpytest_cd7b10fe6567397f is already used&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/networks/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:326: in test_create_check_duplicate
+    net_id = self.client.create_network(net_name, check_duplicate=False)
+docker/api/network.py:153: in create_network
+    return self._result(res, json=True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/create: Internal Server Error ("the network name dockerpytest_cd7b10fe6567397f is already used")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_internal_networks" time="2.908" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_network_ipv6_enabled" time="2.916"><failure message="AssertionError: assert False is True">tests/integration/api_network_test.py:445: in test_create_network_ipv6_enabled
+    assert net['EnableIPv6'] is True
+E   AssertionError: assert False is True</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_network_with_host_driver_fails" time="2.918" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_network_with_ipam_config" time="2.945"><failure message="AssertionError: assert {} is None&#10; +  where {} = &lt;built-in method pop of dict object at 0x7fcfc87632c0&gt;('Options', None)&#10; +    where &lt;built-in method pop of dict object at 0x7fcfc87632c0&gt; = {'Config': [{'Gateway': '172.28.5.254', 'Subnet': '172.28.0.0/16'}], 'Driver': 'default'}.pop">tests/integration/api_network_test.py:62: in test_create_network_with_ipam_config
+    assert ipam.pop('Options', None) is None
+E   AssertionError: assert {} is None
+E    +  where {} = &lt;built-in method pop of dict object at 0x7fcfc87632c0&gt;('Options', None)
+E    +    where &lt;built-in method pop of dict object at 0x7fcfc87632c0&gt; = {'Config': [{'Gateway': '172.28.5.254', 'Subnet': '172.28.0.0/16'}], 'Driver': 'default'}.pop</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_network_with_labels" time="2.928" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_network_with_labels_wrong_type" time="2.926" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_remove_network_with_space_in_name" time="2.930" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_with_aliases" time="3.203"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/e26aa652404d32f146574a3bae9992c9c36f57e040c7f9cdbcee6f720238d143/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/e26aa652404d32f146574a3bae9992c9c36f57e040c7f9cdbcee6f720238d143/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:192: in test_create_with_aliases
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/e26aa652404d32f146574a3bae9992c9c36f57e040c7f9cdbcee6f720238d143/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_with_driveropt" time="2.930"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error (&quot;container create: unable to find network configuration for bridge: network not found&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:276: in test_create_with_driveropt
+    container = self.client.create_container(
+docker/api/container.py:430: in create_container
+    return self.create_container_from_config(config, name)
+docker/api/container.py:441: in create_container_from_config
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error ("container create: unable to find network configuration for bridge: network not found")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_with_ipv4_address" time="3.243"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/7ac5559e321f671e6c0cbfb618b0807b655cdd36ff8ede1e32a5d905b46c9242/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/7ac5559e321f671e6c0cbfb618b0807b655cdd36ff8ede1e32a5d905b46c9242/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:219: in test_create_with_ipv4_address
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/7ac5559e321f671e6c0cbfb618b0807b655cdd36ff8ede1e32a5d905b46c9242/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_with_ipv6_address" time="3.232"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/734e1241598f0f4c7953d0b8abd0c661519b8b55a4e95e40d4d997ed87369869/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/734e1241598f0f4c7953d0b8abd0c661519b8b55a4e95e40d4d997ed87369869/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:245: in test_create_with_ipv6_address
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/734e1241598f0f4c7953d0b8abd0c661519b8b55a4e95e40d4d997ed87369869/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_with_linklocal_ips" time="2.949"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error (&quot;container create: unable to find network configuration for bridge: network not found&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:255: in test_create_with_linklocal_ips
+    container = self.client.create_container(
+docker/api/container.py:430: in create_container
+    return self.create_container_from_config(config, name)
+docker/api/container.py:441: in create_container_from_config
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/create: Internal Server Error ("container create: unable to find network configuration for bridge: network not found")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_create_with_links" time="3.239"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/0646e5a72c37cc58c6d2270fb75e98b9fd91d79a3b0fa2f63ce7a88530514461/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/0646e5a72c37cc58c6d2270fb75e98b9fd91d79a3b0fa2f63ce7a88530514461/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_network_test.py:299: in test_create_with_links
+    container = self.create_and_start(
+tests/integration/base.py:124: in create_and_start
+    self.client.start(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/0646e5a72c37cc58c6d2270fb75e98b9fd91d79a3b0fa2f63ce7a88530514461/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_inspect_network" time="2.937" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_list_networks" time="2.953" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_prune_networks" time="2.911" /><testcase classname="tests.integration.api_network_test.TestNetworks" name="test_remove_network" time="2.911" /><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_configure_plugin" time="3.897"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:90: in test_configure_plugin
+    pl_data = self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_create_plugin" time="3.895"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/create?name=docker-sdk-py%2Fdummy: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/create?name=docker-sdk-py%2Fdummy
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:140: in test_create_plugin
+    assert self.client.create_plugin(
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:52: in create_plugin
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/create?name=docker-sdk-py%2Fdummy: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_disable_plugin" time="3.899"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:56: in test_disable_plugin
+    pl_data = self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_enable_plugin" time="3.888"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:47: in test_enable_plugin
+    pl_data = self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_force_remove_plugin" time="3.851"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:109: in test_force_remove_plugin
+    self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_inspect_plugin" time="3.909"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:68: in test_inspect_plugin
+    self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_install_plugin" time="3.924"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:120: in test_install_plugin
+    prv = self.client.plugin_privileges(SSHFS)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_list_plugins" time="3.890"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:83: in test_list_plugins
+    self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_plugin_privileges" time="3.888"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:75: in test_plugin_privileges
+    prv = self.client.plugin_privileges(SSHFS)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_remove_plugin" time="3.888"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:104: in test_remove_plugin
+    pl_data = self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_plugin_test.PluginTest" name="test_upgrade_plugin" time="4.856"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:39: in ensure_plugin_installed
+    return self.client.inspect_plugin(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:104: in inspect_plugin
+    return self._result(self._get(url), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/vieux/sshfs:latest/json: Not Found ("b'Not Found'")
+
+During handling of the above exception, another exception occurred:
+docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_plugin_test.py:128: in test_upgrade_plugin
+    pl_data = self.ensure_plugin_installed(SSHFS)
+tests/integration/api_plugin_test.py:41: in ensure_plugin_installed
+    prv = self.client.plugin_privileges(plugin_name)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/api/plugin.py:180: in plugin_privileges
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/plugins/privileges?remote=vieux%2Fsshfs%3Alatest: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_secret_test.SecretAPITest" name="test_create_secret" time="4.840" /><testcase classname="tests.integration.api_secret_test.SecretAPITest" name="test_create_secret_unicode_data" time="2.945" /><testcase classname="tests.integration.api_secret_test.SecretAPITest" name="test_inspect_secret" time="2.933" /><testcase classname="tests.integration.api_secret_test.SecretAPITest" name="test_list_secrets" time="2.938" /><testcase classname="tests.integration.api_secret_test.SecretAPITest" name="test_remove_secret" time="4.883" /><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_create_volume" time="2.931" /><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_create_volume_invalid_driver" time="2.931"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/volumes/create: Internal Server Error (&quot;volume perfectcherryblossom uses volume plugin invalid.driver but it could not be retrieved: no volume plugin with name invalid.driver available: required plugin missing&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/volumes/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/api_volume_test.py:22: in test_create_volume_invalid_driver
+    self.client.create_volume('perfectcherryblossom', driver_name)
+docker/api/volume.py:89: in create_volume
+    return self._result(self._post_json(url, data=data), True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/volumes/create: Internal Server Error ("volume perfectcherryblossom uses volume plugin invalid.driver but it could not be retrieved: no volume plugin with name invalid.driver available: required plugin missing")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_force_remove_volume" time="2.969" /><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_inspect_nonexistent_volume" time="2.912" /><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_inspect_volume" time="2.945"><failure message="AssertionError: assert {'CreatedAt':...l/_data', ...} == {'CreatedAt':...l/_data', ...}&#10;  Omitting 6 identical items, use -vv to show&#10;  Differing items:&#10;  {'Options': None} != {'Options': {}}&#10;  Full diff:&#10;    {&#10;     'CreatedAt': '2021-04-06T16:58:34+02:00',&#10;     'Driver': 'local',...&#10;  &#10;  ...Full output truncated (10 lines hidden), use '-vv' to show">tests/integration/api_volume_test.py:38: in test_inspect_volume
+    assert volume_info == result
+E   AssertionError: assert {'CreatedAt':...l/_data', ...} == {'CreatedAt':...l/_data', ...}
+E     Omitting 6 identical items, use -vv to show
+E     Differing items:
+E     {'Options': None} != {'Options': {}}
+E     Full diff:
+E       {
+E        'CreatedAt': '2021-04-06T16:58:34+02:00',
+E        'Driver': 'local',...
+E     
+E     ...Full output truncated (10 lines hidden), use '-vv' to show</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_list_volumes" time="2.983"><failure message="AssertionError: assert {'CreatedAt': '2021-04-06T16:58:37+02:00', 'Driver': 'local', 'Labels': {}, 'Mountpoint': '/home/riyad/podman/storage/volumes/imperishablenight/_data', ...} in [{'CreatedAt': '2021-04-06T16:48:54+02:00', 'Driver': 'local', 'Labels': {}, 'Mountpoint': '/home/riyad/podman/storage...00', 'Driver': 'local', 'Labels': {}, 'Mountpoint': '/home/riyad/podman/storage/volumes/imperishablenight/_data', ...}]">tests/integration/api_volume_test.py:31: in test_list_volumes
+    assert volume_info in volumes
+E   AssertionError: assert {'CreatedAt': '2021-04-06T16:58:37+02:00', 'Driver': 'local', 'Labels': {}, 'Mountpoint': '/home/riyad/podman/storage/volumes/imperishablenight/_data', ...} in [{'CreatedAt': '2021-04-06T16:48:54+02:00', 'Driver': 'local', 'Labels': {}, 'Mountpoint': '/home/riyad/podman/storage...00', 'Driver': 'local', 'Labels': {}, 'Mountpoint': '/home/riyad/podman/storage/volumes/imperishablenight/_data', ...}]</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_prune_volumes" time="2.943" /><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_remove_nonexistent_volume" time="2.932" /><testcase classname="tests.integration.api_volume_test.TestVolumes" name="test_remove_volume" time="2.935" /><testcase classname="tests.integration.client_test.ClientTest" name="test_df" time="1.455" /><testcase classname="tests.integration.client_test.ClientTest" name="test_info" time="0.961" /><testcase classname="tests.integration.client_test.ClientTest" name="test_ping" time="0.002" /><testcase classname="tests.integration.client_test.ClientTest" name="test_version" time="0.972" /><testcase classname="tests.integration.client_test.CancellableEventsTest" name="test_cancel_events" time="2.004" /><testcase classname="tests.integration.context_api_test.ContextLifecycleTest" name="test_context_remove" time="2.993" /><testcase classname="tests.integration.context_api_test.ContextLifecycleTest" name="test_lifecycle" time="2.940" /><testcase classname="tests.integration.context_api_test.ContextLifecycleTest" name="test_load_context_without_orchestrator" time="2.914" /><testcase classname="tests.integration.errors_test.ErrorsTest" name="test_api_error_parses_json" time="3.211"><failure message="AssertionError: assert 'You cannot remove a running container' in 'cannot remove container e5bb1d4c06319992cb037c03514b8a2e7cf359278b3fd744d98d7d9ae3d235c7 as it is running - running or paused containers cannot be removed without force: container state improper'">tests/integration/errors_test.py:13: in test_api_error_parses_json
+    assert 'You cannot remove a running container' in explanation
+E   AssertionError: assert 'You cannot remove a running container' in 'cannot remove container e5bb1d4c06319992cb037c03514b8a2e7cf359278b3fd744d98d7d9ae3d235c7 as it is running - running or paused containers cannot be removed without force: container state improper'</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_get" time="2.470"><failure message="AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'&#10;  - alpine&#10;  + docker.io/library/alpine:latest">tests/integration/models_containers_test.py:189: in test_get
+    assert client.containers.get(container.id).attrs[
+E   AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'
+E     - alpine
+E     + docker.io/library/alpine:latest</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_list" time="2.316"><failure message="AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'&#10;  - alpine&#10;  + docker.io/library/alpine:latest">tests/integration/models_containers_test.py:202: in test_list
+    assert container.attrs['Config']['Image'] == 'alpine'
+E   AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'
+E     - alpine
+E     + docker.io/library/alpine:latest</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_list_sparse" time="2.329"><failure message="AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'&#10;  - alpine&#10;  + docker.io/library/alpine:latest">tests/integration/models_containers_test.py:220: in test_list_sparse
+    assert container.attrs['Image'] == 'alpine'
+E   AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'
+E     - alpine
+E     + docker.io/library/alpine:latest</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run" time="2.487" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_detach" time="2.296"><failure message="AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'&#10;  - alpine&#10;  + docker.io/library/alpine:latest">tests/integration/models_containers_test.py:26: in test_run_detach
+    assert container.attrs['Config']['Image'] == "alpine"
+E   AssertionError: assert 'docker.io/li...alpine:latest' == 'alpine'
+E     - alpine
+E     + docker.io/library/alpine:latest</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_auto_remove" time="4.492" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_auto_remove_error" time="4.520"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/a16dd0bacbb14290867c16b45b80fa4057c33ceee1a9de86e7955c0b2b379992/json: Not Found (&quot;no container with name or ID &quot;a16dd0bacbb14290867c16b45b80fa4057c33ceee1a9de86e7955c0b2b379992&quot; found: no such container&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/containers/a16dd0bacbb14290867c16b45b80fa4057c33ceee1a9de86e7955c0b2b379992/json
+
+During handling of the above exception, another exception occurred:
+tests/integration/models_containers_test.py:139: in test_run_with_auto_remove_error
+    client.containers.run(
+docker/models/containers.py:827: in run
+    out = container.logs(
+docker/models/containers.py:306: in logs
+    return self.client.api.logs(self.id, **kwargs)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:871: in logs
+    output = self._get_result(container, stream, res)
+docker/api/client.py:484: in _get_result
+    return self._get_result_tty(stream, res, self._check_is_tty(container))
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/client.py:480: in _check_is_tty
+    cont = self.inspect_container(container)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:773: in inspect_container
+    return self._result(
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/a16dd0bacbb14290867c16b45b80fa4057c33ceee1a9de86e7955c0b2b379992/json: Not Found ("no container with name or ID "a16dd0bacbb14290867c16b45b80fa4057c33ceee1a9de86e7955c0b2b379992" found: no such container")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_error" time="2.518" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_image_that_does_not_exist" time="1.942"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/create: Not Found (&quot;unable to find a name and tag match for dockerpytest_does_not_exist in repotags: no such image&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/containers/create
+
+During handling of the above exception, another exception occurred:
+tests/integration/models_containers_test.py:41: in test_run_with_image_that_does_not_exist
+    client.containers.run("dockerpytest_does_not_exist")
+docker/models/containers.py:811: in run
+    container = self.create(image=image, command=command,
+docker/models/containers.py:870: in create
+    resp = self.client.api.create_container(**create_kwargs)
+docker/api/container.py:430: in create_container
+    return self.create_container_from_config(config, name)
+docker/api/container.py:441: in create_container_from_config
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/create: Not Found ("unable to find a name and tag match for dockerpytest_does_not_exist in repotags: no such image")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_json_file_driver" time="2.486" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_named_volume" time="2.818" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_network" time="2.161"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/1f2cca263b1c809c0471ed4f13f192ebe6eb43d3051caca93bb59e269f9bbd61/start: Internal Server Error (&quot;container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting &quot;/home/riyad/.config/cni/net.d&quot; to rootfs at &quot;/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d&quot; caused: operation not permitted: OCI permission denied&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/containers/1f2cca263b1c809c0471ed4f13f192ebe6eb43d3051caca93bb59e269f9bbd61/start
+
+During handling of the above exception, another exception occurred:
+tests/integration/models_containers_test.py:95: in test_run_with_network
+    container = client.containers.run(
+docker/models/containers.py:818: in run
+    container.start()
+docker/models/containers.py:404: in start
+    return self.client.api.start(self.id, **kwargs)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1111: in start
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/containers/1f2cca263b1c809c0471ed4f13f192ebe6eb43d3051caca93bb59e269f9bbd61/start: Internal Server Error ("container_linux.go:367: starting container process caused: process_linux.go:495: container init caused: rootfs_linux.go:60: mounting "/home/riyad/.config/cni/net.d" to rootfs at "/home/riyad/podman/storage/overlay/8c704149f711377a9df8478ad442f426c21e0d383f5dc15c044f87ddfb27829b/merged/etc/cni/net.d" caused: operation not permitted: OCI permission denied")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_none_driver" time="2.148" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_proxy_config" time="2.392" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_streamed_logs" time="2.499" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_streamed_logs_and_cancel" time="2.525" /><testcase classname="tests.integration.models_containers_test.ContainerCollectionTest" name="test_run_with_volume" time="2.941" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_commit" time="3.736" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_create_with_volume_driver" time="2.027"><failure message="AssertionError: assert '' == 'foo'&#10;  - foo">tests/integration/models_containers_test.py:456: in test_create_with_volume_driver
+    assert container.attrs['HostConfig']['VolumeDriver'] == 'foo'
+E   AssertionError: assert '' == 'foo'
+E     - foo</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_diff" time="2.407"><failure message="AssertionError: assert [{'Kind': 0, ...th': '/test'}] == [{'Kind': 1, 'Path': '/test'}]&#10;  At index 0 diff: {'Path': '/etc', 'Kind': 0} != {'Path': '/test', 'Kind': 1}&#10;  Left contains one more item: {'Kind': 1, 'Path': '/test'}&#10;  Full diff:&#10;  - [{'Kind': 1, 'Path': '/test'}]&#10;  + [{'Kind': 0, 'Path': '/etc'}, {'Kind': 1, 'Path': '/test'}]">tests/integration/models_containers_test.py:251: in test_diff
+    assert container.diff() == [{'Path': '/test', 'Kind': 1}]
+E   AssertionError: assert [{'Kind': 0, ...th': '/test'}] == [{'Kind': 1, 'Path': '/test'}]
+E     At index 0 diff: {'Path': '/etc', 'Kind': 0} != {'Path': '/test', 'Kind': 1}
+E     Left contains one more item: {'Kind': 1, 'Path': '/test'}
+E     Full diff:
+E     - [{'Kind': 1, 'Path': '/test'}]
+E     + [{'Kind': 0, 'Path': '/etc'}, {'Kind': 1, 'Path': '/test'}]</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_exec_run_failed" time="2.493"><failure message="AssertionError: assert 127 == 126&#10;  +127&#10;  -126">tests/integration/models_containers_test.py:270: in test_exec_run_failed
+    assert exec_output[0] == 126
+E   AssertionError: assert 127 == 126
+E     +127
+E     -126</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_exec_run_success" time="2.599" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_kill" time="2.274"><failure message="AssertionError: assert 'stopped' == 'exited'&#10;  - exited&#10;  + stopped">tests/integration/models_containers_test.py:281: in test_kill
+    assert container.status == 'exited'
+E   AssertionError: assert 'stopped' == 'exited'
+E     - exited
+E     + stopped</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_logs" time="2.263" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_pause" time="2.458" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_ports_target_list" time="2.419" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_ports_target_none" time="2.375" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_ports_target_tuple" time="2.441" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_remove" time="2.344" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_rename" time="2.290" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_restart" time="12.603" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_start" time="2.354" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_stats" time="2.300" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_stop" time="2.389" /><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_top" time="2.472"><failure message="AssertionError: assert 'sleep 60' in ['1 root      0:00 sleep 60']">tests/integration/models_containers_test.py:425: in test_top
+    assert 'sleep 60' in top['Processes'][0]
+E   AssertionError: assert 'sleep 60' in ['1 root      0:00 sleep 60']</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_update" time="2.392"><failure message="docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/b5f23112e13b75a1869d3f1b9dd885d3b3011934e809f9239208c8a472d02b7c/update: Not Found (&quot;b'Not Found'&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http+docker://localhost/v1.40/containers/b5f23112e13b75a1869d3f1b9dd885d3b3011934e809f9239208c8a472d02b7c/update
+
+During handling of the above exception, another exception occurred:
+tests/integration/models_containers_test.py:433: in test_update
+    container.update(cpu_shares=3)
+docker/models/containers.py:489: in update
+    return self.client.api.update_container(self.id, **kwargs)
+docker/utils/decorators.py:34: in wrapper
+    return f(self, *args, **kwargs)
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/container.py:1270: in update_container
+    return self._result(res, True)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.NotFound: 404 Client Error for http+docker://localhost/v1.40/containers/b5f23112e13b75a1869d3f1b9dd885d3b3011934e809f9239208c8a472d02b7c/update: Not Found ("b'Not Found'")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_containers_test.ContainerTest" name="test_wait" time="2.584" /><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_build" time="3.255" /><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_build_with_error" time="2.326"><failure message="AssertionError: assert &quot;The command '/bin/sh -c exit 1' returned a non-zero code: 1&quot; in 'docker.errors.BuildError: error building at STEP &quot;RUN exit 1&quot;: error while running runtime: exit status 1'&#10; +  where 'docker.errors.BuildError: error building at STEP &quot;RUN exit 1&quot;: error while running runtime: exit status 1' = &lt;bound method ExceptionInfo.exconly of &lt;ExceptionInfo BuildError('error building at STEP &quot;RUN exit 1&quot;: error while running runtime: exit status 1\n') tblen=2&gt;&gt;()&#10; +    where &lt;bound method ExceptionInfo.exconly of &lt;ExceptionInfo BuildError('error building at STEP &quot;RUN exit 1&quot;: error while running runtime: exit status 1\n') tblen=2&gt;&gt; = &lt;ExceptionInfo BuildError('error building at STEP &quot;RUN exit 1&quot;: error while running runtime: exit status 1\n') tblen=2&gt;.exconly">tests/integration/models_images_test.py:30: in test_build_with_error
+    assert (
+E   AssertionError: assert "The command '/bin/sh -c exit 1' returned a non-zero code: 1" in 'docker.errors.BuildError: error building at STEP "RUN exit 1": error while running runtime: exit status 1'
+E    +  where 'docker.errors.BuildError: error building at STEP "RUN exit 1": error while running runtime: exit status 1' = &lt;bound method ExceptionInfo.exconly of &lt;ExceptionInfo BuildError('error building at STEP "RUN exit 1": error while running runtime: exit status 1\n') tblen=2&gt;&gt;()
+E    +    where &lt;bound method ExceptionInfo.exconly of &lt;ExceptionInfo BuildError('error building at STEP "RUN exit 1": error while running runtime: exit status 1\n') tblen=2&gt;&gt; = &lt;ExceptionInfo BuildError('error building at STEP "RUN exit 1": error while running runtime: exit status 1\n') tblen=2&gt;.exconly</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_build_with_multiple_success" time="3.515" /><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_build_with_success_build_output" time="3.080" /><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_list" time="5.639" /><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_list_with_repository" time="4.997" /><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_load_error" time="1.948"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/images/load: Internal Server Error (&quot;failed to load image: error pulling image: payload does not match any of the supported image formats (oci-archive, oci-dir, docker-archive, docker-dir)&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/images/load
+
+During handling of the above exception, another exception occurred:
+tests/integration/models_images_test.py:98: in test_load_error
+    client.images.load('abc')
+docker/models/images.py:384: in load
+    for chunk in resp:
+docker/api/client.py:387: in _stream_helper
+    yield self._result(response, json=decode)
+docker/api/client.py:302: in _result
+    self._raise_for_status(response)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/images/load: Internal Server Error ("failed to load image: error pulling image: payload does not match any of the supported image formats (oci-archive, oci-dir, docker-archive, docker-dir)")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_pull" time="4.982"><failure message="AssertionError: assert 'alpine:latest' in ['docker.io/library/alpine:latest']">tests/integration/models_images_test.py:71: in test_pull
+    assert 'alpine:latest' in image.attrs['RepoTags']
+E   AssertionError: assert 'alpine:latest' in ['docker.io/library/alpine:latest']</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_pull_multiple" time="5.177"><failure message="AssertionError: assert False&#10; +  where False = any([False])">tests/integration/models_images_test.py:91: in test_pull_multiple
+    assert any([
+E   AssertionError: assert False
+E    +  where False = any([False])</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_pull_with_sha" time="5.052"><failure message="AssertionError: assert 'hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7' in ['docker.io/library/hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7', 'docker.io/library/hello-world@sha256:8072a54ebb3bc136150e2f2860f00a7bf45f13eeb917cca2430fcd0054c8e51b']">tests/integration/models_images_test.py:85: in test_pull_with_sha
+    assert image_ref in image.attrs['RepoDigests']
+E   AssertionError: assert 'hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7' in ['docker.io/library/hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7', 'docker.io/library/hello-world@sha256:8072a54ebb3bc136150e2f2860f00a7bf45f13eeb917cca2430fcd0054c8e51b']</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_pull_with_tag" time="6.199"><failure message="AssertionError: assert 'alpine:3.10' in ['docker.io/library/alpine:3.10']">tests/integration/models_images_test.py:76: in test_pull_with_tag
+    assert 'alpine:3.10' in image.attrs['RepoTags']
+E   AssertionError: assert 'alpine:3.10' in ['docker.io/library/alpine:3.10']</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_save_and_load" time="2.113" /><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_save_and_load_repo_name" time="1.993"><failure message="docker.errors.InvalidArgument: dockerpytest_ff0fb1210182e92a:latest is not a valid tag for this image">tests/integration/models_images_test.py:122: in test_save_and_load_repo_name
+    stream = image.save(named='{}:latest'.format(additional_tag))
+docker/models/images.py:98: in save
+    raise InvalidArgument(
+E   docker.errors.InvalidArgument: dockerpytest_ff0fb1210182e92a:latest is not a valid tag for this image</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_images_test.ImageCollectionTest" name="test_save_name_error" time="1.957" /><testcase classname="tests.integration.models_images_test.ImageTest" name="test_tag_and_remove" time="4.719" /><testcase classname="tests.integration.models_networks_test.NetworkCollectionTest" name="test_create" time="1.982" /><testcase classname="tests.integration.models_networks_test.NetworkCollectionTest" name="test_get" time="1.968" /><testcase classname="tests.integration.models_networks_test.NetworkCollectionTest" name="test_list_remove" time="2.033" /><testcase classname="tests.integration.models_networks_test.NetworkTest" name="test_connect_disconnect" time="2.112"><failure message="docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/626043d0762020a48a222a6a7a5fbd3d67fe8fb309f5f8296b2aa06363dec595/connect: Internal Server Error (&quot;network disconnect is not enabled for rootless containers&quot;)">docker/api/client.py:296: in _raise_for_status
+    response.raise_for_status()
+../../.virtualenvs/docker-py/lib/python3.8/site-packages/requests/models.py:943: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http+docker://localhost/v1.40/networks/626043d0762020a48a222a6a7a5fbd3d67fe8fb309f5f8296b2aa06363dec595/connect
+
+During handling of the above exception, another exception occurred:
+tests/integration/models_networks_test.py:59: in test_connect_disconnect
+    network.connect(container)
+docker/models/networks.py:58: in connect
+    return self.client.api.connect_container_to_network(
+docker/utils/decorators.py:19: in wrapped
+    return f(self, resource_id, *args, **kwargs)
+docker/api/network.py:250: in connect_container_to_network
+    self._raise_for_status(res)
+docker/api/client.py:298: in _raise_for_status
+    raise create_api_error_from_http_exception(e)
+docker/errors.py:31: in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation)
+E   docker.errors.APIError: 500 Server Error for http+docker://localhost/v1.40/networks/626043d0762020a48a222a6a7a5fbd3d67fe8fb309f5f8296b2aa06363dec595/connect: Internal Server Error ("network disconnect is not enabled for rootless containers")</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.models_resources_test.ModelTest" name="test_reload" time="2.680" /><testcase classname="tests.integration.models_volumes_test.VolumesTest" name="test_create_get" time="1.974" /><testcase classname="tests.integration.models_volumes_test.VolumesTest" name="test_list_remove" time="1.961"><failure message="AssertionError: assert &lt;Volume: dockerpyte&gt; in []&#10; +  where [] = &lt;bound method VolumeCollection.list of &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt;&gt;(filters={'name': 'dockerpytest_'})&#10; +    where &lt;bound method VolumeCollection.list of &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt;&gt; = &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt;.list&#10; +      where &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt; = &lt;docker.client.DockerClient object at 0x7fcfc863b6d0&gt;.volumes">tests/integration/models_volumes_test.py:26: in test_list_remove
+    assert volume in client.volumes.list(filters={'name': 'dockerpytest_'})
+E   AssertionError: assert &lt;Volume: dockerpyte&gt; in []
+E    +  where [] = &lt;bound method VolumeCollection.list of &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt;&gt;(filters={'name': 'dockerpytest_'})
+E    +    where &lt;bound method VolumeCollection.list of &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt;&gt; = &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt;.list
+E    +      where &lt;docker.models.volumes.VolumeCollection object at 0x7fcfc84efeb0&gt; = &lt;docker.client.DockerClient object at 0x7fcfc863b6d0&gt;.volumes</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.regression_test.TestRegressions" name="test_443_handle_nonchunked_response_in_stream" time="2.913"><failure message="Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;">tests/integration/regression_test.py:16: in test_443_handle_nonchunked_response_in_stream
+    pass
+E   Failed: DID NOT RAISE &lt;class 'docker.errors.APIError'&gt;</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="tests.integration.regression_test.TestRegressions" name="test_542_truncate_ids_client_side" time="3.197" /><testcase classname="tests.integration.regression_test.TestRegressions" name="test_647_support_doubleslash_in_image_names" time="2.945" /><testcase classname="tests.integration.regression_test.TestRegressions" name="test_649_handle_timeout_value_none" time="3.268" /><testcase classname="tests.integration.regression_test.TestRegressions" name="test_715_handle_user_param_as_int_value" time="3.168" /><testcase classname="tests.integration.regression_test.TestRegressions" name="test_792_explicit_port_protocol" time="3.457" /><testcase classname="tests.integration.credentials.utils_test" name="test_create_environment_dict" time="0.010" /></testsuite></testsuites>

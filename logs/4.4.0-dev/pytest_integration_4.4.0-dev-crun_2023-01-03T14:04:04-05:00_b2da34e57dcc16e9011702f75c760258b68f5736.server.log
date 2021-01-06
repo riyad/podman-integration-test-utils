@@ -1,0 +1,174 @@
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Realtime period not supported on cgroups V2 systems
+Realtime runtime not supported on cgroups V2 systems
+time="2023-01-12T19:30:44+01:00" level=error msg="passing bulk input to subprocess: write |1: broken pipe"
+time="2023-01-12T19:32:39+01:00" level=error msg="While waiting on condition: \"cancelled by user\""
+time="2023-01-12T19:36:08+01:00" level=warning msg="StopSignal SIGTERM failed to stop container wonderful_curie in 2 seconds, resorting to SIGKILL"
+time="2023-01-12T19:36:31+01:00" level=warning msg="StopSignal SIGTERM failed to stop container xenodochial_mendeleev in 2 seconds, resorting to SIGKILL"
+time="2023-01-12T19:38:44+01:00" level=warning msg="StopSignal SIGTERM failed to stop container intelligent_sutherland in 2 seconds, resorting to SIGKILL"
+time="2023-01-12T19:38:56+01:00" level=warning msg="StopSignal SIGTERM failed to stop container crazy_swanson in 2 seconds, resorting to SIGKILL"
+time="2023-01-12T19:39:07+01:00" level=warning msg="StopSignal SIGTERM failed to stop container vibrant_dewdney in 1 seconds, resorting to SIGKILL"
+time="2023-01-12T19:39:09+01:00" level=warning msg="StopSignal SIGTERM failed to stop container vibrant_dewdney in 1 seconds, resorting to SIGKILL"
+time="2023-01-12T19:39:57+01:00" level=error msg="Error attaching to container 007811af9b49e5a168a1ac2f346b90001507f4c144fefd93fa2dcaa1b2ace59b: detached from container"
+time="2023-01-12T19:40:06+01:00" level=error msg="Error attaching to container ea3463fcdeaf228491ef82209935fcf4095055fa2dfa5e7dc29e819761bc2828: detached from container"
+time="2023-01-12T19:40:16+01:00" level=error msg="Error attaching to container 31d5d0359aaac8ba0d11fa2644068bcffd0f452e8ed7d7d395b086d0a761c1aa: detached from container"
+time="2023-01-12T19:42:10+01:00" level=error msg="Container eefc5a77a0c9bcd76e18b5e08cbc4241259d698405f8721962398d8e5224936c exec session 0a736ecc8b88c51cd06308879145c6b76dfa874957dca7637ce64f6668e5c999 error: detached from container"
+time="2023-01-12T19:42:10+01:00" level=error msg="attaching to container eefc5a77a0c9bcd76e18b5e08cbc4241259d698405f8721962398d8e5224936c exec session 0a736ecc8b88c51cd06308879145c6b76dfa874957dca7637ce64f6668e5c999: timed out waiting for file /home/riyad/podman/storage/overlay-containers/eefc5a77a0c9bcd76e18b5e08cbc4241259d698405f8721962398d8e5224936c/userdata/0a736ecc8b88c51cd06308879145c6b76dfa874957dca7637ce64f6668e5c999/exit/eefc5a77a0c9bcd76e18b5e08cbc4241259d698405f8721962398d8e5224936c: internal libpod error"
+time="2023-01-12T19:42:25+01:00" level=error msg="Container b23bd3f7b5610eca0c716c3eddc31a94d338e6ecf00297d6914cd682d58a6853 exec session e76e36c8dfbf5ae7077aa717a0f64f86d1a26941a9c915dda5a2066fce5c7c8a error: detached from container"
+time="2023-01-12T19:42:25+01:00" level=error msg="attaching to container b23bd3f7b5610eca0c716c3eddc31a94d338e6ecf00297d6914cd682d58a6853 exec session e76e36c8dfbf5ae7077aa717a0f64f86d1a26941a9c915dda5a2066fce5c7c8a: timed out waiting for file /home/riyad/podman/storage/overlay-containers/b23bd3f7b5610eca0c716c3eddc31a94d338e6ecf00297d6914cd682d58a6853/userdata/e76e36c8dfbf5ae7077aa717a0f64f86d1a26941a9c915dda5a2066fce5c7c8a/exit/b23bd3f7b5610eca0c716c3eddc31a94d338e6ecf00297d6914cd682d58a6853: internal libpod error"
+time="2023-01-12T19:44:52+01:00" level=error msg="attaching to container 92185304c1f13267e0c0c2f935a1d294d6e30f62ada92c9b510cb690fe50e5f7 exec session 48184601e89f88b3484ba2d58bdfad8d447ebf87043f720b738ae5b48fee5d01: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2023-01-12T19:44:52+01:00" level=error msg="Writing error to container 92185304c1f13267e0c0c2f935a1d294d6e30f62ada92c9b510cb690fe50e5f7 HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2023-01-12T19:44:52+01:00" level=error msg="Flushing HTTP buffer for container 92185304c1f13267e0c0c2f935a1d294d6e30f62ada92c9b510cb690fe50e5f7 HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:70380225a3dee602a9608b5f974012e1def1cdeaa0ad81a2a94822002003542a
+Copying config sha256:1a525a6e473753e9f86d696b26c4bc9a7d0610b8ae656432d3af2a39dc492e25
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:1c740b89bef57991748552cdf4ec1fb450654d1350e5156cabf5a8301ce9eb35
+Copying config sha256:23be6a44fe4563af967c80a5948f794a4185c0d58c41003cc10541dd0fa1b185
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:54396bb4692c60f3322dad864677921af63e9d3acf9cd14888690babae98d4ff
+Copying config sha256:9b94257f27c32685b294b00ef16e9f9588a3dbf96044c33049c6af66ed8a7ff8
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Copying blob sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:b1acea7fe67bb66c3a24fd066f535b98d52a9346c6dd3bc21926946706fa3625
+Copying config sha256:e87d59393fd2aa9a65e616d25d6954cbb959bddcb3d08270408ff857334d0c6f
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:212bf0dcd3a1492719fb02ddbefffcffe326240dda6828bd4c0a78773e785839
+Copying config sha256:598e90d22ea83d33551b6552bb270acfb571d93d890784396b55f83dfe68ac86
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:010328ebb7f79192e506355d4e1d319d53a9e1da93974cd8c209cec37c17ccfc
+Copying config sha256:8530e8cfd70a9625509940135d5f6b8cf1467f74013c9ee068b6faea3697c3c1
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:e2ff48eb2d38cea30f56cad283a24387da27966e6f3ce660bbed83a49c995962
+Copying config sha256:1e0a74c8039aba4754bbfab9d3be8eb4a594b7a715be98b62af5217dbe91a654
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:f78a75fbc8589391c0b2f850de919490f1614da4d84257ead056e3c969b72f14
+Copying config sha256:7eb77070c792ed1468de00b08ff253cd30fee4549b92ddeb5bd217af4c1345dd
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2023-01-12T19:54:50+01:00" level=warning msg="Recovering from API service endpoint handler panic: runtime error: invalid memory address or nil pointer dereference, goroutine 29669 [running]:\ngithub.com/containers/podman/v4/pkg/api/server.panicHandler.func1.1.1()\n\t/home/riyad/src/podman/pkg/api/server/handler_panic.go:22 +0x85\npanic({0x15a99e0, 0x24062b0})\n\t/usr/lib/go-1.19/src/runtime/panic.go:884 +0x212\ngithub.com/containers/common/libimage.(*Runtime).DiskUsage(0xa?, {0x1a66080, 0xc0011aec60})\n\t/home/riyad/src/podman/vendor/github.com/containers/common/libimage/disk_usage.go:65 +0x578\ngithub.com/containers/podman/v4/pkg/domain/infra/abi.(*ContainerEngine).SystemDf(0xc000648ee0, {0x1a66080?, 0xc0011aec60?}, {{0x2000?, 0x0?}, 0x0?})\n\t/home/riyad/src/podman/pkg/domain/infra/abi/system.go:268 +0x53\ngithub.com/containers/podman/v4/pkg/api/handlers/compat.GetDiskUsage({0x1a65a20, 0xc0005e2300}, 0xc00013cc00)\n\t/home/riyad/src/podman/pkg/api/handlers/compat/system.go:20 +0xd6\ngithub.com/containers/podman/v4/pkg/api/server.(*APIServer).apiWrapper(0xc00025d1e0, 0x1866ef8, {0x1a65a20, 0xc0005e2300}, 0xc00013cc00, 0x0)\n\t/home/riyad/src/podman/pkg/api/server/handler_api.go:62 +0xace\ngithub.com/containers/podman/v4/pkg/api/server.(*APIServer).APIHandler.func1({0x1a65a20?, 0xc0005e2300?}, 0xc000b22b00?)\n\t/home/riyad/src/podman/pkg/api/server/handler_api.go:24 +0x3d\nnet/http.HandlerFunc.ServeHTTP(0x169a040?, {0x1a65a20?, 0xc0005e2300?}, 0xe?)\n\t/usr/lib/go-1.19/src/net/http/server.go:2109 +0x2f\ngithub.com/containers/podman/v4/pkg/api/server.referenceIDHandler.func1.1({0x1a65a20, 0xc0005e2300}, 0xc00013cc00)\n\t/home/riyad/src/podman/pkg/api/server/handler_rid.go:38 +0x357\nnet/http.HandlerFunc.ServeHTTP(0x1a643d0?, {0x1a65a20?, 0xc0005e2300?}, 0x41a33f?)\n\t/usr/lib/go-1.19/src/net/http/server.go:2109 +0x2f\ngithub.com/gorilla/handlers.loggingHandler.ServeHTTP({{0x1a5dda0, 0x24fe480}, {0x1a5dea0, 0xc000957530}, 0x1867e18}, {0x1a643d0, 0xc001c77420}, 0xc00013cc00)\n\t/home/riyad/src/podman/vendor/github.com/gorilla/handlers/logging.go:47 +0xef\ngithub.com/containers/podman/v4/pkg/api/server.panicHandler.func1.1({0x1a643d0?, 0xc001c77420?}, 0xc0011aec60?)\n\t/home/riyad/src/podman/pkg/api/server/handler_panic.go:29 +0x82\nnet/http.HandlerFunc.ServeHTTP(0xc00013cb00?, {0x1a643d0?, 0xc001c77420?}, 0xc00157e9e0?)\n\t/usr/lib/go-1.19/src/net/http/server.go:2109 +0x2f\ngithub.com/gorilla/mux.(*Router).ServeHTTP(0xc000414180, {0x1a643d0, 0xc001c77420}, 0xc00013ca00)\n\t/home/riyad/src/podman/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf\nnet/http.serverHandler.ServeHTTP({0xc0011ae690?}, {0x1a643d0, 0xc001c77420}, 0xc00013ca00)\n\t/usr/lib/go-1.19/src/net/http/server.go:2947 +0x30c\nnet/http.(*conn).serve(0xc001b186e0, {0x1a66080, 0xc0011ae5d0})\n\t/usr/lib/go-1.19/src/net/http/server.go:1991 +0x607\ncreated by net/http.(*Server).Serve\n\t/usr/lib/go-1.19/src/net/http/server.go:3102 +0x4db\n\ngoroutine 1 [chan receive, 38 minutes]:\ngithub.com/containers/podman/v4/pkg/api/server.(*APIServer).Serve(0xc00025d1e0)\n\t/home/riyad/src/podman/pkg/api/server/server.go:222 +0x185\ngithub.com/containers/podman/v4/cmd/podman/system.restService(0x5f?, 0x7f?, {{0x0, 0x0}, {0x0, 0x0}, 0x0, {0x7fffbd4f2c22, 0x2f}})\n\t/home/riyad/src/podman/cmd/podman/system/service_abi.go:127 +0x7f5\ngithub.com/containers/podman/v4/cmd/podman/system.service(0x243ca00?, {0xc0000adbc0?, 0x1?, 0x3?})\n\t/home/riyad/src/podman/cmd/podman/system/service.go:103 +0x26a\ngithub.com/spf13/cobra.(*Command).execute(0x243ca00, {0xc000040210, 0x3, 0x3})\n\t/home/riyad/src/podman/vendor/github.com/spf13/cobra/command.go:916 +0x862\ngithub.com/spf13/cobra.(*Command).ExecuteC(0x24414c0)\n\t/home/riyad/src/podman/vendor/github.com/spf13/cobra/command.go:1044 +0x3bd\ngithub.com/spf13/cobra.(*Command).Execute(...)\n\t/home/riyad/src/podman/vendor/github.com/spf13/cobra/command.go:968\ngithub.com/spf13/cobra.(*Command).ExecuteContext(...)\n\t/home/riyad/src/podman/vendor/github.com/spf13/cobra/command.go:961\nmain.Execute()\n\t/home/riyad/src/podman/cmd/podman/root.go:107 +0xc5\nmain.main()\n\t/home/riyad/src/podman/cmd/podman/main.go:40 +0x7c\n\ngoroutine 10 [syscall]:\nos/signal.signal_recv()\n\t/usr/lib/go-1.19/src/runtime/sigqueue.go:152 +0x2f\nos/signal.loop()\n\t/usr/lib/go-1.19/src/os/signal/signal_unix.go:23 +0x19\ncreated by os/signal.Notify.func1.1\n\t/usr/lib/go-1.19/src/os/signal/signal.go:151 +0x2a\n\ngoroutine 11 [select, 38 minutes]:\ngithub.com/containers/podman/v4/libpod/shutdown.Start.func1()\n\t/home/riyad/src/podman/libpod/shutdown/handler.go:47 +0x93\ncreated by github.com/containers/podman/v4/libpod/shutdown.Start\n\t/home/riyad/src/podman/libpod/shutdown/handler.go:46 +0xe7\n\ngoroutine 12 [chan receive, 38 minutes]:\ngithub.com/godbus/dbus/v5.newConn.func1()\n\t/home/riyad/src/podman/vendor/github.com/godbus/dbus/v5/conn.go:302 +0x32\ncreated by github.com/godbus/dbus/v5.newConn\n\t/home/riyad/src/podman/vendor/github.com/godbus/dbus/v5/conn.go:301 +0x4f6\n\ngoroutine 13 [IO wait, 38 minutes]:\ninternal/poll.runtime_pollWait(0x7f1c1c6ac3d8, 0x72)\n\t/usr/lib/go-1.19/src/runtime/netpoll.go:305 +0x89\ninternal/poll.(*pollDesc).wait(0xc0003e2180?, 0xc0005b0790?, 0x0)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:84 +0x32\ninternal/poll.(*pollDesc).waitRead(...)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:89\ninternal/poll.(*FD).ReadMsg(0xc0003e2180, {0xc0005b0790, 0x10, 0x10}, {0xc00045c020, 0x1000, 0x1000}, 0x1?)\n\t/usr/lib/go-1.19/src/internal/poll/fd_unix.go:304 +0x31c\nnet.(*netFD).readMsg(0xc0003e2180, {0xc0005b0790?, 0xc0005664d8?, 0xc000050640?}, {0xc00045c020?, 0xc0005b05ce?, 0xc0005b05c8?}, 0xc0005b05c4?)\n\t/usr/lib/go-1.19/src/net/fd_posix.go:78 +0x37\nnet.(*UnixConn).readMsg(0xc000014050, {0xc0005b0790?, 0xc0005c8d90?, 0x1a5bea0?}, {0xc00045c020?, 0x1a6c200?, 0x24feac0?})\n\t/usr/lib/go-1.19/src/net/unixsock_posix.go:115 +0x4f\nnet.(*UnixConn).ReadMsgUnix(0xc000014050, {0xc0005b0790?, 0xc000031db8?, 0x41a33f?}, {0xc00045c020?, 0x53738b?, 0x1a6c200?})\n\t/usr/lib/go-1.19/src/net/unixsock.go:143 +0x3c\ngithub.com/godbus/dbus/v5.(*oobReader).Read(0xc00045c000, {0xc0005b0790?, 0xc000031de0?, 0x41a687?})\n\t/home/riyad/src/podman/vendor/github.com/godbus/dbus/v5/transport_unix.go:22 +0x45\nio.ReadAtLeast({0x1a59500, 0xc00045c000}, {0xc0005b0790, 0x10, 0x10}, 0x10)\n\t/usr/lib/go-1.19/src/io/io.go:332 +0x9a\nio.ReadFull(...)\n\t/usr/lib/go-1.19/src/io/io.go:351\ngithub.com/godbus/dbus/v5.(*unixTransport).ReadMessage(0xc000012378)\n\t/home/riyad/src/podman/vendor/github.com/godbus/dbus/v5/transport_unix.go:92 +0x11e\ngithub.com/godbus/dbus/v5.(*Conn).inWorker(0xc000560000)\n\t/home/riyad/src/podman/vendor/github.com/godbus/dbus/v5/conn.go:389 +0x48\ncreated by github.com/godbus/dbus/v5.(*Conn).Auth\n\t/home/riyad/src/podman/vendor/github.com/godbus/dbus/v5/auth.go:118 +0x98e\n\ngoroutine 15796 [chan send, 14 minutes]:\ngithub.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach.func5()\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:675 +0x1a7\ncreated by github.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:658 +0xc94\n\ngoroutine 21 [select]:\ngithub.com/containers/podman/v4/libpod.(*Runtime).libimageEvents.func2()\n\t/home/riyad/src/podman/libpod/runtime.go:746 +0xe9\ncreated by github.com/containers/podman/v4/libpod.(*Runtime).libimageEvents\n\t/home/riyad/src/podman/libpod/runtime.go:722 +0x10d\n\ngoroutine 22 [chan receive, 38 minutes]:\ngithub.com/containers/podman/v4/libpod.(*Runtime).startWorker.func1()\n\t/home/riyad/src/podman/libpod/runtime_worker.go:6 +0x74\ncreated by github.com/containers/podman/v4/libpod.(*Runtime).startWorker\n\t/home/riyad/src/podman/libpod/runtime_worker.go:5 +0x96\n\ngoroutine 23 [chan receive]:\ngithub.com/containers/podman/v4/pkg/servicereaper.reaper(0x0?)\n\t/home/riyad/src/podman/pkg/servicereaper/service.go:42 +0x39\ncreated by github.com/containers/podman/v4/pkg/servicereaper.Start\n\t/home/riyad/src/podman/pkg/servicereaper/service.go:36 +0x9b\n\ngoroutine 24 [chan receive, 38 minutes]:\ngithub.com/containers/podman/v4/pkg/domain/infra.StartWatcher.func1()\n\t/home/riyad/src/podman/pkg/domain/infra/runtime_libpod.go:357 +0x5c\ncreated by github.com/containers/podman/v4/pkg/domain/infra.StartWatcher\n\t/home/riyad/src/podman/pkg/domain/infra/runtime_libpod.go:353 +0xb9\n\ngoroutine 26 [IO wait]:\ninternal/poll.runtime_pollWait(0x7f1c1c6ac2e8, 0x72)\n\t/usr/lib/go-1.19/src/runtime/netpoll.go:305 +0x89\ninternal/poll.(*pollDesc).wait(0xc0004f2000?, 0x0?, 0x0)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:84 +0x32\ninternal/poll.(*pollDesc).waitRead(...)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:89\ninternal/poll.(*FD).Accept(0xc0004f2000)\n\t/usr/lib/go-1.19/src/internal/poll/fd_unix.go:614 +0x234\nnet.(*netFD).accept(0xc0004f2000)\n\t/usr/lib/go-1.19/src/net/fd_unix.go:172 +0x35\nnet.(*UnixListener).accept(0x47704e?)\n\t/usr/lib/go-1.19/src/net/unixsock_posix.go:166 +0x1c\nnet.(*UnixListener).Accept(0xc0008718f0)\n\t/usr/lib/go-1.19/src/net/unixsock.go:260 +0x3d\nnet/http.(*Server).Serve(0xc00025d1e0, {0x1a641f0, 0xc0008718f0})\n\t/usr/lib/go-1.19/src/net/http/server.go:3070 +0x385\ngithub.com/containers/podman/v4/pkg/api/server.(*APIServer).Serve.func3()\n\t/home/riyad/src/podman/pkg/api/server/server.go:214 +0x38\ncreated by github.com/containers/podman/v4/pkg/api/server.(*APIServer).Serve\n\t/home/riyad/src/podman/pkg/api/server/server.go:213 +0x16d\n\ngoroutine 27 [IO wait, 38 minutes]:\ninternal/poll.runtime_pollWait(0x7f1c1c6ac1f8, 0x72)\n\t/usr/lib/go-1.19/src/runtime/netpoll.go:305 +0x89\ninternal/poll.(*pollDesc).wait(0xc000ac3f80?, 0xc000b0a000?, 0x0)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:84 +0x32\ninternal/poll.(*pollDesc).waitRead(...)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:89\ninternal/poll.(*FD).Read(0xc000ac3f80, {0xc000b0a000, 0x1000, 0x1000})\n\t/usr/lib/go-1.19/src/internal/poll/fd_unix.go:167 +0x25a\nnet.(*netFD).Read(0xc000ac3f80, {0xc000b0a000?, 0x8?, 0x30?})\n\t/usr/lib/go-1.19/src/net/fd_posix.go:55 +0x29\nnet.(*conn).Read(0xc000015e20, {0xc000b0a000?, 0x203000?, 0x203000?})\n\t/usr/lib/go-1.19/src/net/net.go:183 +0x45\nnet/http.(*connReader).Read(0xc000af6ff0, {0xc000b0a000, 0x1000, 0x1000})\n\t/usr/lib/go-1.19/src/net/http/server.go:786 +0x171\nbufio.(*Reader).fill(0xc000552cc0)\n\t/usr/lib/go-1.19/src/bufio/bufio.go:106 +0xff\nbufio.(*Reader).ReadSlice(0xc000552cc0, 0x0?)\n\t/usr/lib/go-1.19/src/bufio/bufio.go:372 +0x2f\nbufio.(*Reader).ReadLine(0xc000552cc0)\n\t/usr/lib/go-1.19/src/bufio/bufio.go:401 +0x27\nnet/textproto.(*Reader).readLineSlice(0xc000871e30)\n\t/usr/lib/go-1.19/src/net/textproto/reader.go:56 +0x99\nnet/textproto.(*Reader).ReadLine(...)\n\t/usr/lib/go-1.19/src/net/textproto/reader.go:37\nnet/http.readRequest(0xc000015e20?)\n\t/usr/lib/go-1.19/src/net/http/request.go:1036 +0x79\nnet/http.(*conn).readRequest(0xc000af99a0, {0x1a65fd8, 0xc000af0300})\n\t/usr/lib/go-1.19/src/net/http/server.go:994 +0x24a\nnet/http.(*conn).serve(0xc000af99a0, {0x1a66080, 0xc000af6ed0})\n\t/usr/lib/go-1.19/src/net/http/server.go:1916 +0x345\ncreated by net/http.(*Server).Serve\n\t/usr/lib/go-1.19/src/net/http/server.go:3102 +0x4db\n\ngoroutine 91 [IO wait, 38 minutes]:\ninternal/poll.runtime_pollWait(0x7f1c1c6ac108, 0x72)\n\t/usr/lib/go-1.19/src/runtime/netpoll.go:305 +0x89\ninternal/poll.(*pollDesc).wait(0xc0004f3d00?, 0xc0003cb000?, 0x0)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:84 +0x32\ninternal/poll.(*pollDesc).waitRead(...)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:89\ninternal/poll.(*FD).Read(0xc0004f3d00, {0xc0003cb000, 0x1000, 0x1000})\n\t/usr/lib/go-1.19/src/internal/poll/fd_unix.go:167 +0x25a\nnet.(*netFD).Read(0xc0004f3d00, {0xc0003cb000?, 0x41a687?, 0x483bfe?})\n\t/usr/lib/go-1.19/src/net/fd_posix.go:55 +0x29\nnet.(*conn).Read(0xc000014370, {0xc0003cb000?, 0x7751bc?, 0xc000b1d9d8?})\n\t/usr/lib/go-1.19/src/net/net.go:183 +0x45\nnet/http.(*connReader).Read(0xc000154630, {0xc0003cb000, 0x1000, 0x1000})\n\t/usr/lib/go-1.19/src/net/http/server.go:786 +0x171\nbufio.(*Reader).fill(0xc000019320)\n\t/usr/lib/go-1.19/src/bufio/bufio.go:106 +0xff\nbufio.(*Reader).ReadSlice(0xc000019320, 0x0?)\n\t/usr/lib/go-1.19/src/bufio/bufio.go:372 +0x2f\nbufio.(*Reader).ReadLine(0xc000019320)\n\t/usr/lib/go-1.19/src/bufio/bufio.go:401 +0x27\nnet/textproto.(*Reader).readLineSlice(0xc000938f90)\n\t/usr/lib/go-1.19/src/net/textproto/reader.go:56 +0x99\nnet/textproto.(*Reader).ReadLine(...)\n\t/usr/lib/go-1.19/src/net/textproto/reader.go:37\nnet/http.readRequest(0xc000014370?)\n\t/usr/lib/go-1.19/src/net/http/request.go:1036 +0x79\nnet/http.(*conn).readRequest(0xc000af8460, {0x1a65fd8, 0xc000b96440})\n\t/usr/lib/go-1.19/src/net/http/server.go:994 +0x24a\nnet/http.(*conn).serve(0xc000af8460, {0x1a66080, 0xc000871ec0})\n\t/usr/lib/go-1.19/src/net/http/server.go:1916 +0x345\ncreated by net/http.(*Server).Serve\n\t/usr/lib/go-1.19/src/net/http/server.go:3102 +0x4db\n\ngoroutine 17750 [chan send, 12 minutes]:\ngithub.com/containers/podman/v4/libpod.attachExecHTTP.func5()\n\t/home/riyad/src/podman/libpod/oci_conmon_exec_common.go:638 +0x1a7\ncreated by github.com/containers/podman/v4/libpod.attachExecHTTP\n\t/home/riyad/src/podman/libpod/oci_conmon_exec_common.go:621 +0xbf4\n\ngoroutine 16232 [chan send, 14 minutes]:\ngithub.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach.func6()\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:683 +0xab\ncreated by github.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:680 +0xd65\n\ngoroutine 3744 [chan receive, 33 minutes]:\ngithub.com/containers/buildah.(*Builder).runUsingRuntimeSubproc.func2()\n\t/home/riyad/src/podman/vendor/github.com/containers/buildah/run_common.go:1168 +0x51\ncreated by github.com/containers/buildah.(*Builder).runUsingRuntimeSubproc\n\t/home/riyad/src/podman/vendor/github.com/containers/buildah/run_common.go:1167 +0xd8d\n\ngoroutine 4050 [chan receive, 33 minutes]:\ngithub.com/containers/buildah.(*Builder).runUsingRuntimeSubproc.func2()\n\t/home/riyad/src/podman/vendor/github.com/containers/buildah/run_common.go:1168 +0x51\ncreated by github.com/containers/buildah.(*Builder).runUsingRuntimeSubproc\n\t/home/riyad/src/podman/vendor/github.com/containers/buildah/run_common.go:1167 +0xd8d\n\ngoroutine 29670 [IO wait]:\ninternal/poll.runtime_pollWait(0x7f1c1c6ab988, 0x72)\n\t/usr/lib/go-1.19/src/runtime/netpoll.go:305 +0x89\ninternal/poll.(*pollDesc).wait(0xc000faa300?, 0xc0011ae6a1?, 0x0)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:84 +0x32\ninternal/poll.(*pollDesc).waitRead(...)\n\t/usr/lib/go-1.19/src/internal/poll/fd_poll_runtime.go:89\ninternal/poll.(*FD).Read(0xc000faa300, {0xc0011ae6a1, 0x1, 0x1})\n\t/usr/lib/go-1.19/src/internal/poll/fd_unix.go:167 +0x25a\nnet.(*netFD).Read(0xc000faa300, {0xc0011ae6a1?, 0xc000527458?, 0xc00054bf68?})\n\t/usr/lib/go-1.19/src/net/fd_posix.go:55 +0x29\nnet.(*conn).Read(0xc00197ee78, {0xc0011ae6a1?, 0xc000d3eb90?, 0x6d?})\n\t/usr/lib/go-1.19/src/net/net.go:183 +0x45\nnet/http.(*connReader).backgroundRead(0xc0011ae690)\n\t/usr/lib/go-1.19/src/net/http/server.go:678 +0x3f\ncreated by net/http.(*connReader).startBackgroundRead\n\t/usr/lib/go-1.19/src/net/http/server.go:674 +0xca\n\ngoroutine 15511 [chan send, 15 minutes]:\ngithub.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach.func5()\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:675 +0x1a7\ncreated by github.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:658 +0xc94\n\ngoroutine 3849 [chan receive, 33 minutes]:\ngithub.com/containers/buildah.(*Builder).runUsingRuntimeSubproc.func2()\n\t/home/riyad/src/podman/vendor/github.com/containers/buildah/run_common.go:1168 +0x51\ncreated by github.com/containers/buildah.(*Builder).runUsingRuntimeSubproc\n\t/home/riyad/src/podman/vendor/github.com/containers/buildah/run_common.go:1167 +0xd8d\n\ngoroutine 15612 [chan send, 14 minutes]:\ngithub.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach.func5()\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:675 +0x1a7\ncreated by github.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:658 +0xc94\n\ngoroutine 15959 [chan send, 14 minutes]:\ngithub.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach.func6()\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:683 +0xab\ncreated by github.com/containers/podman/v4/libpod.(*ConmonOCIRuntime).HTTPAttach\n\t/home/riyad/src/podman/libpod/oci_conmon_common.go:680 +0xd65\n\ngoroutine 17519 [chan send, 12 minutes]:\ngithub.com/containers/podman/v4/libpod.attachExecHTTP.func5()\n\t/home/riyad/src/podman/libpod/oci_conmon_exec_common.go:638 +0x1a7\ncreated by github.com/containers/podman/v4/libpod.attachExecHTTP\n\t/home/riyad/src/podman/libpod/oci_conmon_exec_common.go:621 +0xbf4\n"
+time="2023-01-12T19:56:07+01:00" level=error msg="While waiting on condition: \"container 50be69e7662bdce93a64e0ab63132e0fa107fb59ab4e59c3428b2d809e836efc does not exist in database: no such container\""
+Trying to pull docker.io/library/dockerpytest_does_not_exist:latest...
+Getting image source signatures
+Copying blob sha256:8e012198eea15b2554b07014081c85fec4967a1b9cc4b65bd9a4bce3ae1c0c88
+Copying blob sha256:caac6de42cf33bedce6571aae0c8c816cd160e13284113670e6d39c3fc0d4a63
+Copying config sha256:495e2b4758e109c8553cf2fa023d5766915cc7aded2d8d93065ea1c92e039073
+Writing manifest to image destination
+Storing signatures
+time="2023-01-12T19:57:46+01:00" level=error msg="attaching to container aefcd7b551b51b3cc4ece164af6f79820635e2637961d861ae98078f2bbb299a exec session 733ff89cdb326440c4b69f04a6ec028dac3237ad6b409090c3b97a9bb197b476: crun: executable file `docker` not found in $PATH: No such file or directory: OCI runtime attempted to invoke a command that was not found"
+time="2023-01-12T19:58:59+01:00" level=warning msg="StopSignal SIGTERM failed to stop container agitated_nightingale in 10 seconds, resorting to SIGKILL"
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:8921db27df2831fa6eaa85321205a2470c669b855f3ec95d5a3c2b46de0442c9
+Copying config sha256:042a816809aac8d0f7d7cacac7965782ee2ecac3f21bcf9f24b1de1a7387b769
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:8921db27df2831fa6eaa85321205a2470c669b855f3ec95d5a3c2b46de0442c9
+Copying config sha256:042a816809aac8d0f7d7cacac7965782ee2ecac3f21bcf9f24b1de1a7387b769
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:8921db27df2831fa6eaa85321205a2470c669b855f3ec95d5a3c2b46de0442c9
+Copying config sha256:042a816809aac8d0f7d7cacac7965782ee2ecac3f21bcf9f24b1de1a7387b769
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:2db29710123e3e53a794f2694094b9b4338aa9ee5c40b930cb8063a1be392c54
+Copying config sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7...
+Getting image source signatures
+Copying blob sha256:ca4f61b1923c10e9eb81228bd46bee1dfba02b9c7dac1844527a734752688ede
+Copying config sha256:f2a91732366c0332ccd7afd2a5c4ff2b9af81f549370f7a19acd460f87686bc7
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:8921db27df2831fa6eaa85321205a2470c669b855f3ec95d5a3c2b46de0442c9
+Copying config sha256:042a816809aac8d0f7d7cacac7965782ee2ecac3f21bcf9f24b1de1a7387b769
+Writing manifest to image destination
+Storing signatures

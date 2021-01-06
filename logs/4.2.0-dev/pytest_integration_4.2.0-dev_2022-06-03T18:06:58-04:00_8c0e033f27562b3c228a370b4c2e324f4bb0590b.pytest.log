@@ -1,0 +1,273 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.4, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /home/riyad/.virtualenvs/docker-py/bin/python
+cachedir: .pytest_cache
+rootdir: /home/riyad/src/docker-py, configfile: pytest_podman_apiv2.ini, testpaths: tests/integration/
+plugins: timeout-2.0.1, cov-3.0.0
+collecting ... collected 420 items / 154 deselected / 266 selected
+
+tests/integration/api_build_test.py::BuildTest::test_build_container_with_target PASSED [  0%]
+tests/integration/api_build_test.py::BuildTest::test_build_from_stringio PASSED [  0%]
+tests/integration/api_build_test.py::BuildTest::test_build_gzip_custom_encoding PASSED [  1%]
+tests/integration/api_build_test.py::BuildTest::test_build_gzip_encoding PASSED [  1%]
+tests/integration/api_build_test.py::BuildTest::test_build_in_context_abs_dockerfile PASSED [  1%]
+tests/integration/api_build_test.py::BuildTest::test_build_in_context_dockerfile PASSED [  2%]
+tests/integration/api_build_test.py::BuildTest::test_build_in_context_nested_dockerfile PASSED [  2%]
+tests/integration/api_build_test.py::BuildTest::test_build_invalid_platform PASSED [  3%]
+tests/integration/api_build_test.py::BuildTest::test_build_isolation PASSED [  3%]
+tests/integration/api_build_test.py::BuildTest::test_build_labels PASSED [  3%]
+tests/integration/api_build_test.py::BuildTest::test_build_out_of_context_dockerfile PASSED [  4%]
+tests/integration/api_build_test.py::BuildTest::test_build_shmsize PASSED [  4%]
+tests/integration/api_build_test.py::BuildTest::test_build_squash PASSED [  4%]
+tests/integration/api_build_test.py::BuildTest::test_build_stderr_data PASSED [  5%]
+tests/integration/api_build_test.py::BuildTest::test_build_streaming PASSED [  5%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_buildargs PASSED [  6%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_cache_from FAILED [  6%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_dockerfile_empty_lines PASSED [  6%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_dockerignore PASSED [  7%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_extra_hosts FAILED [  7%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_network_mode FAILED [  7%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_proxy PASSED [  8%]
+tests/integration/api_build_test.py::BuildTest::test_build_with_proxy_and_buildargs PASSED [  8%]
+tests/integration/api_build_test.py::BuildTest::test_prune_builds XFAIL  [  9%]
+tests/integration/api_client_test.py::InformationTest::test_info PASSED  [  9%]
+tests/integration/api_client_test.py::InformationTest::test_version PASSED [  9%]
+tests/integration/api_client_test.py::AutoDetectVersionTest::test_client_init PASSED [ 10%]
+tests/integration/api_client_test.py::ConnectionTimeoutTest::test_timeout PASSED [ 10%]
+tests/integration/api_client_test.py::UnixconnTest::test_resource_warnings PASSED [ 10%]
+tests/integration/api_container_test.py::ListContainersTest::test_list_containers PASSED [ 11%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create PASSED [ 11%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_container_with_volumes_from PASSED [ 12%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_auto_remove PASSED [ 12%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_cpu_rt_options XPASS [ 12%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_device_cgroup_rules FAILED [ 13%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_environment_variable_no_value FAILED [ 13%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_host_pid_mode PASSED [ 13%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_init PASSED [ 14%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_isolation FAILED [ 14%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_links FAILED [ 15%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_mac_address FAILED [ 15%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_memory_constraints_with_int FAILED [ 15%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_memory_constraints_with_str PASSED [ 16%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_restart_policy FAILED [ 16%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_stop_timeout PASSED [ 16%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_storage_opt XFAIL [ 17%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_tmpfs FAILED [ 17%]
+tests/integration/api_container_test.py::CreateContainerTest::test_create_with_uts_mode PASSED [ 18%]
+tests/integration/api_container_test.py::CreateContainerTest::test_group_id_ints PASSED [ 18%]
+tests/integration/api_container_test.py::CreateContainerTest::test_group_id_strings PASSED [ 18%]
+tests/integration/api_container_test.py::CreateContainerTest::test_invalid_log_driver_raises_exception FAILED [ 19%]
+tests/integration/api_container_test.py::CreateContainerTest::test_valid_log_driver_and_log_opt FAILED [ 19%]
+tests/integration/api_container_test.py::CreateContainerTest::test_valid_no_config_specified FAILED [ 19%]
+tests/integration/api_container_test.py::CreateContainerTest::test_valid_no_log_driver_specified FAILED [ 20%]
+tests/integration/api_container_test.py::VolumeBindTest::test_create_with_binds_ro PASSED [ 20%]
+tests/integration/api_container_test.py::VolumeBindTest::test_create_with_binds_rw PASSED [ 21%]
+tests/integration/api_container_test.py::VolumeBindTest::test_create_with_mounts PASSED [ 21%]
+tests/integration/api_container_test.py::VolumeBindTest::test_create_with_mounts_ro PASSED [ 21%]
+tests/integration/api_container_test.py::VolumeBindTest::test_create_with_volume_mount PASSED [ 22%]
+tests/integration/api_container_test.py::ArchiveTest::test_copy_directory_to_container PASSED [ 22%]
+tests/integration/api_container_test.py::ArchiveTest::test_copy_file_to_container PASSED [ 22%]
+tests/integration/api_container_test.py::ArchiveTest::test_get_file_archive_from_container PASSED [ 23%]
+tests/integration/api_container_test.py::ArchiveTest::test_get_file_stat_from_container PASSED [ 23%]
+tests/integration/api_container_test.py::RenameContainerTest::test_rename_container PASSED [ 24%]
+tests/integration/api_container_test.py::StartContainerTest::test_run_shlex_commands PASSED [ 24%]
+tests/integration/api_container_test.py::StartContainerTest::test_start_container PASSED [ 24%]
+tests/integration/api_container_test.py::StartContainerTest::test_start_container_with_dict_instead_of_id PASSED [ 25%]
+tests/integration/api_container_test.py::WaitTest::test_wait PASSED      [ 25%]
+tests/integration/api_container_test.py::WaitTest::test_wait_with_condition PASSED [ 25%]
+tests/integration/api_container_test.py::WaitTest::test_wait_with_dict_instead_of_id PASSED [ 26%]
+tests/integration/api_container_test.py::LogsTest::test_logs PASSED      [ 26%]
+tests/integration/api_container_test.py::LogsTest::test_logs_streaming_and_follow PASSED [ 27%]
+tests/integration/api_container_test.py::LogsTest::test_logs_streaming_and_follow_and_cancel FAILED [ 27%]
+tests/integration/api_container_test.py::LogsTest::test_logs_tail_option PASSED [ 27%]
+tests/integration/api_container_test.py::LogsTest::test_logs_with_dict_instead_of_id PASSED [ 28%]
+tests/integration/api_container_test.py::LogsTest::test_logs_with_tail_0 PASSED [ 28%]
+tests/integration/api_container_test.py::LogsTest::test_logs_with_until PASSED [ 28%]
+tests/integration/api_container_test.py::DiffTest::test_diff PASSED      [ 29%]
+tests/integration/api_container_test.py::DiffTest::test_diff_with_dict_instead_of_id PASSED [ 29%]
+tests/integration/api_container_test.py::StopTest::test_stop PASSED      [ 30%]
+tests/integration/api_container_test.py::StopTest::test_stop_with_dict_instead_of_id PASSED [ 30%]
+tests/integration/api_container_test.py::KillTest::test_kill PASSED      [ 30%]
+tests/integration/api_container_test.py::KillTest::test_kill_with_dict_instead_of_id PASSED [ 31%]
+tests/integration/api_container_test.py::KillTest::test_kill_with_signal PASSED [ 31%]
+tests/integration/api_container_test.py::KillTest::test_kill_with_signal_integer PASSED [ 31%]
+tests/integration/api_container_test.py::KillTest::test_kill_with_signal_name PASSED [ 32%]
+tests/integration/api_container_test.py::PortTest::test_port PASSED      [ 32%]
+tests/integration/api_container_test.py::ContainerTopTest::test_top XFAIL [ 33%]
+tests/integration/api_container_test.py::ContainerTopTest::test_top_with_psargs XFAIL [ 33%]
+tests/integration/api_container_test.py::RestartContainerTest::test_restart PASSED [ 33%]
+tests/integration/api_container_test.py::RestartContainerTest::test_restart_with_dict_instead_of_id PASSED [ 34%]
+tests/integration/api_container_test.py::RestartContainerTest::test_restart_with_low_timeout PASSED [ 34%]
+tests/integration/api_container_test.py::RemoveContainerTest::test_remove PASSED [ 34%]
+tests/integration/api_container_test.py::RemoveContainerTest::test_remove_with_dict_instead_of_id PASSED [ 35%]
+tests/integration/api_container_test.py::AttachContainerTest::test_attach_no_stream FAILED [ 35%]
+tests/integration/api_container_test.py::AttachContainerTest::test_attach_stream_and_cancel PASSED [ 36%]
+tests/integration/api_container_test.py::AttachContainerTest::test_detach_with_arg PASSED [ 36%]
+tests/integration/api_container_test.py::AttachContainerTest::test_detach_with_config_file PASSED [ 36%]
+tests/integration/api_container_test.py::AttachContainerTest::test_detach_with_default PASSED [ 37%]
+tests/integration/api_container_test.py::AttachContainerTest::test_run_container_reading_socket PASSED [ 37%]
+tests/integration/api_container_test.py::AttachContainerTest::test_run_container_streaming PASSED [ 37%]
+tests/integration/api_container_test.py::PauseTest::test_pause_unpause PASSED [ 38%]
+tests/integration/api_container_test.py::PruneTest::test_prune_containers PASSED [ 38%]
+tests/integration/api_container_test.py::GetContainerStatsTest::test_get_container_stats_no_stream PASSED [ 39%]
+tests/integration/api_container_test.py::ContainerUpdateTest::test_restart_policy_update FAILED [ 39%]
+tests/integration/api_container_test.py::ContainerUpdateTest::test_update_container FAILED [ 39%]
+tests/integration/api_container_test.py::ContainerCPUTest::test_container_cpu_shares PASSED [ 40%]
+tests/integration/api_container_test.py::ContainerCPUTest::test_container_cpuset PASSED [ 40%]
+tests/integration/api_container_test.py::ContainerCPUTest::test_create_with_runtime FAILED [ 40%]
+tests/integration/api_exec_test.py::ExecTest::test_detach_with_config_file FAILED [ 41%]
+tests/integration/api_exec_test.py::ExecTest::test_detach_with_default FAILED [ 41%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_command_as_root PASSED [ 42%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_command_as_user PASSED [ 42%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_command_streaming PASSED [ 42%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_command_string PASSED [ 43%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_command_with_env PASSED [ 43%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_command_with_workdir PASSED [ 43%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_inspect PASSED   [ 44%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_start_detached FAILED [ 44%]
+tests/integration/api_exec_test.py::ExecTest::test_exec_start_socket FAILED [ 45%]
+tests/integration/api_exec_test.py::ExecTest::test_execute_command PASSED [ 45%]
+tests/integration/api_exec_test.py::ExecTest::test_execute_command_with_proxy_env PASSED [ 45%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_no_stream_demux PASSED [ 46%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_no_stream_no_demux PASSED [ 46%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_stream_demux PASSED [ 46%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_stream_no_demux PASSED [ 47%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_tty_no_stream_demux FAILED [ 47%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_tty_no_stream_no_demux FAILED [ 48%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_tty_stream_demux FAILED [ 48%]
+tests/integration/api_exec_test.py::ExecDemuxTest::test_exec_command_tty_stream_no_demux FAILED [ 48%]
+tests/integration/api_healthcheck_test.py::HealthcheckTest::test_healthcheck_fails PASSED [ 49%]
+tests/integration/api_healthcheck_test.py::HealthcheckTest::test_healthcheck_passes PASSED [ 49%]
+tests/integration/api_healthcheck_test.py::HealthcheckTest::test_healthcheck_shell_command PASSED [ 50%]
+tests/integration/api_healthcheck_test.py::HealthcheckTest::test_healthcheck_start_period PASSED [ 50%]
+tests/integration/api_image_test.py::ListImagesTest::test_images PASSED  [ 50%]
+tests/integration/api_image_test.py::ListImagesTest::test_images_quiet PASSED [ 51%]
+tests/integration/api_image_test.py::PullImageTest::test_pull PASSED     [ 51%]
+tests/integration/api_image_test.py::PullImageTest::test_pull_invalid_platform FAILED [ 51%]
+tests/integration/api_image_test.py::PullImageTest::test_pull_streaming PASSED [ 52%]
+tests/integration/api_image_test.py::CommitTest::test_commit FAILED      [ 52%]
+tests/integration/api_image_test.py::CommitTest::test_commit_with_changes FAILED [ 53%]
+tests/integration/api_image_test.py::RemoveImageTest::test_remove PASSED [ 53%]
+tests/integration/api_image_test.py::ImportImageTest::test_get_load_image FAILED [ 53%]
+tests/integration/api_image_test.py::ImportImageTest::test_import_from_bytes PASSED [ 54%]
+tests/integration/api_image_test.py::ImportImageTest::test_import_from_file PASSED [ 54%]
+tests/integration/api_image_test.py::ImportImageTest::test_import_from_stream PASSED [ 54%]
+tests/integration/api_image_test.py::ImportImageTest::test_import_from_url SKIPPED [ 55%]
+tests/integration/api_image_test.py::ImportImageTest::test_import_image_from_data_with_changes PASSED [ 55%]
+tests/integration/api_image_test.py::ImportImageTest::test_import_image_with_changes PASSED [ 56%]
+tests/integration/api_image_test.py::PruneImagesTest::test_prune_images FAILED [ 56%]
+tests/integration/api_image_test.py::SaveLoadImagesTest::test_get_image_load_image FAILED [ 56%]
+tests/integration/api_image_test.py::InspectDistributionTest::test_inspect_distribution FAILED [ 57%]
+tests/integration/api_network_test.py::TestNetworks::test_connect_and_disconnect_container FAILED [ 57%]
+tests/integration/api_network_test.py::TestNetworks::test_connect_and_force_disconnect_container FAILED [ 57%]
+tests/integration/api_network_test.py::TestNetworks::test_connect_on_container_create PASSED [ 58%]
+tests/integration/api_network_test.py::TestNetworks::test_connect_with_aliases FAILED [ 58%]
+tests/integration/api_network_test.py::TestNetworks::test_connect_with_ipv4_address FAILED [ 59%]
+tests/integration/api_network_test.py::TestNetworks::test_connect_with_ipv6_address FAILED [ 59%]
+tests/integration/api_network_test.py::TestNetworks::test_connect_with_links FAILED [ 59%]
+tests/integration/api_network_test.py::TestNetworks::test_create_check_duplicate FAILED [ 60%]
+tests/integration/api_network_test.py::TestNetworks::test_create_internal_networks PASSED [ 60%]
+tests/integration/api_network_test.py::TestNetworks::test_create_network_ipv6_enabled PASSED [ 60%]
+tests/integration/api_network_test.py::TestNetworks::test_create_network_with_host_driver_fails PASSED [ 61%]
+tests/integration/api_network_test.py::TestNetworks::test_create_network_with_ipam_config FAILED [ 61%]
+tests/integration/api_network_test.py::TestNetworks::test_create_network_with_labels PASSED [ 62%]
+tests/integration/api_network_test.py::TestNetworks::test_create_network_with_labels_wrong_type PASSED [ 62%]
+tests/integration/api_network_test.py::TestNetworks::test_create_remove_network_with_space_in_name FAILED [ 62%]
+tests/integration/api_network_test.py::TestNetworks::test_create_with_aliases PASSED [ 63%]
+tests/integration/api_network_test.py::TestNetworks::test_create_with_driveropt FAILED [ 63%]
+tests/integration/api_network_test.py::TestNetworks::test_create_with_ipv4_address FAILED [ 63%]
+tests/integration/api_network_test.py::TestNetworks::test_create_with_ipv6_address FAILED [ 64%]
+tests/integration/api_network_test.py::TestNetworks::test_create_with_linklocal_ips FAILED [ 64%]
+tests/integration/api_network_test.py::TestNetworks::test_create_with_links FAILED [ 65%]
+tests/integration/api_network_test.py::TestNetworks::test_inspect_network PASSED [ 65%]
+tests/integration/api_network_test.py::TestNetworks::test_list_networks PASSED [ 65%]
+tests/integration/api_network_test.py::TestNetworks::test_prune_networks PASSED [ 66%]
+tests/integration/api_network_test.py::TestNetworks::test_remove_network PASSED [ 66%]
+tests/integration/api_secret_test.py::SecretAPITest::test_create_secret PASSED [ 66%]
+tests/integration/api_secret_test.py::SecretAPITest::test_create_secret_unicode_data PASSED [ 67%]
+tests/integration/api_secret_test.py::SecretAPITest::test_inspect_secret PASSED [ 67%]
+tests/integration/api_secret_test.py::SecretAPITest::test_list_secrets PASSED [ 68%]
+tests/integration/api_secret_test.py::SecretAPITest::test_remove_secret PASSED [ 68%]
+tests/integration/api_volume_test.py::TestVolumes::test_create_volume PASSED [ 68%]
+tests/integration/api_volume_test.py::TestVolumes::test_create_volume_invalid_driver FAILED [ 69%]
+tests/integration/api_volume_test.py::TestVolumes::test_force_remove_volume PASSED [ 69%]
+tests/integration/api_volume_test.py::TestVolumes::test_inspect_nonexistent_volume PASSED [ 69%]
+tests/integration/api_volume_test.py::TestVolumes::test_inspect_volume FAILED [ 70%]
+tests/integration/api_volume_test.py::TestVolumes::test_list_volumes FAILED [ 70%]
+tests/integration/api_volume_test.py::TestVolumes::test_prune_volumes PASSED [ 71%]
+tests/integration/api_volume_test.py::TestVolumes::test_remove_nonexistent_volume PASSED [ 71%]
+tests/integration/api_volume_test.py::TestVolumes::test_remove_volume PASSED [ 71%]
+tests/integration/client_test.py::ClientTest::test_df PASSED             [ 72%]
+tests/integration/client_test.py::ClientTest::test_info PASSED           [ 72%]
+tests/integration/client_test.py::ClientTest::test_ping PASSED           [ 72%]
+tests/integration/client_test.py::ClientTest::test_version PASSED        [ 73%]
+tests/integration/client_test.py::CancellableEventsTest::test_cancel_events PASSED [ 73%]
+tests/integration/context_api_test.py::ContextLifecycleTest::test_context_remove PASSED [ 74%]
+tests/integration/context_api_test.py::ContextLifecycleTest::test_lifecycle PASSED [ 74%]
+tests/integration/context_api_test.py::ContextLifecycleTest::test_load_context_without_orchestrator PASSED [ 74%]
+tests/integration/errors_test.py::ErrorsTest::test_api_error_parses_json FAILED [ 75%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_get FAILED [ 75%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_list FAILED [ 75%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_list_sparse FAILED [ 76%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run PASSED [ 76%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_detach FAILED [ 77%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_auto_remove PASSED [ 77%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_auto_remove_error FAILED [ 77%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_error PASSED [ 78%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_image_that_does_not_exist PASSED [ 78%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_json_file_driver PASSED [ 78%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_named_volume PASSED [ 79%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_network PASSED [ 79%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_none_driver PASSED [ 80%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_proxy_config PASSED [ 80%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_streamed_logs PASSED [ 80%]
+tests/integration/models_containers_test.py::ContainerCollectionTest::test_run_with_streamed_logs_and_cancel PASSED [ 81%]
+INTERNALERROR> Traceback (most recent call last):
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/main.py", line 269, in wrap_session
+INTERNALERROR>     session.exitstatus = doit(config, session) or 0
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/main.py", line 323, in _main
+INTERNALERROR>     config.hook.pytest_runtestloop(session=session)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_hooks.py", line 265, in __call__
+INTERNALERROR>     return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_manager.py", line 80, in _hookexec
+INTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_callers.py", line 60, in _multicall
+INTERNALERROR>     return outcome.get_result()
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_result.py", line 60, in get_result
+INTERNALERROR>     raise ex[1].with_traceback(ex[2])
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_callers.py", line 39, in _multicall
+INTERNALERROR>     res = hook_impl.function(*args)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/main.py", line 348, in pytest_runtestloop
+INTERNALERROR>     item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_hooks.py", line 265, in __call__
+INTERNALERROR>     return self._hookexec(self.name, self.get_hookimpls(), kwargs, firstresult)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_manager.py", line 80, in _hookexec
+INTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_callers.py", line 60, in _multicall
+INTERNALERROR>     return outcome.get_result()
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_result.py", line 60, in get_result
+INTERNALERROR>     raise ex[1].with_traceback(ex[2])
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pluggy/_callers.py", line 39, in _multicall
+INTERNALERROR>     res = hook_impl.function(*args)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/runner.py", line 109, in pytest_runtest_protocol
+INTERNALERROR>     runtestprotocol(item, nextitem=nextitem)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/runner.py", line 127, in runtestprotocol
+INTERNALERROR>     reports.append(call_and_report(item, "teardown", log, nextitem=nextitem))
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/runner.py", line 215, in call_and_report
+INTERNALERROR>     call = call_runtest_hook(item, when, **kwds)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/runner.py", line 248, in call_runtest_hook
+INTERNALERROR>     ihook = item.ihook.pytest_runtest_teardown
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/nodes.py", line 195, in ihook
+INTERNALERROR>     return self.session.gethookproxy(self.fspath)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/main.py", line 519, in gethookproxy
+INTERNALERROR>     my_conftestmodules = pm._getconftestmodules(
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/py/_path/local.py", line 165, in __hash__
+INTERNALERROR>     def __hash__(self):
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pytest_timeout.py", line 207, in handler
+INTERNALERROR>     timeout_sigalrm(item, params.timeout)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/pytest_timeout.py", line 382, in timeout_sigalrm
+INTERNALERROR>     pytest.fail("Timeout >%ss" % timeout)
+INTERNALERROR>   File "/home/riyad/.virtualenvs/docker-py/lib/python3.10/site-packages/_pytest/outcomes.py", line 153, in fail
+INTERNALERROR>     raise Failed(msg=msg, pytrace=pytrace)
+INTERNALERROR> Failed: Timeout >5.0s
+
+= 58 failed, 152 passed, 1 skipped, 154 deselected, 4 xfailed, 1 xpassed, 1 warning in 1934.72s (0:32:14) =

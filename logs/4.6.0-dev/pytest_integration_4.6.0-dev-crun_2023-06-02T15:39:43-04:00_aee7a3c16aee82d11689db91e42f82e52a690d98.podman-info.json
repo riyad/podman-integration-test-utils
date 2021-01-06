@@ -1,0 +1,168 @@
+{
+  "host": {
+    "arch": "amd64",
+    "buildahVersion": "1.31.0-dev",
+    "cgroupManager": "systemd",
+    "cgroupVersion": "v2",
+    "cgroupControllers": [
+      "cpuset",
+      "cpu",
+      "io",
+      "memory",
+      "pids"
+    ],
+    "conmon": {
+      "package": "conmon_2:2.1.7-0ubuntu22.04+obs15.43_amd64",
+      "path": "/usr/bin/conmon",
+      "version": "conmon version 2.1.7, commit: "
+    },
+    "cpus": 4,
+    "cpuUtilization": {
+      "userPercent": 2.27,
+      "systemPercent": 1.94,
+      "idlePercent": 95.79
+    },
+    "databaseBackend": "boltdb",
+    "distribution": {
+      "distribution": "ubuntu",
+      "version": "23.04",
+      "codename": "lunar"
+    },
+    "eventLogger": "journald",
+    "hostname": "acnologia",
+    "idMappings": {
+      "gidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ],
+      "uidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ]
+    },
+    "kernel": "6.2.0-20-generic",
+    "logDriver": "journald",
+    "memFree": 3736875008,
+    "memTotal": 16506007552,
+    "networkBackend": "netavark",
+    "ociRuntime": {
+      "name": "crun",
+      "package": "crun_101:1.8.4-0ubuntu22.04+obs55.14_amd64",
+      "path": "/usr/bin/crun",
+      "version": "crun version 1.8.4\ncommit: 5a8fa99a5e41facba2eda4af12fa26313918805b\nrundir: /run/user/1000/crun\nspec: 1.0.0\n+SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +YAJL"
+    },
+    "os": "linux",
+    "remoteSocket": {
+      "path": "/run/user/1000/podman/podman.sock",
+      "exists": true
+    },
+    "serviceIsRemote": false,
+    "security": {
+      "apparmorEnabled": false,
+      "capabilities": "CAP_CHOWN,CAP_DAC_OVERRIDE,CAP_FOWNER,CAP_FSETID,CAP_KILL,CAP_NET_BIND_SERVICE,CAP_SETFCAP,CAP_SETGID,CAP_SETPCAP,CAP_SETUID,CAP_SYS_CHROOT",
+      "rootless": true,
+      "seccompEnabled": true,
+      "seccompProfilePath": "/usr/share/containers/seccomp.json",
+      "selinuxEnabled": false
+    },
+    "slirp4netns": {
+      "executable": "/usr/bin/slirp4netns",
+      "package": "slirp4netns_1.2.0-1_amd64",
+      "version": "slirp4netns version 1.2.0\ncommit: 656041d45cfca7a4176f6b7eed9e4fe6c11e8383\nlibslirp: 4.7.0\nSLIRP_CONFIG_VERSION_MAX: 4\nlibseccomp: 2.5.4"
+    },
+    "pasta": {
+      "executable": "",
+      "package": "",
+      "version": ""
+    },
+    "swapFree": 2146693120,
+    "swapTotal": 2147479552,
+    "uptime": "82h 4m 26.00s (Approximately 3.42 days)",
+    "linkmode": "dynamic"
+  },
+  "store": {
+    "configFile": "/home/riyad/.config/containers/storage.conf",
+    "containerStore": {
+      "number": 0,
+      "paused": 0,
+      "running": 0,
+      "stopped": 0
+    },
+    "graphDriverName": "overlay",
+    "graphOptions": {
+      "overlay.mount_program": {
+  "Executable": "/usr/bin/fuse-overlayfs",
+  "Package": "fuse-overlayfs_1.12-0ubuntu22.04+obs21.14_amd64",
+  "Version": "fusermount3 version: 3.14.0\nfuse-overlayfs: version 1.12\nFUSE library version 3.14.0\nusing FUSE kernel interface version 7.31"
+},
+      "overlay.mountopt": "nodev,metacopy=on"
+    },
+    "graphRoot": "/home/riyad/podman/storage",
+    "graphRootAllocated": 97380597760,
+    "graphRootUsed": 2411855872,
+    "graphStatus": {
+      "Backing Filesystem": "zfs",
+      "Native Overlay Diff": "false",
+      "Supports d_type": "true",
+      "Using metacopy": "false"
+    },
+    "imageCopyTmpDir": "/var/tmp",
+    "imageStore": {
+      "number": 25
+    },
+    "runRoot": "/run/user/1000/containers",
+    "volumePath": "/home/riyad/podman/storage/volumes",
+    "transientStore": false
+  },
+  "registries": {
+    "search": [
+  "registry.fedoraproject.org",
+  "registry.access.redhat.com",
+  "docker.io",
+  "quay.io"
+]
+  },
+  "plugins": {
+    "volume": [
+      "local"
+    ],
+    "network": [
+      "bridge",
+      "macvlan",
+      "ipvlan"
+    ],
+    "log": [
+      "k8s-file",
+      "none",
+      "passthrough",
+      "journald"
+    ],
+    "authorization": null
+  },
+  "version": {
+    "APIVersion": "4.6.0-dev",
+    "Version": "4.6.0-dev",
+    "GoVersion": "go1.20.3",
+    "GitCommit": "aee7a3c16aee82d11689db91e42f82e52a690d98",
+    "BuiltTime": "Tue Jun  6 20:53:04 2023",
+    "Built": 1686077584,
+    "OsArch": "linux/amd64",
+    "Os": "linux"
+  }
+}

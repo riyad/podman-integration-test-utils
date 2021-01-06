@@ -1,0 +1,371 @@
+Resolved "alpine" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2021-07-17T00:20:44+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:20:55+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:20:59+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:03+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:08+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:15+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:18+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:22+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:25+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:30+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:34+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:36+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:40+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:44+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:49+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:53+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:54+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:21:58+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:22:02+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:22:06+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:22:15+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:22:20+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:24:12+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2021-07-17T00:24:16+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+time="2021-07-17T00:25:29+02:00" level=error msg="error while waiting on condition: \"cancelled by user\""
+time="2021-07-17T00:27:49+02:00" level=error msg="error attaching to container e5c8aa5bceb31e338a3a4985176fadad4ab4f102a141c9c9afc5c5be7ebdd537: detached from container"
+time="2021-07-17T00:27:53+02:00" level=error msg="error attaching to container 147ee23d980d61c117822a128ec53cd692100e35fff76415d15bcb35b02c914f: detached from container"
+time="2021-07-17T00:27:58+02:00" level=error msg="error attaching to container 960e9b2adc934b155e06459df3584cd31e72e6074279211b5a63c974410a2de6: detached from container"
+time="2021-07-17T00:28:46+02:00" level=error msg="Container 4ea112df1f3bfc953b7ab301a08a8898b7541af3042f4e6ae0e144068b277672 exec session 3faa99ebf298b36937d18b04ac2f36af933dae00127f3b7dfb0e9843ab23ed0c error: detached from container"
+time="2021-07-17T00:28:46+02:00" level=error msg="error attaching to container 4ea112df1f3bfc953b7ab301a08a8898b7541af3042f4e6ae0e144068b277672 exec session 3faa99ebf298b36937d18b04ac2f36af933dae00127f3b7dfb0e9843ab23ed0c: timed out waiting for file /home/riyad/podman/storage/overlay-containers/4ea112df1f3bfc953b7ab301a08a8898b7541af3042f4e6ae0e144068b277672/userdata/3faa99ebf298b36937d18b04ac2f36af933dae00127f3b7dfb0e9843ab23ed0c/exit/4ea112df1f3bfc953b7ab301a08a8898b7541af3042f4e6ae0e144068b277672: internal libpod error"
+time="2021-07-17T00:28:51+02:00" level=error msg="error attaching to container 8f4482082b5eadf7274f6047be696e2025a1d7cfba7de203ade651baf2dcf94c exec session 8b47d831d8bdb334d8674d2f99512b087d997cfbdf7322213343c9cfc8cedda4: detached from container"
+time="2021-07-17T00:30:02+02:00" level=error msg="error attaching to container 8d0e8c8dc6d74acd93fb21b1e9f94bae1fb750da41ea427d1fea1e8777882bc1 exec session 7d16db1b2aaab0d70d13ca89baffdd65fcb2a405c3c1f4855339e21425a89a51: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2021-07-17T00:30:02+02:00" level=error msg="Error writing error to container 8d0e8c8dc6d74acd93fb21b1e9f94bae1fb750da41ea427d1fea1e8777882bc1 HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+time="2021-07-17T00:30:02+02:00" level=error msg="Error flushing HTTP buffer for container 8d0e8c8dc6d74acd93fb21b1e9f94bae1fb750da41ea427d1fea1e8777882bc1 HTTP attach connection: write unix /home/riyad/src/podman/docker-py-test.sock->@: write: broken pipe"
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:5d9759f596cee98287c74fca61c04965130178a310c92e5abe467f8cbe3870db
+Copying config sha256:878f8f4adb2145fe21babd357683ab71be54b433c717e0232edb55c8c37e3861
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying blob sha256:e69529532637f5845df5bca0d39f28502039aad938833e30dbdb04f52b7a6fd3
+Copying config sha256:81087f76c059015b41a201fff3b7e81505953f6ea73b9a31da7da913d9570bea
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:f22b99068db93900abe17f7f5e09ec775c2826ecfe9db961fea68293744144bd
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:f22b99068db93900abe17f7f5e09ec775c2826ecfe9db961fea68293744144bd
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:4cbea4f5684e8c738bf689bf3d31072ac28990be5b7494ad50594adcf0ad417d
+Copying config sha256:75e2f86cf0d4e688f2493db200faeeefc3557abfab2a135b50c4eb0bb52968d2
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:5480879c77ef33f9c519f1d31d90919df7ab73dc9a59681dc1f11c0c477d49a2
+Copying config sha256:3ea7b13c69d604b0ebbaa0ab91787a90a108f34afaac8a3122779ffd6e2b9794
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:a8c962dc6ca5f64eb9a2d60b563791efcb11614d774cddeaf19b7b3e4cff542b
+Copying config sha256:1d6dfece93fee1ba98d2cba0f967ae8ccec7af83478b7c2e3156f8412cf89ae0
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:ed47398f92652b669e14f564407390d3f7106016b643aac4f5deaf36adb07840
+Copying config sha256:151d6ae874e9bb010172326f2c17563ae85c2b7e793ad7bd5e5587d9ec4b3251
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:c00d72af71e37a88218d9dede226a413e9184533d0779da23cd7f120d8065829
+Copying config sha256:90b942d7119c433f8af32e29954e1415b606ab48c8954083ebfb55f100997654
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+time="2021-07-17T00:34:02+02:00" level=warning msg="dnsname and --internal networks are incompatible.  dnsname plugin not configured for network dockerpytest_486eccf694cd0db8"
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:11+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:12+02:00" level=error msg="Unable to decode event: unknown event status \"exec_died\""
+time="2021-07-17T00:36:55+02:00" level=error msg="json-file logging specified but not supported. Choosing k8s-file logging instead"
+Getting image source signatures
+Copying blob sha256:72e830a4dff5f0d5225cdc0a320e85ab1ce06ea5673acfe8d83a7645cbd0e9cf
+Copying blob sha256:6994a25fe2cb3b07494c0a6b674808e2f7685d16da646a6c7c0c7d3990660545
+Copying config sha256:9546e1961ef2c6f8b55be775bc655dad5486bd877231b3ffb52d49fe64c1b7a1
+Writing manifest to image destination
+Storing signatures
+time="2021-07-17T00:39:29+02:00" level=error msg="error attaching to container 5434e5f003a49c342708241559db79ff500818d27154a65a555975e4258c7842 exec session 02217cc896f835b12417c8ea24a17f668e3c111d2de1606e5645f3a872c3ad4b: executable file `docker` not found in $PATH: No such file or directory: OCI runtime attempted to invoke a command that was not found"
+time="2021-07-17T00:40:25+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:40:28+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:40:31+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+time="2021-07-17T00:40:34+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world:latest...
+Getting image source signatures
+Copying blob sha256:b8dfde127a2919ff59ad3fd4a0776de178a555a76fff77a506e128aea3ed41e3
+Copying config sha256:d1165f2212346b2bab48cb01c1e39ee8ad1be46b87873d9ca7a4e434980a7726
+Writing manifest to image destination
+Storing signatures
+Resolved "hello-world" as an alias (/etc/containers/registries.conf.d/shortnames.conf)
+Trying to pull docker.io/library/hello-world@sha256:083de497cff944f969d8499ab94f07134c50bcf5e6b9559b27182d3fa80ce3f7...
+Getting image source signatures
+Copying blob sha256:ca4f61b1923c10e9eb81228bd46bee1dfba02b9c7dac1844527a734752688ede
+Copying config sha256:f2a91732366c0332ccd7afd2a5c4ff2b9af81f549370f7a19acd460f87686bc7
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:3.10...
+Getting image source signatures
+Copying blob sha256:396c31837116ac290458afcb928f68b6cc1c7bdd6963fc72f52f365a2a89c1b5
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Getting image source signatures
+Copying blob sha256:9fb3aa2f8b8023a4bebbf92aa567caf88e38e969ada9f0ac12643b2847391635
+Copying config sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a
+Writing manifest to image destination
+Storing signatures
+Trying to pull docker.io/library/alpine:latest...
+Getting image source signatures
+Copying blob sha256:5843afab387455b37944e709ee8c78d7520df80f8d01cf7f861aae63beeddb6b
+Copying config sha256:d4ff818577bc193b309b355b02ebc9220427090057b54a59e73b79bdfe139b83
+Writing manifest to image destination
+Storing signatures
+time="2021-07-17T00:41:45+02:00" level=warning msg="tar file content type is  application/tar, should use \"application/x-tar\" content type"

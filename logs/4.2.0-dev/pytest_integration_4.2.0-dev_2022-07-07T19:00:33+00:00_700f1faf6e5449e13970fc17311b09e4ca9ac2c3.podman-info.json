@@ -1,0 +1,159 @@
+{
+  "host": {
+    "arch": "amd64",
+    "buildahVersion": "1.27.0-dev",
+    "cgroupManager": "systemd",
+    "cgroupVersion": "v2",
+    "cgroupControllers": [
+      "cpuset",
+      "cpu",
+      "io",
+      "memory",
+      "pids"
+    ],
+    "conmon": {
+      "package": "conmon_2:2.1.2-0ubuntu22.04+obs5.1_amd64",
+      "path": "/usr/bin/conmon",
+      "version": "conmon version 2.1.2, commit: "
+    },
+    "cpus": 4,
+    "cpuUtilization": {
+      "userPercent": 3.95,
+      "systemPercent": 2.28,
+      "idlePercent": 93.77
+    },
+    "distribution": {
+      "distribution": "ubuntu",
+      "version": "22.04",
+      "codename": "jammy"
+    },
+    "eventLogger": "journald",
+    "hostname": "acnologia",
+    "idMappings": {
+      "gidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ],
+      "uidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ]
+    },
+    "kernel": "5.15.0-40-generic",
+    "logDriver": "journald",
+    "memFree": 3258920960,
+    "memTotal": 16533049344,
+    "networkBackend": "netavark",
+    "ociRuntime": {
+      "name": "runc",
+      "package": "runc_1.1.0-0ubuntu1_amd64",
+      "path": "/usr/sbin/runc",
+      "version": "runc version 1.1.0-0ubuntu1\nspec: 1.0.2-dev\ngo: go1.17.3\nlibseccomp: 2.5.3"
+    },
+    "os": "linux",
+    "remoteSocket": {
+      "path": "/run/user/1000/podman/podman.sock"
+    },
+    "serviceIsRemote": false,
+    "security": {
+      "apparmorEnabled": false,
+      "capabilities": "CAP_CHOWN,CAP_DAC_OVERRIDE,CAP_FOWNER,CAP_FSETID,CAP_KILL,CAP_NET_BIND_SERVICE,CAP_SETFCAP,CAP_SETGID,CAP_SETPCAP,CAP_SETUID,CAP_SYS_CHROOT",
+      "rootless": true,
+      "seccompEnabled": true,
+      "seccompProfilePath": "/usr/share/containers/seccomp.json",
+      "selinuxEnabled": false
+    },
+    "slirp4netns": {
+      "executable": "/usr/bin/slirp4netns",
+      "package": "slirp4netns_1.2.0-0ubuntu22.04+obs4.1_amd64",
+      "version": "slirp4netns version 1.2.0\ncommit: 656041d45cfca7a4176f6b7eed9e4fe6c11e8383\nlibslirp: 4.6.1\nSLIRP_CONFIG_VERSION_MAX: 3\nlibseccomp: 2.5.3"
+    },
+    "swapFree": 2147479552,
+    "swapTotal": 2147479552,
+    "uptime": "13h 19m 12.00s (Approximately 0.54 days)",
+    "linkmode": "dynamic"
+  },
+  "store": {
+    "configFile": "/home/riyad/.config/containers/storage.conf",
+    "containerStore": {
+      "number": 0,
+      "paused": 0,
+      "running": 0,
+      "stopped": 0
+    },
+    "graphDriverName": "overlay",
+    "graphOptions": {
+      "overlay.mount_program": {
+  "Executable": "/usr/bin/fuse-overlayfs",
+  "Package": "fuse-overlayfs_1.9-0ubuntu22.04+obs12.1_amd64",
+  "Version": "fusermount3 version: 3.10.5\nfuse-overlayfs: version 1.9\nFUSE library version 3.10.5\nusing FUSE kernel interface version 7.31"
+},
+      "overlay.mountopt": "nodev,metacopy=on"
+    },
+    "graphRoot": "/home/riyad/podman/storage",
+    "graphRootAllocated": 122075348992,
+    "graphRootUsed": 2106720256,
+    "graphStatus": {
+      "Backing Filesystem": "zfs",
+      "Native Overlay Diff": "false",
+      "Supports d_type": "true",
+      "Using metacopy": "false"
+    },
+    "imageCopyTmpDir": "/var/tmp",
+    "imageStore": {
+      "number": 41
+    },
+    "runRoot": "/run/user/1000/containers",
+    "volumePath": "/home/riyad/podman/storage/volumes"
+  },
+  "registries": {
+    "search": [
+  "registry.fedoraproject.org",
+  "registry.access.redhat.com",
+  "docker.io",
+  "quay.io"
+]
+  },
+  "plugins": {
+    "volume": [
+      "local"
+    ],
+    "network": [
+      "bridge",
+      "macvlan"
+    ],
+    "log": [
+      "k8s-file",
+      "none",
+      "passthrough",
+      "journald"
+    ],
+    "authorization": null
+  },
+  "version": {
+    "APIVersion": "4.2.0-dev",
+    "Version": "4.2.0-dev",
+    "GoVersion": "go1.18.1",
+    "GitCommit": "700f1faf6e5449e13970fc17311b09e4ca9ac2c3",
+    "BuiltTime": "Fri Jul  8 11:38:58 2022",
+    "Built": 1657273138,
+    "OsArch": "linux/amd64",
+    "Os": "linux"
+  }
+}

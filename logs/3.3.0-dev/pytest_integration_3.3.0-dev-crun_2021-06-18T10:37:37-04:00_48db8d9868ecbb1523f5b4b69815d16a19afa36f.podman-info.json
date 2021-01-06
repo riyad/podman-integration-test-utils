@@ -1,0 +1,123 @@
+{
+  "host": {
+    "arch": "amd64",
+    "buildahVersion": "1.21.1",
+    "cgroupManager": "systemd",
+    "cgroupVersion": "v2",
+    "cgroupControllers": [],
+    "conmon": {
+      "package": "conmon: /usr/libexec/podman/conmon",
+      "path": "/usr/libexec/podman/conmon",
+      "version": "conmon version 2.0.27, commit: "
+    },
+    "cpus": 4,
+    "distribution": {
+      "distribution": "ubuntu",
+      "version": "21.04"
+    },
+    "eventLogger": "journald",
+    "hostname": "acnologia",
+    "idMappings": {
+      "gidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ],
+      "uidmap": [
+        {
+          "container_id": 0,
+          "host_id": 1000,
+          "size": 1
+        },
+        {
+          "container_id": 1,
+          "host_id": 100000,
+          "size": 65536
+        }
+      ]
+    },
+    "kernel": "5.11.0-18-generic",
+    "memFree": 1060777984,
+    "memTotal": 16535015424,
+    "ociRuntime": {
+      "name": "crun",
+      "package": "crun: /usr/bin/crun",
+      "path": "/usr/bin/crun",
+      "version": "crun version 0.20.1.5-925d-dirty\ncommit: 0d42f1109fd73548f44b01b3e84d04a279e99d2e\nspec: 1.0.0\n+SYSTEMD +SELINUX +APPARMOR +CAP +SECCOMP +EBPF +CRIU +YAJL"
+    },
+    "os": "linux",
+    "remoteSocket": {
+      "path": "/run/user/1000/podman/podman.sock"
+    },
+    "serviceIsRemote": false,
+    "security": {
+      "apparmorEnabled": false,
+      "capabilities": "CAP_CHOWN,CAP_DAC_OVERRIDE,CAP_FOWNER,CAP_FSETID,CAP_KILL,CAP_NET_BIND_SERVICE,CAP_SETFCAP,CAP_SETGID,CAP_SETPCAP,CAP_SETUID,CAP_SYS_CHROOT",
+      "rootless": true,
+      "seccompEnabled": true,
+      "seccompProfilePath": "/usr/share/containers/seccomp.json",
+      "selinuxEnabled": false
+    },
+    "slirp4netns": {
+      "executable": "/usr/bin/slirp4netns",
+      "package": "slirp4netns: /usr/bin/slirp4netns",
+      "version": "slirp4netns version 1.1.8\ncommit: unknown\nlibslirp: 4.3.1-git\nSLIRP_CONFIG_VERSION_MAX: 3\nlibseccomp: 2.5.1"
+    },
+    "swapFree": 1086951424,
+    "swapTotal": 2147479552,
+    "uptime": "74h 13m 52.4s (Approximately 3.08 days)",
+    "linkmode": "dynamic"
+  },
+  "store": {
+    "configFile": "/home/riyad/.config/containers/storage.conf",
+    "containerStore": {
+      "number": 0,
+      "paused": 0,
+      "running": 0,
+      "stopped": 0
+    },
+    "graphDriverName": "overlay",
+    "graphOptions": {
+      "overlay.mount_program": {
+  "Executable": "/usr/bin/fuse-overlayfs",
+  "Package": "fuse-overlayfs: /usr/bin/fuse-overlayfs",
+  "Version": "fusermount3 version: 3.10.2\nfuse-overlayfs: version 1.5\nFUSE library version 3.10.2\nusing FUSE kernel interface version 7.31"
+},
+      "overlay.mountopt": "nodev,metacopy=on"
+    },
+    "graphRoot": "/home/riyad/podman/storage",
+    "graphStatus": {
+      "Backing Filesystem": "zfs",
+      "Native Overlay Diff": "false",
+      "Supports d_type": "true",
+      "Using metacopy": "false"
+    },
+    "imageStore": {
+      "number": 22
+    },
+    "runRoot": "/run/user/1000/containers",
+    "volumePath": "/home/riyad/podman/storage/volumes"
+  },
+  "registries": {
+    "search": [
+  "docker.io",
+  "quay.io"
+]
+  },
+  "version": {
+    "APIVersion": "3.3.0-dev",
+    "Version": "3.3.0-dev",
+    "GoVersion": "go1.16.5",
+    "GitCommit": "48db8d9868ecbb1523f5b4b69815d16a19afa36f",
+    "BuiltTime": "Sat Jun 19 16:43:36 2021",
+    "Built": 1624113816,
+    "OsArch": "linux/amd64"
+  }
+}

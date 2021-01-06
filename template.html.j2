@@ -32,7 +32,7 @@
               </form>
             </th>
             {%- for test_suite in test_suites: %}
-              <th class="align-top" scope="col" data-commit-date="{{ test_suite.commit_date }}" data-commit-id="{{ test_suite.commit_id }}" data-podman-version="{{ test_suite.podman_version }}" data-runtime="{{ test_suite.runtime }}">
+              <th class="align-top" scope="col">
                 {{ test_suite.podman_version }}
                 {%- if test_suite.commit_id != '': %}
                   {{ test_suite.commit_date.date().isoformat()}}
@@ -91,7 +91,6 @@
                   {% else: %}
                   {% endif %}
                   result result-{{ test.result }}"
-                  data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-result="{{ test.result }}"  data-runtime="{{ test.runtime }}" data-test-file="{{ test.test_file }}" data-test-class="{{ test.test_class }}" data-test-method="{{ test.test_method }}"
                 >
                   {{ test.result }}
                 </td>
@@ -123,7 +122,7 @@
           </tr>
           <tr>
             {%- for test_suite in test_suites: %}
-              <th class="align-top" scope="col" data-commit-date="{{ test_suite.commit_date }}" data-commit-id="{{ test_suite.commit_id }}" data-podman-version="{{ test_suite.podman_version }}" data-runtime="{{ test_suite.runtime }}">
+              <th class="align-top" scope="col">
                 {{ test_suite.podman_version }}
                 {%- if test_suite.commit_id != '': %}
                   {{ test_suite.commit_date.date().isoformat()}}
