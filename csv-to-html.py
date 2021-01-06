@@ -42,8 +42,8 @@ def main():
             tests_by_name_and_session[test_name][test['_test_session']] = test
             test_summaries_by_session[test['_test_session']][test['result']] += 1
 
-    test_names = sorted(list(test_names))
-    test_sessions = sorted(list(test_sessions))
+    test_names = list(sorted(test_names))
+    test_sessions = list(reversed(sorted(test_sessions)))
 
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
     template = env.get_template('template.html.j2')
