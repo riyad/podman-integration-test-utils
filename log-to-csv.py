@@ -19,6 +19,8 @@ EMPTY_TEST = dict(
     _test_session=None,
     _unsupported=None,
 )
+UNSUPPORTED_TEST_CLASSES = ['ConfigAPITest', 'NodesTest', 'SecretAPITest', 'ServiceTest', 'SwarmTest', 'TestStore']
+UNSUPPORTED_TEST_METHODS = ['test_create_inspect_network_with_scope', 'test_create_network_attachable' , 'test_create_network_ingress']
 
 
 def main():
@@ -49,7 +51,13 @@ def main():
 
         test_file_data['comment'] = '_'.join(file_name_parts[i:])
 
-        test_file_data['_test_session'] = "{} {} {} {} {}".format(test_file_data['podman_version'], test_file_data['commit_date'], test_file_data['commit_id'], test_file_data['runtime'], test_file_data['comment'])
+        test_file_data['_test_session'] = "{} {} {} {} {}".format(
+            test_file_data['podman_version'],
+            test_file_data['commit_date'],
+            test_file_data['commit_id'],
+            test_file_data['runtime'],
+            test_file_data['comment'],
+        )
 
         with file_path.open('rt') as f:
             is_test_section = False
@@ -96,8 +104,8 @@ def main():
                             pass
 
                         test['_unsupported'] = (
-                            test['test_class'] in ['ConfigAPITest', 'NodesTest', 'SecretAPITest', 'ServiceTest', 'SwarmTest'] \
-                                or test['test_method'] in ['test_create_inspect_network_with_scope', 'test_create_network_attachable' , 'test_create_network_ingress'])
+                            test['test_class'] in UNSUPPORTED_TEST_CLASSES \
+                            or test['test_method'] in UNSUPPORTED_TEST_METHODS)
 
                         csv_writer.writerow(test)
 
