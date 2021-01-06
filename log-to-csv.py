@@ -5,33 +5,50 @@ import pathlib
 import sys
 
 
+EMPTY_TEST = dict(
+    commit_date=None,
+    commit_id=None,
+    podman_version=None,
+    runtime=None,
+    test_file=None,
+    test_class=None,
+    test_method=None,
+    result=None,
+    comment=None,
+    _test_name=None,
+    _test_session=None,
+)
+
+
 def main():
-    csv_writer = csv.writer(sys.stdout)
-    csv_writer.writerow(['commit_date', 'commit_id', 'podman_version', 'runtime', 'test_file', 'test_class', 'test_method', 'result', 'comment', '_test_name', '_test_session'])
+    csv_writer = csv.DictWriter(sys.stdout, fieldnames=EMPTY_TEST.keys())
+    csv_writer.writeheader()
 
     for file_arg in sys.argv[1:]:
         file_path = pathlib.Path(file_arg)
         file_name_parts = file_path.name.lstrip('pytest_integration_').rstrip('.log').split('_')
 
+        test_file_data = EMPTY_TEST.copy()
+
         i = 0
 
-        podman_version = file_name_parts[i]
+        test_file_data['podman_version'] = file_name_parts[i]
         i += 1
 
-        if podman_version.endswith('-dev'):
-            commit_date = file_name_parts[i]
-            commit_id = file_name_parts[i+1]
+        if test_file_data['podman_version'].endswith('-dev'):
+            test_file_data['commit_date'] = file_name_parts[i]
+            test_file_data['commit_id'] = file_name_parts[i+1]
             i += 2
         else:
-            commit_date = None
-            commit_id = None
+            test_file_data['commit_date'] = None
+            test_file_data['commit_id'] = None
 
-        runtime = file_name_parts[i]
+        test_file_data['runtime'] = file_name_parts[i]
         i += 1
 
-        comment = '_'.join(file_name_parts[i:])
+        test_file_data['comment'] = '_'.join(file_name_parts[i:])
 
-        _test_session = "{} {} {} {} {}".format(podman_version, commit_date, commit_id, runtime, comment)
+        test_file_data['_test_session'] = "{} {} {} {} {}".format(test_file_data['podman_version'], test_file_data['commit_date'], test_file_data['commit_id'], test_file_data['runtime'], test_file_data['comment'])
 
         with file_path.open('rt') as f:
             is_test_section = False
@@ -58,23 +75,26 @@ def main():
                             do_parse = False
                             break
 
+                        test = test_file_data.copy()
+
                         try:
                             file_class_test, result, _ = line.split(' ', maxsplit=2)
+                            test['_test_name'] = file_class_test
+                            test['result'] = result
                         except ValueError:
                             file_class_test, _ = line.split(' ', maxsplit=1)
-                            result = None
 
                         try:
                             test_file, test_method = file_class_test.split('::', maxsplit=1)
                             if '::' in test_method:
                                 test_class, test_method = test_method.split('::')
+                            test['test_file'] = test_file
+                            test['test_class'] = test_class
+                            test['test_method'] = test_method
                         except ValueError:
-                            test_file = None
-                            test_class = None
-                            test_method = None
+                            pass
 
-                        _test_name = file_class_test
-                        csv_writer.writerow([commit_date, commit_id, podman_version, runtime, test_file, test_class, test_method, result, comment, _test_name, _test_session])
+                        csv_writer.writerow(test)
 
 
 if __name__ == '__main__':
