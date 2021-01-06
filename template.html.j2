@@ -16,11 +16,20 @@
           <div class="card-body text-muted">
             <button type="button" class="btn-close float-end" aria-label="Close"></button>
             <h5 class="card-title">Legend</h5>
+
+            <h6>Runtime used</h6>
             <p>
-              Runtime: <span class="badge bg-info">crun</span> (runc assumed if not given)
+              Different runtimes might affect test performance. We assume that tests were run with <code>runc</code> by default and mark them with e.g. <span class="badge bg-info">crun</span> if this was not the case.
             </p>
+
+            <h6>Comments/Notes</h6>
             <p>
-              Comment/Note: <span class="badge bg-warning text-dark">something</span>
+              Tests that have notes have a <span class="badge bg-warning text-dark">badge looking like this</span>.
+            </p>
+
+            <h6>Unsupported tests</h6>
+            <p>
+              Some tests will never pass, because they test features of Docker that Podman doesn't intend to replicate (e.g. Swarm). They're marked with <span class="badge bg-danger">unsupported</span>.
             </p>
           </div>
         </div>
