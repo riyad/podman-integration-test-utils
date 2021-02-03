@@ -4,6 +4,7 @@ import csv
 import distutils.util
 import sys
 from collections import defaultdict
+from datetime import datetime
 from itertools import groupby
 from operator import itemgetter
 
@@ -36,6 +37,8 @@ def main():
 
         for test in tests:
             # fix data format
+            if test['commit_date'] != '':
+                test['commit_date'] = datetime.fromisoformat(test['commit_date'])
             test['_unsupported'] = bool(distutils.util.strtobool(test['_unsupported']))
 
             test_sessions.add(test['_test_session'])
