@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import csv
+import json
 import pathlib
 import sys
 
@@ -23,40 +24,78 @@ UNSUPPORTED_TEST_CLASSES = ['ConfigAPITest', 'NodesTest', 'SecretAPITest', 'Serv
 UNSUPPORTED_TEST_METHODS = ['test_create_inspect_network_with_scope', 'test_create_network_attachable' , 'test_create_network_ingress']
 
 
+# str.removeprefix only supported for Python >= 3.9
+# see https://docs.python.org/3/library/stdtypes.html#str.removeprefix
+def removeprefix(text, prefix):
+    if prefix and text.startswith(prefix):
+        return text[len(prefix):]
+    return text
+
+# str.removesuffix only supported for Python >= 3.9
+# see https://docs.python.org/3/library/stdtypes.html#str.removesuffix
+def removesuffix(text, suffix):
+    if suffix and text.endswith(suffix):
+        return text[:-len(suffix)]
+    return text
+
+
 def main():
     csv_writer = csv.DictWriter(sys.stdout, fieldnames=EMPTY_TEST.keys())
     csv_writer.writeheader()
 
     for file_arg in sys.argv[1:]:
         file_path = pathlib.Path(file_arg)
-        file_name_parts = file_path.name.lstrip('pytest_integration_').rstrip('.log').split('_')
 
-        test_file_data = EMPTY_TEST.copy()
+        if not file_path.name.endswith('.pytest.log'):
+            continue
 
+        test_suite_data = EMPTY_TEST.copy()
+
+        podman_info_file = file_path.parent.joinpath(
+            removesuffix(file_path.name, '.pytest.log') + '.podman-info.json')
+
+        pytest_log_file_name_parts = removesuffix(removeprefix(file_path.name, 'pytest_integration_'), '.pytest.log').split('_')
         i = 0
+        if podman_info_file.exists():
+            with podman_info_file.open('rt') as f:
+                podman_info_data = json.load(f)
 
-        test_file_data['podman_version'] = file_name_parts[i]
-        i += 1
+            # skip "release/branch"
+            i += 1
 
-        if test_file_data['podman_version'].endswith('-dev'):
-            test_file_data['commit_date'] = file_name_parts[i]
-            test_file_data['commit_id'] = file_name_parts[i+1]
-            i += 2
+            test_suite_data['podman_version'] = podman_info_data['version']['Version']
+            test_suite_data['runtime'] = podman_info_data['host']['ociRuntime']['name']
+
+            if 'dev' in test_suite_data['podman_version']:
+                test_suite_data['commit_date'] = pytest_log_file_name_parts[i]
+                test_suite_data['commit_id'] = pytest_log_file_name_parts[i+1]
+                i += 2
+            else:
+                test_suite_data['commit_date'] = None
+                test_suite_data['commit_id'] = None
         else:
-            test_file_data['commit_date'] = None
-            test_file_data['commit_id'] = None
+            test_suite_data['podman_version'] = pytest_log_file_name_parts[i]
+            i += 1
 
-        test_file_data['runtime'] = file_name_parts[i]
-        i += 1
+            if 'dev' in test_suite_data['podman_version']:
+                test_suite_data['commit_date'] = pytest_log_file_name_parts[i]
+                test_suite_data['commit_id'] = pytest_log_file_name_parts[i+1]
+                i += 2
+            else:
+                test_suite_data['commit_date'] = None
+                test_suite_data['commit_id'] = None
 
-        test_file_data['comment'] = '_'.join(file_name_parts[i:])
+            test_suite_data['runtime'] = pytest_log_file_name_parts[i]
+            i += 1
 
-        test_file_data['_test_session'] = "{} {} {} {} {}".format(
-            test_file_data['podman_version'],
-            test_file_data['commit_date'],
-            test_file_data['commit_id'],
-            test_file_data['runtime'],
-            test_file_data['comment'],
+        test_suite_data['comment'] = '_'.join(pytest_log_file_name_parts[i:])
+
+        test_suite_data['_test_session'] = "{} {} {} {} {}".format(
+            test_suite_data['podman_version'],
+            test_suite_data['commit_date'],
+            test_suite_data['commit_id'],
+            test_suite_data['runtime'],
+            test_suite_data['comment'],
         )
 
         with file_path.open('rt') as f:
@@ -84,7 +123,7 @@ def main():
                             do_parse = False
                             break
 
-                        test = test_file_data.copy()
+                        test = test_suite_data.copy()
 
                         try:
                             file_class_test, result, _ = line.split(' ', maxsplit=2)
