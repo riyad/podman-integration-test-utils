@@ -57,6 +57,7 @@ def main():
         pytest_log_file_name_parts = removesuffix(removeprefix(file_path.name, 'pytest_integration_'), '.pytest.log').split('_')
         i = 0
         if podman_info_file.exists():
+            # file name format:  pytest_integration_<branch/release>_<commit date>_<commit id>[_<comments ...>].pytest.log
             with podman_info_file.open('rt') as f:
                 podman_info_data = json.load(f)
 
@@ -74,6 +75,7 @@ def main():
                 test_suite_data['commit_date'] = None
                 test_suite_data['commit_id'] = None
         else:
+            # file name format:  pytest_integration_<podman version>_<commit date>_<commit id>_<runtime>[_<comments ...>].pytest.log
             test_suite_data['podman_version'] = pytest_log_file_name_parts[i]
             i += 1
 
