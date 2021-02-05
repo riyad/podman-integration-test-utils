@@ -39,7 +39,7 @@ function main() {
 
   local PODMAN_COMMIT_ID="$(git log -1 --format=%H)"
   local PODMAN_COMMIT_DATE="$(git log -1 --format=%cI)"
-  local LOG_BASE_NAME="${DOCKER_PY_LOGS_PATH}/pytest_integration_${PODMAN_COMMIT_DATE}_${PODMAN_COMMIT_ID}"
+  local LOG_BASE_NAME="${DOCKER_PY_LOGS_PATH}/pytest_integration_dev_${PODMAN_COMMIT_DATE}_${PODMAN_COMMIT_ID}"
 
   make -j "$(nproc)" podman
 
