@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+#
+# Author: Riyad Preukschas <riyad@informatik.uni-bremen.de>
+# License: Mozilla Public License 2.0
+# SPDX-License-Identifier: MPL-2.0
+#
+# Takes a list of pytest log files (and some meta data), converts them into CSV
+# format and prints that.
 
 import csv
 import json

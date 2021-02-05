@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+#
+# Author: Riyad Preukschas <riyad@informatik.uni-bremen.de>
+# License: Mozilla Public License 2.0
+# SPDX-License-Identifier: MPL-2.0
+#
+# Loads pytest test logs from a CSV file (also from  STDIN) and renders it into
+# a HTML table for better comparison.
 
 import csv
 import distutils.util
