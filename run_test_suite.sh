@@ -46,6 +46,7 @@ function main() {
   ./bin/podman info --format json > "${LOG_BASE_NAME}.podman-info.json"
 
   # TODO: put behind flag
+  ./bin/podman stop -a
   ./bin/podman rm -a
 
   # TODO: put behind flag
