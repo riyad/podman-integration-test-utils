@@ -48,6 +48,7 @@ function main() {
   # TODO: put behind flag
   ./bin/podman stop -a
   ./bin/podman rm -a
+  buildah rm -a
 
   # TODO: put behind flag
   killall -r 'podman.*'
