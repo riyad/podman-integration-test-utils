@@ -10,12 +10,14 @@
 
 set -euo pipefail
 
+# NOTE: change these to match your environment
 readonly PODMAN_REPO_PATH=~/src/podman
-readonly PODMAN_SOCKET_PATH="unix:${PODMAN_REPO_PATH}/docker-py-test.sock"
 readonly DOCKER_PY_REPO_PATH=~/src/docker-py
 readonly DOCKER_PY_VIRTUALENV_PATH="${DOCKER_PY_REPO_PATH}/venv"
 readonly DOCKER_PY_LOGS_PATH="${DOCKER_PY_REPO_PATH}/logs"
 
+
+readonly PODMAN_SOCKET_PATH="unix:${PODMAN_REPO_PATH}/docker-py-test.sock"
 export DOCKER_HOST="${PODMAN_SOCKET_PATH}"
 
 
