@@ -41,13 +41,19 @@ a Python virtualenv for docker-py and install its dependencies into it.
 ### Running the test suite
 
 The simplest way to run the test suite is to call the `run_test_suite.sh` script
-giving it a Git branch or commit id.
+and optionally giving it a Git branch or commit id.
 
 ```shell
+# run against master
 ./run_test_suite.sh dev
+
+# run against a specific branch/commit
+./run_test_suite.sh dev --checkout abcdefg
+
+# see ./run_test_suite.sh --help for more options
 ```
 
-It will checkout the specified branch or commit, build the _podman_ binary,
+It will checkout the branch or commit, build the _podman_ binary,
 start the API server run the tests against it and then stop the server again.
 
 It will produce 3 files:
