@@ -107,6 +107,9 @@ visualizing how individual test results compare between different test suite run
 
 ```
 
+If you want, you can checkout the [`logs`](https://github.com/riyad/podman-integration-test-utils/tree/logs)
+branch for a head start.
+
 ### Converting pytest logs into a CSV file
 
 You can also convert your pytest logs into a CSV file if you want to use other
