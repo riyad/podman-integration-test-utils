@@ -14,6 +14,7 @@ import sys
 
 
 EMPTY_TEST = dict(
+    suite_tag=None,
     commit_date=None,
     commit_id=None,
     podman_version=None,
@@ -24,7 +25,7 @@ EMPTY_TEST = dict(
     result=None,
     comment=None,
     _test_name=None,
-    _test_session=None,
+    _test_suite=None,
     _unsupported=None,
 )
 UNSUPPORTED_TEST_CLASSES = ['ConfigAPITest', 'NodesTest', 'SecretAPITest', 'ServiceTest', 'SwarmTest', 'TestStore']
@@ -64,47 +65,40 @@ def main():
         pytest_log_file_name_parts = removesuffix(removeprefix(file_path.name, 'pytest_integration_'), '.pytest.log').split('_')
         i = 0
         if podman_info_file.exists():
-            # file name format:  pytest_integration_<branch/release>_<commit date>_<commit id>[_<comments ...>].pytest.log
+            # file name format:  pytest_integration_<suite tag>_<commit date>_<commit id>[_<comments ...>].pytest.log
             with podman_info_file.open('rt') as f:
                 podman_info_data = json.load(f)
 
-            # skip "release/branch"
+            test_suite_data['suite_tag'] = pytest_log_file_name_parts[i]
             i += 1
 
             test_suite_data['podman_version'] = podman_info_data['version']['Version']
             test_suite_data['runtime'] = podman_info_data['host']['ociRuntime']['name']
 
-            if 'dev' in test_suite_data['podman_version']:
-                test_suite_data['commit_date'] = pytest_log_file_name_parts[i]
-                test_suite_data['commit_id'] = pytest_log_file_name_parts[i+1]
-                i += 2
-            else:
-                test_suite_data['commit_date'] = None
-                test_suite_data['commit_id'] = None
+            test_suite_data['commit_date'] = pytest_log_file_name_parts[i]
+            test_suite_data['commit_id'] = pytest_log_file_name_parts[i+1]
+            i += 2
         else:
             # file name format:  pytest_integration_<podman version>_<commit date>_<commit id>_<runtime>[_<comments ...>].pytest.log
+            test_suite_data['suite_tag'] = pytest_log_file_name_parts[i]
             test_suite_data['podman_version'] = pytest_log_file_name_parts[i]
             i += 1
 
-            if 'dev' in test_suite_data['podman_version']:
-                test_suite_data['commit_date'] = pytest_log_file_name_parts[i]
-                test_suite_data['commit_id'] = pytest_log_file_name_parts[i+1]
-                i += 2
-            else:
-                test_suite_data['commit_date'] = None
-                test_suite_data['commit_id'] = None
+            test_suite_data['commit_date'] = pytest_log_file_name_parts[i]
+            test_suite_data['commit_id'] = pytest_log_file_name_parts[i+1]
+            i += 2
 
             test_suite_data['runtime'] = pytest_log_file_name_parts[i]
             i += 1
 
         test_suite_data['comment'] = '_'.join(pytest_log_file_name_parts[i:])
 
-        test_suite_data['_test_session'] = "{} {} {} {} {}".format(
+        test_suite_data['_test_suite'] = "{} {} {} {} {}".format(
             test_suite_data['podman_version'],
             test_suite_data['commit_date'],
-            test_suite_data['commit_id'],
+            test_suite_data['suite_tag'],
             test_suite_data['runtime'],
-            test_suite_data['comment'],
+            file_path,
         )
 
         with file_path.open('rt') as f:

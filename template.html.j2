@@ -31,8 +31,8 @@
                 <input class="form-control" type="search" id="filterInputLeft" placeholder="Filter tests ...">
               </form>
             </th>
-            {%- for test_session in test_sessions: %}
-              {%- set test = tests_by_name_and_session[test_names[0]][test_session] %}
+            {%- for test_suite in test_suites: %}
+              {%- set test = tests_by_name_and_suite[test_names[0]][test_suite] %}
               <th class="align-top" scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
                 {{ test.podman_version }}
                 {%- if test.commit_id != '': %}
@@ -53,21 +53,21 @@
             </th>
           </tr>
           <tr>
-            {%- for test_session in test_sessions: %}
+            {%- for test_suite in test_suites: %}
               <td>
-                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_session[test_session].FAILED }}</span>
-                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_session[test_session].PASSED }}</span>
-                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_session[test_session].SKIPPED }}</span>
-                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_session[test_session].XFAIL }}</span>
-                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_session[test_session].XPASS }}</span>
-                <span class="badge bg-danger">ERROR: {{ test_summaries_by_session[test_session].ERROR }}</span>
+                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite].FAILED }}</span>
+                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite].PASSED }}</span>
+                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite].SKIPPED }}</span>
+                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite].XFAIL }}</span>
+                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite].XPASS }}</span>
+                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite].ERROR }}</span>
               </td>
             {%- endfor %}
           </tr>
         </thead>
         <tbody>
           {%- for test_name in test_names: %}
-            {%- set _test = tests_by_name_and_session[test_name][test_sessions[0]] %}
+            {%- set _test = tests_by_name_and_suite[test_name][test_suites[0]] %}
             <tr class="align-middle test {{ 'test-unsupported d-none' if _test._unsupported }}" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
               <th scope="row" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
                 {{ test_name }}
@@ -75,8 +75,8 @@
                   <span class="badge bg-danger">unsupported</span>
                 {%- endif %}
               </th>
-              {%- for test_session in test_sessions: %}
-                {%- set test = tests_by_name_and_session[test_name][test_session] %}
+              {%- for test_suite in test_suites: %}
+                {%- set test = tests_by_name_and_suite[test_name][test_suite] %}
                 <td class="
                   {% if test.result == 'ERROR': %}
                     table-danger bg-danger text-white
@@ -96,9 +96,9 @@
                   {{ test.result }}
                 </td>
               {%- endfor %}
-              <th scope="row" data-test-file="{{ tests_by_name_and_session[test_name][test_session].test_file }}" data-test-class="{{ tests_by_name_and_session[test_name][test_session].test_class }}" data-test-method="{{ tests_by_name_and_session[test_name][test_session].test_method }}">
+              <th scope="row" data-test-file="{{ tests_by_name_and_suite[test_name][test_suite].test_file }}" data-test-class="{{ tests_by_name_and_suite[test_name][test_suite].test_class }}" data-test-method="{{ tests_by_name_and_suite[test_name][test_suite].test_method }}">
                 {{ test_name }}
-                {%- if tests_by_name_and_session[test_name][test_session]._unsupported: %}
+                {%- if tests_by_name_and_suite[test_name][test_suite]._unsupported: %}
                   <span class="badge bg-danger">unsupported</span>
                 {%- endif %}
               </th>
@@ -108,21 +108,21 @@
         <tfoot>
           <tr>
             <th scope="col" rowspan="2"></th>
-            {%- for test_session in test_sessions: %}
+            {%- for test_suite in test_suites: %}
               <td>
-                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_session[test_session].FAILED }}</span>
-                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_session[test_session].PASSED }}</span>
-                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_session[test_session].SKIPPED }}</span>
-                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_session[test_session].XFAIL }}</span>
-                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_session[test_session].XPASS }}</span>
-                <span class="badge bg-danger">ERROR: {{ test_summaries_by_session[test_session].ERROR }}</span>
+                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite].FAILED }}</span>
+                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite].PASSED }}</span>
+                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite].SKIPPED }}</span>
+                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite].XFAIL }}</span>
+                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite].XPASS }}</span>
+                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite].ERROR }}</span>
               </td>
             {%- endfor %}
             <th scope="col" rowspan="2"></th>
           </tr>
           <tr>
-            {%- for test_session in test_sessions: %}
-              {%- set test = tests_by_name_and_session[test_names[0]][test_session] %}
+            {%- for test_suite in test_suites: %}
+              {%- set test = tests_by_name_and_suite[test_names[0]][test_suite] %}
               <th class="align-top" scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
                 {{ test.podman_version }}
                 {%- if test.commit_id != '': %}

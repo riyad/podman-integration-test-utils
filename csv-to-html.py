@@ -34,10 +34,10 @@ def main():
     else:
         exit(1)
 
-    tests_by_name_and_session = defaultdict(lambda: defaultdict(defaultdict))
+    tests_by_name_and_suite = defaultdict(lambda: defaultdict(defaultdict))
     test_names = set()
-    test_sessions = set()
-    test_summaries_by_session = defaultdict(lambda: defaultdict(int))
+    test_suites = set()
+    test_summaries_by_suite = defaultdict(lambda: defaultdict(int))
     for test_name, tests in groupby(all_tests, lambda t: t['_test_name']):
         tests = list(tests)
         test_names.add(test_name)
@@ -48,20 +48,20 @@ def main():
                 test['commit_date'] = datetime.fromisoformat(test['commit_date'])
             test['_unsupported'] = bool(distutils.util.strtobool(test['_unsupported']))
 
-            test_sessions.add(test['_test_session'])
-            tests_by_name_and_session[test_name][test['_test_session']] = test
-            test_summaries_by_session[test['_test_session']][test['result']] += 1
+            test_suites.add(test['_test_suite'])
+            tests_by_name_and_suite[test_name][test['_test_suite']] = test
+            test_summaries_by_suite[test['_test_suite']][test['result']] += 1
 
     test_names = list(sorted(test_names))
-    test_sessions = list(reversed(sorted(test_sessions)))
+    test_suites = list(reversed(sorted(test_suites)))
 
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
     template = env.get_template('template.html.j2')
     print(template.render(
         test_names=test_names,
-        test_sessions=test_sessions,
-        tests_by_name_and_session=tests_by_name_and_session,
-        test_summaries_by_session=test_summaries_by_session,
+        test_suites=test_suites,
+        tests_by_name_and_suite=tests_by_name_and_suite,
+        test_summaries_by_suite=test_summaries_by_suite,
     ))
 
 
