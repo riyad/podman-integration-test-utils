@@ -23,40 +23,49 @@ _run_test_suite.sh_ to point to the directories you've cloned
 [Podman](https://github.com/containers/podman) and
 [docker-py](https://github.com/docker/docker-py) to.
 
-NOTE: beware that _run_test_suite.sh_ will run Git commands on the specified
-  Podman repo. You may want to have a separate clone for these scripts to work in.
+WARNING: beware that _run_test_suite.sh_ will run Git commands on the specified
+Podman repo. You may want to have a separate clone for these scripts to work in.
 
-If you've updated the paths run the setup script.
+After you've set the repo paths run the setup script.
 
 ```shell
 ./setup_test_suite.sh
 ```
 
-This will create a pytest configuration filemore suited to our needs and setup a
-Python virtualenv for docker-py and install its dependencies into it.
+This will create a pytest configuration file more suited to our needs and setup
+a Python virtualenv for docker-py and install its dependencies into it.
 
 
 ## Usage
 
-### Running test suite
+### Running the test suite
 
 The simplest way to run the test suite is to call the `run_test_suite.sh` script
 giving it a Git branch or commit id.
 
 ```shell
-./run_test_suite.sh master
+./run_test_suite.sh dev
 ```
 
 It will checkout the specified branch or commit, build the _podman_ binary,
 start the API server run the tests against it and then stop the server again.
 
 It will produce 3 files:
-- _pyptest_integration_dev_<commit date>_<commit id>_<comment>.pytest.log_: the pytest output
-- _pyptest_integration_dev_<commit date>_<commit id>_<comment>.podman-info.json_: a
+- `pyptest_integration_<suite tag>_<commit date>_<commit id>_<comment>.pytest.log`: the pytest output
+- `pyptest_integration_<suite tag>_<commit date>_<commit id>_<comment>.podman-info.json`: a
     capture of `podman info`
-- _pyptest_integration_dev_<commit date>_<commit id>_<comment>.server.log_: the server logs
+- `pyptest_integration_<suite tag>_<commit date>_<commit id>_<comment>.server.log`: the server logs
 
-NOTE: to ensure a "clean" environment _run_test_suite.sh_ will preemptively
+`<suite tag>` is meant to differentiate multiple runs of the test suite on the
+same commit (e.g. running with different runtimes). Most sensible is to use the
+Podman version (e.g. "3.0.0-dev")
+
+`<commit date>` and `<commit id>` are automatically determined from the checked-out
+commit in the Podman repo. They can be empty.
+
+`<comment>` is whatever you provided with the `--message` option.
+
+WARNING: to ensure a "clean" environment _run_test_suite.sh_ will preemptively
 remove containers, kill "lingering" Podman processes and do a `git checkout` in
 the Podman repo. Use the options listed with `./run_test_suit.sh --help` to prevent
 the script from doing any of these things.
@@ -67,8 +76,20 @@ You can pass additional arguments to _run_test_suite.sh_ which get forwarded to
 pytest (see [pytest's commmand-line flags](https://docs.pytest.org/en/stable/reference.html#command-line-flags)):
 
 ```shell
-./un_test_suite.sh master -k test_create_with_host_pid_mode
+./run_test_suite.sh drilldown -k test_create_with_host_pid_mode
 ```
+
+#### Running tests against host Podman
+
+You can use _run_test_suite.sh_ also to run it agains a system installed version
+of Podman.
+
+```shell
+PODMAN_BIN=podman ./run_test_suite.sh 2.2.1 --checkout ''
+```
+
+NOTE: the commit id and commit date in the file names of the generated logs have
+no meaning in this case.
 
 ### Rendering pytest logs into a HTML table
 
