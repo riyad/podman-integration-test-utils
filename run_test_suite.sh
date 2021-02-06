@@ -123,9 +123,11 @@ function main() {
 
   "${PODMAN_BIN}" system service -t 0 "${PODMAN_SOCKET_PATH}" > "${LOG_BASE_NAME}.server.log" 2>&1 &
 
+  echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ..."
   cd "${DOCKER_PY_REPO_PATH}"
   source "${DOCKER_PY_VIRTUALENV_PATH}/bin/activate"
   pytest -c pytest_podman_apiv2.ini "${OPT_PYTEST_ARGS[@]}" | tee "${LOG_BASE_NAME}.pytest.log"
+  echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ... Done."
 
   # kill backgrounbd jobs (i.e. Podman API server)
   kill "$(jobs -p)"
