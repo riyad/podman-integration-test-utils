@@ -18,7 +18,7 @@ readonly DOCKER_PY_LOGS_PATH="${DOCKER_PY_REPO_PATH}/logs"
 
 
 readonly PODMAN_BIN="${PODMAN_BIN:-./bin/podman}"
-readonly PODMAN_SOCKET_PATH="unix:${PODMAN_REPO_PATH}/docker-py-test.sock"
+readonly PODMAN_SOCKET_PATH="${PODMAN_SOCKET_PATH:-unix:${PODMAN_REPO_PATH}/docker-py-test.sock}"
 export DOCKER_HOST="${PODMAN_SOCKET_PATH}"
 
 
@@ -39,6 +39,8 @@ function usage() {
   echo ""
   echo "ENVIRONMENT VARIABLES"
   echo "         PODMAN_BIN  Use this binary as the podman command (default: ./bin/podman)"
+  echo " PODMAN_SOCKET_PATH  Use this as the socket path for the API server"
+  echo "                     (default: unix:${PODMAN_REPO_PATH}/docker-py-test.sock)"
 }
 
 
