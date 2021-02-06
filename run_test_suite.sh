@@ -17,6 +17,7 @@ readonly DOCKER_PY_VIRTUALENV_PATH="${DOCKER_PY_REPO_PATH}/venv"
 readonly DOCKER_PY_LOGS_PATH="${DOCKER_PY_REPO_PATH}/logs"
 
 
+readonly PODMAN_BIN="${PODMAN_BIN:-./bin/podman}"
 readonly PODMAN_SOCKET_PATH="unix:${PODMAN_REPO_PATH}/docker-py-test.sock"
 export DOCKER_HOST="${PODMAN_SOCKET_PATH}"
 
@@ -34,6 +35,9 @@ function usage() {
   echo "                             containers before running the tests"
   echo "                  --no-kill  Do not kill all podman processes before"
   echo "                             running the tests"
+  echo ""
+  echo "ENVIRONMENT VARIABLES"
+  echo "         PODMAN_BIN  Use this binary as the podman command (default: ./bin/podman)"
 }
 
 
@@ -101,11 +105,11 @@ function main() {
 
   make -j "$(nproc)" podman
 
-  ./bin/podman info --format json > "${LOG_BASE_NAME}.podman-info.json"
+  "${PODMAN_BIN}" info --format json > "${LOG_BASE_NAME}.podman-info.json"
 
   if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
-    ./bin/podman stop -a
-    ./bin/podman rm -a
+    "${PODMAN_BIN}" stop -a
+    "${PODMAN_BIN}" rm -a
     buildah rm -a
   fi
 
@@ -113,7 +117,7 @@ function main() {
     killall -r 'podman.*'
   fi
 
-  ./bin/podman system service -t 0 "${PODMAN_SOCKET_PATH}" > "${LOG_BASE_NAME}.server.log" 2>&1 &
+  "${PODMAN_BIN}" system service -t 0 "${PODMAN_SOCKET_PATH}" > "${LOG_BASE_NAME}.server.log" 2>&1 &
 
   cd "${DOCKER_PY_REPO_PATH}"
   source "${DOCKER_PY_VIRTUALENV_PATH}/bin/activate"
