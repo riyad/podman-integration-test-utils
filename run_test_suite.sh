@@ -96,7 +96,7 @@ function main() {
 
   cd "${PODMAN_REPO_PATH}"
   if [[ -n "${OPT_CHECKOUT_PODMAN}" ]]; then
-    git checkout "${OPT_SUITE_TAG}"
+    git checkout "${OPT_CHECKOUT_PODMAN}"
   fi
 
   local PODMAN_COMMIT_ID="$(git log -1 --format=%H)"
