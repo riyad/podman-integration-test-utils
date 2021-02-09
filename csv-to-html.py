@@ -36,7 +36,7 @@ def main():
 
     tests_by_name_and_suite = defaultdict(lambda: defaultdict(defaultdict))
     test_names = set()
-    test_suites = set()
+    test_suites = dict()
     test_summaries_by_suite = defaultdict(lambda: defaultdict(int))
     for test_name, tests in groupby(all_tests, lambda t: t['_test_name']):
         tests = list(tests)
@@ -48,12 +48,20 @@ def main():
                 test['commit_date'] = datetime.fromisoformat(test['commit_date'])
             test['_unsupported'] = bool(distutils.util.strtobool(test['_unsupported']))
 
-            test_suites.add(test['_test_suite'])
+            if test['_test_suite'] not in test_suites:
+                test_suites[test['_test_suite']] = dict(
+                    _id=test['_test_suite'],
+                    commit_date=test['commit_date'],
+                    commit_id=test['commit_id'],
+                    podman_version=test['podman_version'],
+                    runtime=test['runtime'],
+                    comment=test['comment'],
+                )
             tests_by_name_and_suite[test_name][test['_test_suite']] = test
             test_summaries_by_suite[test['_test_suite']][test['result']] += 1
 
     test_names = list(sorted(test_names))
-    test_suites = list(reversed(sorted(test_suites)))
+    test_suites = list((test_suite for (_, test_suite) in sorted(test_suites.items(), reverse=True)))
 
     env = jinja2.Environment(loader=jinja2.FileSystemLoader('.'))
     template = env.get_template('template.html.j2')

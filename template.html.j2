@@ -32,17 +32,17 @@
               </form>
             </th>
             {%- for test_suite in test_suites: %}
-              {%- set test = tests_by_name_and_suite[test_names[0]][test_suite] %}
-              <th class="align-top" scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
-                {{ test.podman_version }}
-                {%- if test.commit_id != '': %}
-                  <a href="https://github.com/containers/podman/commit/{{ test.commit_id }}" title="Commit ID: {{ test.commit_id }}">{{ test.commit_date.date().isoformat() }}</a>
+              <th class="align-top" scope="col" data-commit-date="{{ test_suite.commit_date }}" data-commit-id="{{ test_suite.commit_id }}" data-podman-version="{{ test_suite.podman_version }}" data-runtime="{{ test_suite.runtime }}">
+                {{ test_suite.podman_version }}
+                {%- if test_suite.commit_id != '': %}
+                  {{ test_suite.commit_date.date().isoformat()}}
+                  <a href="https://github.com/containers/podman/commit/{{ test_suite.commit_id }}" title="Commit ID: {{ test_suite.commit_id }}">{{ test_suite.commit_id[:10] }}</a>
                 {%- endif %}
-                {%- if test.runtime != "runc": %}
-                  <span class="badge bg-info">{{ test.runtime }}</span>
+                {%- if test_suite.runtime != "runc": %}
+                  <span class="badge bg-info">{{ test_suite.runtime }}</span>
                 {%- endif %}
-                {%- if test.comment != "": %}
-                  <span class="badge bg-warning text-dark">{{ test.comment }}</span>
+                {%- if test_suite.comment != "": %}
+                  <span class="badge bg-warning text-dark">{{ test_suite.comment }}</span>
                 {%- endif %}
               </th>
             {%- endfor %}
@@ -55,19 +55,19 @@
           <tr>
             {%- for test_suite in test_suites: %}
               <td>
-                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite].FAILED }}</span>
-                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite].PASSED }}</span>
-                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite].SKIPPED }}</span>
-                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite].XFAIL }}</span>
-                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite].XPASS }}</span>
-                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite].ERROR }}</span>
+                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite._id].FAILED }}</span>
+                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite._id].PASSED }}</span>
+                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite._id].SKIPPED }}</span>
+                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
+                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
+                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
               </td>
             {%- endfor %}
           </tr>
         </thead>
         <tbody>
           {%- for test_name in test_names: %}
-            {%- set _test = tests_by_name_and_suite[test_name][test_suites[0]] %}
+            {%- set _test = tests_by_name_and_suite[test_name][test_suites[0]._id] %}
             <tr class="align-middle test {{ 'test-unsupported d-none' if _test._unsupported }}" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
               <th scope="row" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
                 {{ test_name }}
@@ -76,7 +76,7 @@
                 {%- endif %}
               </th>
               {%- for test_suite in test_suites: %}
-                {%- set test = tests_by_name_and_suite[test_name][test_suite] %}
+                {%- set test = tests_by_name_and_suite[test_name][test_suite._id] %}
                 <td class="
                   {% if test.result == 'ERROR': %}
                     table-danger bg-danger text-white
@@ -110,29 +110,29 @@
             <th scope="col" rowspan="2"></th>
             {%- for test_suite in test_suites: %}
               <td>
-                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite].FAILED }}</span>
-                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite].PASSED }}</span>
-                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite].SKIPPED }}</span>
-                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite].XFAIL }}</span>
-                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite].XPASS }}</span>
-                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite].ERROR }}</span>
+                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite._id].FAILED }}</span>
+                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite._id].PASSED }}</span>
+                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite._id].SKIPPED }}</span>
+                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
+                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
+                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
               </td>
             {%- endfor %}
             <th scope="col" rowspan="2"></th>
           </tr>
           <tr>
             {%- for test_suite in test_suites: %}
-              {%- set test = tests_by_name_and_suite[test_names[0]][test_suite] %}
-              <th class="align-top" scope="col" data-commit-date="{{ test.commit_date }}" data-commit-id="{{ test.commit_id }}" data-podman-version="{{ test.podman_version }}" data-runtime="{{ test.runtime }}">
-                {{ test.podman_version }}
-                {%- if test.commit_id != '': %}
-                  <a href="https://github.com/containers/podman/commit/{{ test.commit_id }}" title="Commit ID: {{ test.commit_id }}">{{ test.commit_date }}</a>
+              <th class="align-top" scope="col" data-commit-date="{{ test_suite.commit_date }}" data-commit-id="{{ test_suite.commit_id }}" data-podman-version="{{ test_suite.podman_version }}" data-runtime="{{ test_suite.runtime }}">
+                {{ test_suite.podman_version }}
+                {%- if test_suite.commit_id != '': %}
+                  {{ test_suite.commit_date.date().isoformat()}}
+                  <a href="https://github.com/containers/podman/commit/{{ test_suite.commit_id }}" title="Commit ID: {{ test_suite.commit_id }}">{{ test_suite.commit_id[:10] }}</a>
                 {%- endif %}
-                {%- if test.runtime != "runc": %}
-                  <span class="badge bg-info">{{ test.runtime }}</span>
+                {%- if test_suite.runtime != "runc": %}
+                  <span class="badge bg-info">{{ test_suite.runtime }}</span>
                 {%- endif %}
-                {%- if test.comment != "": %}
-                  <span class="badge bg-warning text-dark">{{ test.comment }}</span>
+                {%- if test_suite.comment != "": %}
+                  <span class="badge bg-warning text-dark">{{ test_suite.comment }}</span>
                 {%- endif %}
               </th>
             {%- endfor %}
