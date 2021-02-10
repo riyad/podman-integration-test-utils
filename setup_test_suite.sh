@@ -35,7 +35,7 @@ addopts =
     -rxs
     --cache-clear
     -v
-    -k 'not SwarmTest and not NodesTest and not ServiceTest and not SecretAPITest and not TestStore and not ConfigAPITest and not test_create_network_attachable and not test_create_network_ingress and not test_create_inspect_network_with_scope'
+    -k 'not SwarmTest and not NodesTest and not ServiceTest and not TestStore and not ConfigAPITest and not test_create_network_attachable and not test_create_network_ingress and not test_create_inspect_network_with_scope'
 
 junit_suite_name = docker-py
 junit_family = xunit2

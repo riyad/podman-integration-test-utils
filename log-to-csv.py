@@ -28,7 +28,7 @@ EMPTY_TEST = dict(
     _test_suite=None,
     _unsupported=None,
 )
-UNSUPPORTED_TEST_CLASSES = ['ConfigAPITest', 'NodesTest', 'SecretAPITest', 'ServiceTest', 'SwarmTest', 'TestNetworksWithSwarm', 'TestStore']
+UNSUPPORTED_TEST_CLASSES = ['ConfigAPITest', 'NodesTest', 'ServiceTest', 'SwarmTest', 'TestNetworksWithSwarm', 'TestStore']
 UNSUPPORTED_TEST_METHODS = ['test_create_inspect_network_with_scope', 'test_create_network_attachable' , 'test_create_network_ingress']
 
 
