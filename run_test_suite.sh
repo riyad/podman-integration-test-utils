@@ -109,8 +109,6 @@ function main() {
 
   make -j "$(nproc)" podman
 
-  "${PODMAN_BIN}" info --format json > "${LOG_BASE_NAME}.podman-info.json"
-
   if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
     "${PODMAN_BIN}" stop -a
     "${PODMAN_BIN}" rm -a
@@ -120,6 +118,8 @@ function main() {
   if [[ -n "${OPT_KILL_PODMAN}" ]]; then
     killall -r 'podman.*'
   fi
+
+  "${PODMAN_BIN}" info --format json > "${LOG_BASE_NAME}.podman-info.json"
 
   "${PODMAN_BIN}" system service -t 0 "${PODMAN_SOCKET_PATH}" > "${LOG_BASE_NAME}.server.log" 2>&1 &
 
