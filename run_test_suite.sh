@@ -97,11 +97,11 @@ function main() {
   cd "${PODMAN_REPO_PATH}"
   if [[ -n "${OPT_CHECKOUT_PODMAN}" ]]; then
     git checkout "${OPT_CHECKOUT_PODMAN}"
+    local PODMAN_COMMIT_ID="$(git log -1 --format=%H)"
+    local PODMAN_COMMIT_DATE="$(git log -1 --format=%cI)"
   fi
 
-  local PODMAN_COMMIT_ID="$(git log -1 --format=%H)"
-  local PODMAN_COMMIT_DATE="$(git log -1 --format=%cI)"
-  local LOG_BASE_NAME="${DOCKER_PY_LOGS_PATH}/pytest_integration_${OPT_SUITE_TAG}_${PODMAN_COMMIT_DATE}_${PODMAN_COMMIT_ID}"
+  local LOG_BASE_NAME="${DOCKER_PY_LOGS_PATH}/pytest_integration_${OPT_SUITE_TAG}_${PODMAN_COMMIT_DATE:-}_${PODMAN_COMMIT_ID:-}"
 
   if [[ -n "${OPT_MESSAGE}" ]]; then
     LOG_BASE_NAME="${LOG_BASE_NAME}_${OPT_MESSAGE}"
