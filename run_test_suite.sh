@@ -129,6 +129,19 @@ function main() {
   pytest -c pytest_podman_apiv2.ini "${OPT_PYTEST_ARGS[@]}" | tee "${LOG_BASE_NAME}.pytest.log"
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ... Done."
 
+  if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
+    buildah rm -a
+    "${PODMAN_BIN}" image rm \
+      localhost/docker-py-test-build-with-dockerignore \
+      localhost/dup-txt-tag \
+      localhost/isolation \
+      localhost/some-tag \
+      189596303490 \ #quay.io/libpod/rootless-cni-infra \
+      sha256:be4e4bea2c2e15b403bb321562e78ea84b501fb41497472e91ecb41504e8a27c \
+      f2a91732366c bf756fb1ae65
+    "${PODMAN_BIN}" image prune
+  fi
+
   # kill backgrounbd jobs (i.e. Podman API server)
   kill "$(jobs -p)"
 }
