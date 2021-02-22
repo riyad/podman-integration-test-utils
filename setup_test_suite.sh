@@ -9,10 +9,10 @@
 set -euo pipefail
 
 # NOTE: change these to match your environment
-readonly PODMAN_REPO_PATH=~/src/podman
-readonly DOCKER_PY_REPO_PATH=~/src/docker-py
-readonly DOCKER_PY_VIRTUALENV_PATH="${DOCKER_PY_REPO_PATH}/venv"
-readonly DOCKER_PY_LOGS_PATH="${DOCKER_PY_REPO_PATH}/logs"
+readonly PODMAN_REPO_PATH="${PODMAN_REPO_PATH:-$HOME/src/podman}"
+readonly DOCKER_PY_REPO_PATH="${DOCKER_PY_REPO_PATH:-$HOME/src/docker-py}"
+readonly DOCKER_PY_VENV_PATH="${DOCKER_PY_VENV_PATH:-$HOME/.virtualenvs/docker-py}"
+readonly LOGS_PATH="${LOGS_PATH:-${DOCKER_PY_REPO_PATH}/logs}"
 
 
 function main() {
@@ -22,7 +22,7 @@ function main() {
   fi
   cd "${DOCKER_PY_REPO_PATH}"
 
-  mkdir -p "${DOCKER_PY_LOGS_PATH}"
+  mkdir -p "${LOGS_PATH}"
 
   # create custom pytest config
   # see https://docs.pytest.org/en/stable/reference.html#ini-options-ref

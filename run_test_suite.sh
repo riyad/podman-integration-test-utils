@@ -11,15 +11,14 @@
 set -euo pipefail
 
 # NOTE: change these to match your environment
-readonly PODMAN_REPO_PATH=~/src/podman
-readonly DOCKER_PY_REPO_PATH=~/src/docker-py
-readonly DOCKER_PY_VIRTUALENV_PATH="${DOCKER_PY_REPO_PATH}/venv"
-readonly DOCKER_PY_LOGS_PATH="${DOCKER_PY_REPO_PATH}/logs"
-
-
-readonly PODMAN_BIN="${PODMAN_BIN:-./bin/podman}"
+readonly PODMAN_REPO_PATH="${PODMAN_REPO_PATH:-$HOME/src/podman}"
+readonly DOCKER_PY_REPO_PATH="${DOCKER_PY_REPO_PATH:-$HOME/src/docker-py}"
+readonly DOCKER_PY_VENV_PATH="${DOCKER_PY_VENV_PATH:-$HOME/.virtualenvs/docker-py}"
+readonly LOGS_PATH="${LOGS_PATH:-${DOCKER_PY_REPO_PATH}/logs}"
+readonly PODMAN_BIN="${PODMAN_BIN:-${PODMAN_REPO_PATH}/bin/podman}"
 readonly PODMAN_SOCKET_PATH="${PODMAN_SOCKET_PATH:-unix:${PODMAN_REPO_PATH}/docker-py-test.sock}"
-export DOCKER_HOST="${PODMAN_SOCKET_PATH}"
+
+export DOCKER_HOST="${DOCKER_HOST:-${PODMAN_SOCKET_PATH}}"
 
 
 function usage() {
@@ -39,9 +38,17 @@ function usage() {
   echo "                  -h,--help  Display this help text and exit"
   echo ""
   echo "ENVIRONMENT VARIABLES"
-  echo "         PODMAN_BIN  Use this binary as the podman command (default: ./bin/podman)"
-  echo " PODMAN_SOCKET_PATH  Use this as the socket path for the API server"
-  echo "                     (default: unix:${PODMAN_REPO_PATH}/docker-py-test.sock)"
+  echo "    PODMAN_REPO_PATH  Directory where your podman source code lives"
+  echo "                      (default: ~/src/podman)"
+  echo " DOCKER_PY_REPO_PATH  Directory where your docker-py source code lives"
+  echo "                      (default: ~/src/docker-py)"
+  echo " DOCKER_PY_VENV_PATH  Directory where your Python virtual env for docker-py"
+  echo "                      lives (default: ~/.virtualenvs/docker-py)"
+  echo "           LOGS_PATH  Directory where you want logs from test suites saved"
+  echo "                      (default: \$DOCKER_PY_REPO_PATH/logs)"
+  echo "          PODMAN_BIN  Use this binary as the podman command (default: ./bin/podman)"
+  echo "  PODMAN_SOCKET_PATH  Use this as the socket path for the API server"
+  echo "                      (default: unix:${PODMAN_REPO_PATH}/docker-py-test.sock)"
 }
 
 
@@ -105,7 +112,7 @@ function main() {
     local PODMAN_COMMIT_DATE="$(git log -1 --format=%cI)"
   fi
 
-  local LOG_BASE_NAME="${DOCKER_PY_LOGS_PATH}/pytest_integration_${OPT_SUITE_TAG}_${PODMAN_COMMIT_DATE:-}_${PODMAN_COMMIT_ID:-}"
+  local LOG_BASE_NAME="${LOGS_PATH}/pytest_integration_${OPT_SUITE_TAG}_${PODMAN_COMMIT_DATE:-}_${PODMAN_COMMIT_ID:-}"
 
   if [[ -n "${OPT_MESSAGE}" ]]; then
     LOG_BASE_NAME="${LOG_BASE_NAME}_${OPT_MESSAGE}"
@@ -129,7 +136,7 @@ function main() {
 
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ..."
   cd "${DOCKER_PY_REPO_PATH}"
-  source "${DOCKER_PY_VIRTUALENV_PATH}/bin/activate"
+  source "${DOCKER_PY_VENV_PATH}/bin/activate"
   pytest -c pytest_podman_apiv2.ini --junitxml="${LOG_BASE_NAME}.junit.xml" "${OPT_PYTEST_ARGS[@]}" | tee "${LOG_BASE_NAME}.pytest.log"
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ... Done."
 
