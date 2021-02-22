@@ -126,7 +126,7 @@ function main() {
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ..."
   cd "${DOCKER_PY_REPO_PATH}"
   source "${DOCKER_PY_VIRTUALENV_PATH}/bin/activate"
-  pytest -c pytest_podman_apiv2.ini "${OPT_PYTEST_ARGS[@]}" | tee "${LOG_BASE_NAME}.pytest.log"
+  pytest -c pytest_podman_apiv2.ini --junitxml="${LOG_BASE_NAME}.junit.xml" "${OPT_PYTEST_ARGS[@]}" | tee "${LOG_BASE_NAME}.pytest.log"
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ... Done."
 
   if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
