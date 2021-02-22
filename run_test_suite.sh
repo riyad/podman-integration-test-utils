@@ -36,6 +36,7 @@ function usage() {
   echo "                             containers before running the tests"
   echo "                  --no-kill  Do not kill all podman processes before"
   echo "                             running the tests"
+  echo "                  -h,--help  Display this help text and exit"
   echo ""
   echo "ENVIRONMENT VARIABLES"
   echo "         PODMAN_BIN  Use this binary as the podman command (default: ./bin/podman)"
@@ -48,6 +49,9 @@ parse_command_line_args() {
   if [[ $# -eq 0 ]]; then
     usage
     exit 1
+  elif [[ $# -eq 1 && ( "$1" = '-h' || "$1" = '--help' ) ]]; then
+    usage
+    exit 0
   fi
 
   OPT_CHECKOUT_PODMAN='master'
@@ -63,7 +67,7 @@ parse_command_line_args() {
     case "$1" in
       -h|--help)
         usage
-        exit 1
+        exit 0
         ;;
       -c|--checkout)
         readonly OPT_CHECKOUT_PODMAN="$2"
