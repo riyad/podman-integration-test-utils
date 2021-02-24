@@ -137,20 +137,29 @@ function main() {
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ..."
   cd "${DOCKER_PY_REPO_PATH}"
   source "${DOCKER_PY_VENV_PATH}/bin/activate"
+  set +o pipefail  # disable pipefail
+  # pytest returns with non-zero exit code when tests fail :/
   pytest -c pytest_podman_apiv2.ini --junitxml="${LOG_BASE_NAME}.junit.xml" "${OPT_PYTEST_ARGS[@]}" | tee "${LOG_BASE_NAME}.pytest.log"
+  set +o pipefail  # re.enable pipefail
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ... Done."
 
   if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
     buildah rm -a
+    "${PODMAN_BIN}" rm -af
+    set +e  # disable errexit
+    # podman image rm ... returns non-zero exit code when any of the images don't exist
     "${PODMAN_BIN}" image rm \
       localhost/docker-py-test-build-with-dockerignore \
       localhost/dup-txt-tag \
       localhost/isolation \
       localhost/some-tag \
-      189596303490 \ #quay.io/libpod/rootless-cni-infra \
+      189596303490 \
       sha256:be4e4bea2c2e15b403bb321562e78ea84b501fb41497472e91ecb41504e8a27c \
       f2a91732366c bf756fb1ae65
-    "${PODMAN_BIN}" image prune
+      # 189596303490 => quay.io/libpod/rootless-cni-infra
+      # f2a91732366c,bf756fb1ae65 => docker.io/library/hello-world
+    "${PODMAN_BIN}" image prune -f
+    set -e  # re-enable errexit
   fi
 
   # kill backgrounbd jobs (i.e. Podman API server)
