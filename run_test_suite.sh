@@ -121,6 +121,7 @@ function main() {
   make -j "$(nproc)" podman
 
   if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
+    echo "Cleaning up ..."
     "${PODMAN_BIN}" stop -a
     "${PODMAN_BIN}" rm -a
     buildah rm -a
@@ -132,6 +133,7 @@ function main() {
 
   "${PODMAN_BIN}" info --format json > "${LOG_BASE_NAME}.podman-info.json"
 
+  echo "Starting API service ..."
   "${PODMAN_BIN}" system service -t 0 "${PODMAN_SOCKET_PATH}" > "${LOG_BASE_NAME}.server.log" 2>&1 &
 
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ..."
@@ -144,6 +146,7 @@ function main() {
   echo "Saving logs to \"${LOG_BASE_NAME}.pytest.log\" ... Done."
 
   if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
+    echo "Cleaning up ..."
     buildah rm -a
     "${PODMAN_BIN}" rm -af
     set +e  # disable errexit
@@ -164,6 +167,8 @@ function main() {
 
   # kill backgrounbd jobs (i.e. Podman API server)
   kill "$(jobs -p)"
+
+  echo "All done."
 }
 
 
