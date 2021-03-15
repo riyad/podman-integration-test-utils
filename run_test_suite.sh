@@ -157,10 +157,10 @@ function main() {
       localhost/isolation \
       localhost/some-tag \
       189596303490 \
-      sha256:be4e4bea2c2e15b403bb321562e78ea84b501fb41497472e91ecb41504e8a27c \
-      f2a91732366c bf756fb1ae65
+      sha256:5641e297651005e256c7e27f8363dcacc560fabdc635f1254cd5a41354485dfd \
+      f2a91732366c d1165f221234
       # 189596303490 => quay.io/libpod/rootless-cni-infra
-      # f2a91732366c,bf756fb1ae65 => docker.io/library/hello-world
+      # f2a91732366c,d1165f221234 => docker.io/library/hello-world
     "${PODMAN_BIN}" image prune -f
     set -e  # re-enable errexit
   fi
