@@ -161,6 +161,7 @@ function main() {
       f2a91732366c d1165f221234
       # 189596303490 => quay.io/libpod/rootless-cni-infra
       # f2a91732366c,d1165f221234 => docker.io/library/hello-world
+    "${PODMAN_BIN}" image ls | grep dockerpytest | awk '{ print $1 }' | xargs "${PODMAN_BIN}" image rm
     "${PODMAN_BIN}" image prune -f
     set -e  # re-enable errexit
   fi
