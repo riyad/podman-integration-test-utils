@@ -157,12 +157,13 @@ function main() {
       localhost/isolation \
       localhost/some-tag \
       189596303490 \
-      sha256:d1bb6234ef26de7a1976176b36eb0f518b3d3d9e6a46e2da2ae6eb0b4d99d87d \
+      sha256:f5a0b9bab59c8e3b2f9e5f1ab1270d07052997609ccba8270bdab6f78ac13ff8 \
       f2a91732366c d1165f221234
       # 189596303490 => quay.io/libpod/rootless-cni-infra
       # f2a91732366c,d1165f221234 => docker.io/library/hello-world
     "${PODMAN_BIN}" image ls | grep dockerpytest | awk '{ print $1 }' | xargs "${PODMAN_BIN}" image rm
     "${PODMAN_BIN}" image prune -f
+    "${PODMAN_BIN}" network ls | grep dockerpytest | awk '{ print $1 }' | xargs "${PODMAN_BIN}" network rm
     set -e  # re-enable errexit
   fi
 
