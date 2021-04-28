@@ -157,7 +157,7 @@ function main() {
       localhost/isolation \
       localhost/some-tag \
       189596303490 \
-      sha256:f5a0b9bab59c8e3b2f9e5f1ab1270d07052997609ccba8270bdab6f78ac13ff8 \
+      sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a \
       f2a91732366c d1165f221234
       # 189596303490 => quay.io/libpod/rootless-cni-infra
       # f2a91732366c,d1165f221234 => docker.io/library/hello-world
