@@ -66,17 +66,16 @@
           </tr>
         </thead>
         <tbody>
-          {%- for test_name in test_names: %}
-            {%- set _test = tests_by_name_and_suite[test_name][test_suites[0]._id] %}
-            <tr class="align-middle test {{ 'test-unsupported d-none' if _test._unsupported }}" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
-              <th scope="row" data-test-file="{{ _test.test_file }}" data-test-class="{{ _test.test_class }}" data-test-method="{{ _test.test_method }}">
-                {{ test_name }}
-                {%- if _test._unsupported: %}
+          {%- for test_info in test_infos: %}
+            <tr class="align-middle test {{ 'test-unsupported d-none' if test_infos._unsupported }}" data-test-file="{{ test_infos.test_file }}" data-test-class="{{ test_infos.test_class }}" data-test-method="{{ test_infos.test_method }}">
+              <th scope="row" data-test-file="{{ test_infos.test_file }}" data-test-class="{{ test_infos.test_class }}" data-test-method="{{ test_infos.test_method }}">
+                {{ test_info.test_name }}
+                {%- if test_info._unsupported: %}
                   <span class="badge bg-danger">unsupported</span>
                 {%- endif %}
               </th>
               {%- for test_suite in test_suites: %}
-                {%- set test = tests_by_name_and_suite[test_name][test_suite._id] %}
+                {%- set test = tests_by_name_and_suite[test_info.test_name][test_suite._id] %}
                 <td class="
                   {% if test.result == 'ERROR': %}
                     table-danger bg-danger text-white
@@ -96,9 +95,9 @@
                   {{ test.result }}
                 </td>
               {%- endfor %}
-              <th scope="row" data-test-file="{{ tests_by_name_and_suite[test_name][test_suite].test_file }}" data-test-class="{{ tests_by_name_and_suite[test_name][test_suite].test_class }}" data-test-method="{{ tests_by_name_and_suite[test_name][test_suite].test_method }}">
-                {{ test_name }}
-                {%- if tests_by_name_and_suite[test_name][test_suite]._unsupported: %}
+              <th scope="row" data-test-file="{{ test_info.test_file }}" data-test-class="{{ test_info.test_class }}" data-test-method="{{ test_info.test_method }}">
+                {{ test_info.test_name }}
+                {%- if test_info._unsupported: %}
                   <span class="badge bg-danger">unsupported</span>
                 {%- endif %}
               </th>
