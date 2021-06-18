@@ -68,7 +68,9 @@ def main():
                     comment=test['comment'],
                 )
             tests_by_name_and_suite[test_name][test['_test_suite']] = test
-            test_summaries_by_suite[test['_test_suite']][test['result']] += 1
+            # don't "count" unsupported tests
+            test_summaries_by_suite[test['_test_suite']] \
+                ['UNSUPPORTED' if test['_unsupported'] else test['result']] += 1
 
             test_infos_by_name[test_name]['test_file'] = test['test_file']
             test_infos_by_name[test_name]['test_class'] = test['test_class']

@@ -28,8 +28,8 @@ EMPTY_TEST = dict(
     _test_suite=None,
     _unsupported=None,
 )
-UNSUPPORTED_TEST_CLASSES = ['ConfigAPITest', 'NodesTest', 'ServiceTest', 'SwarmTest', 'TestNetworksWithSwarm', 'TestStore']
-UNSUPPORTED_TEST_METHODS = ['test_create_inspect_network_with_scope', 'test_create_network_attachable' , 'test_create_network_ingress']
+UNSUPPORTED_TEST_CLASSES = ['ConfigAPITest', 'LinkTest', 'NodesTest', 'PluginTest', 'ServiceTest', 'SwarmTest', 'TestNetworksWithSwarm', 'TestStore']
+UNSUPPORTED_TEST_METHODS = ['test_connect_with_links', 'test_create_inspect_network_with_scope', 'test_create_network_attachable' , 'test_create_network_ingress', 'test_create_with_links']
 
 
 # str.removeprefix only supported for Python >= 3.9

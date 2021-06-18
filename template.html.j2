@@ -61,6 +61,7 @@
                 <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
                 <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
                 <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
+                <span class="badge bg-secondary">UNSUPPORTED: {{ test_summaries_by_suite[test_suite._id].UNSUPPORTED }}</span>
               </td>
             {%- endfor %}
           </tr>
@@ -115,6 +116,7 @@
                 <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
                 <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
                 <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
+                <span class="badge bg-secondary">UNSUPPORTED: {{ test_summaries_by_suite[test_suite._id].UNSUPPORTED }}</span>
               </td>
             {%- endfor %}
             <th scope="col" rowspan="2"></th>
