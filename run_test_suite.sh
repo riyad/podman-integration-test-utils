@@ -29,7 +29,7 @@ function usage() {
   echo ""
   echo "OPTIONS"
   echo " -c,--checkout \"<BRANCH>\"  Podman branch/commit to checkout. Set this to"
-  echo "                             '' to prevent doing acheckout. (default: master)"
+  echo "                             '' to prevent doing acheckout. (default: main)"
   echo " -m,--message \"<MESSAGE>\"  Message/comment/note to attach to this test run"
   echo "               --no-cleanup  Do not stop and remove Podman and Buildah"
   echo "                             containers before running the tests"
@@ -61,7 +61,7 @@ parse_command_line_args() {
     exit 0
   fi
 
-  OPT_CHECKOUT_PODMAN='master'
+  OPT_CHECKOUT_PODMAN='main'
   OPT_CLEANUP_CONTAINERS='1'
   OPT_KILL_PODMAN='1'
   OPT_MESSAGE=''
