@@ -35,7 +35,7 @@ addopts =
     -rxs
     --cache-clear
     -v
-    -k 'not SwarmTest and not NodesTest and not ServiceTest and not TestStore and not ConfigAPITest and not TestNetworksWithSwarm'
+    -k 'not ConfigAPITest  and not LinkTest and not NodesTest and not PluginTest and not ServiceTest and not SwarmTest and not TestNetworksWithSwarm and not TestStore'
 
 junit_suite_name = docker-py
 junit_logging = all
