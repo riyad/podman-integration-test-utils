@@ -54,7 +54,7 @@ EOF
   pip install -U -r requirements.txt
   pip install -U -r test-requirements.txt
   # make sure at least pytest is up-to-date
-  pip install -U pytest
+  pip install -U pytest pytest-timeout mock
 }
 
 
