@@ -11,7 +11,7 @@ set -euo pipefail
 # NOTE: change these to match your environment
 readonly PODMAN_REPO_PATH="${PODMAN_REPO_PATH:-$HOME/src/podman}"
 readonly DOCKER_PY_REPO_PATH="${DOCKER_PY_REPO_PATH:-$HOME/src/docker-py}"
-readonly DOCKER_PY_VENV_PATH="${DOCKER_PY_VENV_PATH:-$HOME/.virtualenvs/docker-py}"
+readonly DOCKER_PY_VIRTUALENV_PATH="${DOCKER_PY_VIRTUALENV_PATH:-$HOME/.virtualenvs/docker-py}"
 readonly LOGS_PATH="${LOGS_PATH:-${DOCKER_PY_REPO_PATH}/logs}"
 
 
