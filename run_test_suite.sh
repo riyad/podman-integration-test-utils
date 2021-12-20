@@ -128,7 +128,7 @@ function main() {
   fi
 
   if [[ -n "${OPT_KILL_PODMAN}" ]]; then
-    killall -r 'podman.*'
+    killall -r 'podman.*' || true
   fi
 
   "${PODMAN_BIN}" info --format json > "${LOG_BASE_NAME}.podman-info.json"
