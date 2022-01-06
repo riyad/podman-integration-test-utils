@@ -42,7 +42,7 @@
                   <span class="badge bg-info">{{ test_suite.runtime }}</span>
                 {%- endif %}
                 {%- if test_suite.comment != "": %}
-                  <span class="badge bg-warning text-dark">{{ test_suite.comment }}</span>
+                  <div class="bg-warning text-dark">{{ test_suite.comment }}</div>
                 {%- endif %}
               </th>
             {%- endfor %}
@@ -55,13 +55,13 @@
           <tr>
             {%- for test_suite in test_suites: %}
               <td>
-                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite._id].FAILED }}</span>
-                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite._id].PASSED }}</span>
-                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite._id].SKIPPED }}</span>
-                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
-                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
-                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
-                <span class="badge bg-secondary">UNSUPPORTED: {{ test_summaries_by_suite[test_suite._id].UNSUPPORTED }}</span>
+                <span class="badge rounded-pill bg-danger"><abbr title="FAILED">F</abbr>: {{ test_summaries_by_suite[test_suite._id].FAILED }}</span>
+                <span class="badge rounded-pill bg-success"><abbr title="PASSED">P</abbr>: {{ test_summaries_by_suite[test_suite._id].PASSED }}</span>
+                <span class="badge rounded-pill bg-warning"><abbr title="SKIPPED">S</abbr>: {{ test_summaries_by_suite[test_suite._id].SKIPPED }}</span>
+                <span class="badge bg-secondary"><abbr title="XFAIL">XF</abbr>: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
+                <span class="badge bg-light text-dark"><abbr title="XPASS">XP</abbr>: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
+                <span class="badge bg-danger"><abbr title="ERROR">E</abbr>: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
+                <span class="badge bg-secondary"><abbr title="UNSUPPORTED">U</abbr>: {{ test_summaries_by_suite[test_suite._id].UNSUPPORTED }}</span>
               </td>
             {%- endfor %}
           </tr>
@@ -92,7 +92,8 @@
                   {% endif %}
                   result result-{{ test.result }}"
                 >
-                  {{ test.result }}
+                  <!--{{ test.result }}-->
+                  &nbsp;
                 </td>
               {%- endfor %}
               <th scope="row" data-test-file="{{ test_info.test_file }}" data-test-class="{{ test_info.test_class }}" data-test-method="{{ test_info.test_method }}">
@@ -109,13 +110,13 @@
             <th scope="col" rowspan="2"></th>
             {%- for test_suite in test_suites: %}
               <td>
-                <span class="badge rounded-pill bg-danger">FAILED: {{ test_summaries_by_suite[test_suite._id].FAILED }}</span>
-                <span class="badge rounded-pill bg-success">PASSED: {{ test_summaries_by_suite[test_suite._id].PASSED }}</span>
-                <span class="badge rounded-pill bg-warning">SKIPPED: {{ test_summaries_by_suite[test_suite._id].SKIPPED }}</span>
-                <span class="badge bg-secondary">XFAIL: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
-                <span class="badge bg-light text-dark">XPASS: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
-                <span class="badge bg-danger">ERROR: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
-                <span class="badge bg-secondary">UNSUPPORTED: {{ test_summaries_by_suite[test_suite._id].UNSUPPORTED }}</span>
+                <span class="badge rounded-pill bg-danger"><abbr title="FAILED">F</abbr>: {{ test_summaries_by_suite[test_suite._id].FAILED }}</span>
+                <span class="badge rounded-pill bg-success"><abbr title="PASSED">P</abbr>: {{ test_summaries_by_suite[test_suite._id].PASSED }}</span>
+                <span class="badge rounded-pill bg-warning"><abbr title="SKIPPED">S</abbr>: {{ test_summaries_by_suite[test_suite._id].SKIPPED }}</span>
+                <span class="badge bg-secondary"><abbr title="XFAIL">XF</abbr>: {{ test_summaries_by_suite[test_suite._id].XFAIL }}</span>
+                <span class="badge bg-light text-dark"><abbr title="XPASS">XP</abbr>: {{ test_summaries_by_suite[test_suite._id].XPASS }}</span>
+                <span class="badge bg-danger"><abbr title="ERROR">E</abbr>: {{ test_summaries_by_suite[test_suite._id].ERROR }}</span>
+                <span class="badge bg-secondary"><abbr title="UNSUPPORTED">U</abbr>: {{ test_summaries_by_suite[test_suite._id].UNSUPPORTED }}</span>
               </td>
             {%- endfor %}
             <th scope="col" rowspan="2"></th>
@@ -132,7 +133,7 @@
                   <span class="badge bg-info">{{ test_suite.runtime }}</span>
                 {%- endif %}
                 {%- if test_suite.comment != "": %}
-                  <span class="badge bg-warning text-dark">{{ test_suite.comment }}</span>
+                  <div class="bg-warning text-dark">{{ test_suite.comment }}</div>
                 {%- endif %}
               </th>
             {%- endfor %}
