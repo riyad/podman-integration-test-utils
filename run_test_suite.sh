@@ -151,13 +151,16 @@ function main() {
     "${PODMAN_BIN}" rm -af
     set +e  # disable errexit
     # podman image rm ... returns non-zero exit code when any of the images don't exist
+    # we could use --ignore for podman versions > 3.4?!?
     "${PODMAN_BIN}" image rm \
       localhost/docker-py-test-build-with-dockerignore \
       docker.io/library/docker-py-test-build-with-dockerignore \
       localhost/dup-txt-tag \
+      docker.io/library/dup-txt-tag \
       localhost/isolation \
       docker.io/library/isolation \
       localhost/some-tag \
+      docker.io/library/some-tag \
       189596303490 \
       sha256:e7b300aee9f9bf3433d32bc9305bfdd22183beb59d933b48d77ab56ba53a197a \
       f2a91732366c d1165f221234 feb5d9fea6a5
