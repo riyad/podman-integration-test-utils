@@ -47,3 +47,10 @@ exemplary error:
 other tests exhibit similar behaviour:
 - TestNetworks.test_connect_with_ipv4_address
 - TestNetworks.test_create_with_ipv6_address
+
+
+
+## BuildTest.test_build_with_cache_from
+
+2022-01-07 Podman 4.0.0-dev:
+Podman always uses cached layers and ignores the `cachefrom` parameter.
