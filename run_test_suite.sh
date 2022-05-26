@@ -17,6 +17,7 @@ readonly DOCKER_PY_VENV_PATH="${DOCKER_PY_VENV_PATH:-$HOME/.virtualenvs/docker-p
 readonly LOGS_PATH="${LOGS_PATH:-${DOCKER_PY_REPO_PATH}/logs}"
 readonly PODMAN_BIN="${PODMAN_BIN:-${PODMAN_REPO_PATH}/bin/podman}"
 readonly PODMAN_SOCKET_PATH="${PODMAN_SOCKET_PATH:-unix:${PODMAN_REPO_PATH}/docker-py-test.sock}"
+readonly BUILDAH_BIN="$(command -v buildah)"
 
 export DOCKER_HOST="${DOCKER_HOST:-${PODMAN_SOCKET_PATH}}"
 
@@ -124,7 +125,7 @@ function main() {
     echo "Cleaning up ..."
     "${PODMAN_BIN}" stop -a
     "${PODMAN_BIN}" rm -a
-    buildah rm -a
+    [[ -x "${BUILDAH_BIN}" ]] && "${BUILDAH_BIN}" rm -a
   fi
 
   if [[ -n "${OPT_KILL_PODMAN}" ]]; then
@@ -147,7 +148,7 @@ function main() {
 
   if [[ -n "${OPT_CLEANUP_CONTAINERS}" ]]; then
     echo "Cleaning up ..."
-    buildah rm -a
+    [[ -x "${BUILDAH_BIN}" ]] && "${BUILDAH_BIN}" rm -a
     "${PODMAN_BIN}" rm -af
     set +e  # disable errexit
     # podman image rm ... returns non-zero exit code when any of the images don't exist
